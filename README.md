@@ -6,6 +6,8 @@
 
 PENTAX 67II（宾得 67II）中文说明书的全套资料整理：
 
+> **在线预览（GitHub Pages）：https://gengyueworks.github.io/pentax67ii-manual/**
+
 | 文件 | 说明 |
 |------|------|
 | `Pentax67II中文说明书.pdf` | 官方中文说明书，80 页，28.7 MB |
