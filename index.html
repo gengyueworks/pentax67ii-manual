@@ -194,6 +194,62 @@ body {
   gap: 12px;
 }
 
+
+.lang-switch-wrap {
+  position: relative;
+  display: inline-block;
+}
+.lang-switch-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border-strong);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.lang-switch-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-1px);
+}
+.lang-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  z-index: 120;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  display: none;
+  flex-direction: column;
+  min-width: 130px;
+}
+.lang-dropdown.open {
+  display: flex;
+}
+.lang-option {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  font-size: 13px;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  font-family: var(--font-body);
+}
+.lang-option:hover {
+  background: var(--bg-secondary);
+  color: var(--accent-gold);
+}
+
 .theme-switch-pill {
   background: var(--bg-secondary);
   border: 1px solid var(--card-border-strong);
@@ -1007,7 +1063,63 @@ tr:hover td {
     font-size: 9px;
   }
   
-  .theme-switch-pill {
+  
+.lang-switch-wrap {
+  position: relative;
+  display: inline-block;
+}
+.lang-switch-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border-strong);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.lang-switch-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-1px);
+}
+.lang-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  z-index: 120;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  display: none;
+  flex-direction: column;
+  min-width: 130px;
+}
+.lang-dropdown.open {
+  display: flex;
+}
+.lang-option {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  font-size: 13px;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  font-family: var(--font-body);
+}
+.lang-option:hover {
+  background: var(--bg-secondary);
+  color: var(--accent-gold);
+}
+
+.theme-switch-pill {
     padding: 5px 10px;
     font-size: 12px;
   }
@@ -1295,6 +1407,20 @@ tr:hover td {
     </a>
     
     <div class="header-controls">
+      
+      <div class="lang-switch-wrap">
+        <button class="lang-switch-btn" id="langBtn" onclick="toggleLangMenu()" title="切换语言 / Switch Language / 言語切替">
+          <span style="font-size:14px;">🌐</span>
+          <span id="currentLangLabel" style="font-weight:700; font-family:var(--font-mono); font-size:12px;">中文</span>
+          <span style="font-size:10px;">▼</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option" onclick="selectLang('zh')">🇨🇳 简体中文</button>
+          <button class="lang-option" onclick="selectLang('en')">🇺🇸 English</button>
+          <button class="lang-option" onclick="selectLang('ja')">🇯🇵 日本語</button>
+        </div>
+      </div>
+
       <button class="theme-switch-pill" id="themeToggle" title="切换明亮画册白 / 暗室黑金">
         <span id="themeIcon">☀️</span>
         <span id="themeLabel" style="font-size:12px; font-weight:600; font-family:var(--font-mono);">银盐画册白</span>
@@ -2060,7 +2186,7 @@ tr:hover td {
   <section class="tab-content-panel" id="manual">
     <div class="legend-story-card" style="padding:28px 32px; margin-bottom:24px;">
       <div class="story-header-tag">OFFICIAL ARCHIVE · 80 HIGH-RES PAGES</div>
-      <h2 class="story-title" style="font-size:22px; margin-bottom:8px;">📖 理光官方中文说明书 80 页完整画廊</h2>
+      <h2 class="story-title" style="font-size:22px; margin-bottom:8px;">📖 旭光学（PENTAX 宾得）原厂官方说明书 80 页完整画廊</h2>
       <p style="font-size:14px; color:var(--text-secondary);">逐页扫描自 80 页官方中文说明书。支持单页精读、双页画册展开、章节直达与全屏灯箱放大。</p>
     </div>
     
@@ -2167,7 +2293,7 @@ tr:hover td {
       <div class="download-card">
         <div>
           <h3>📄 官方原版中文说明书 PDF</h3>
-          <div class="file-meta">80 页高清完整版 · 28.7 MB · RICOH / PENTAX 官方中文版</div>
+          <div class="file-meta">80 页高清完整版 · 28.7 MB · Asahi Optical / PENTAX 旭光学原厂中文版</div>
           <p style="font-size:14px; color:var(--text-secondary); margin-bottom:12px;">包含封面、机身各部位图解、装卷流程、测光系统、MLU预升、配件系统及故障速查全量内容。</p>
           <div class="path-box" id="pdfPath">/Volumes/拓展坞 1T2022/2 Codex-Workspace/Codex-Workspace-Main/30-项目-网站/gengyueworks-Github/pentax67ii-manual/Pentax67II中文说明书.pdf</div>
         </div>
@@ -2348,7 +2474,7 @@ function openLightbox(src, pageNum) {
   const img = document.getElementById('lightboxImg');
   const caption = document.getElementById('lightboxCaption');
   img.src = src;
-  caption.textContent = pageNum ? `理光官方中文说明书 · 第 ${pageNum} 页` : '';
+  caption.textContent = pageNum ? `旭光学（PENTAX 宾得）原厂官方说明书 · 第 ${pageNum} 页` : '';
   modal.classList.add('active');
 }
 
@@ -2437,8 +2563,220 @@ function handleSwipe() {
   }
 }
 
+
+/* ─── Trilingual Internationalization Engine (ZH / EN / JA) ─── */
+const I18N = {
+  zh: {
+    meta_title: "PENTAX 67II · 中画幅传奇摄影指南与全景档案",
+    brand_sub: "Medium Format 6×7",
+    hero_tag: "1998 · 旭光学中画幅单反终极机皇",
+    hero_title: "PENTAX 67II",
+    hero_sub: "中画幅传奇 · 摄影指南与全景档案",
+    spec_format: "画幅 56×67mm (6×7)",
+    spec_film: "胶卷 120 (10张) / 220 (21张)",
+    spec_metering: "测光 TTL 6分区 / 中央重点 / 点测",
+    spec_shutter: "快门 1/1000s ~ 30s + B门",
+    spec_features: "机能 MLU 反光镜预升 · ME 多重曝光",
+    btn_start: "⚡ 开启装机进阶之旅",
+    btn_manual: "📖 翻阅 80 页原版说明书",
+    btn_download_pdf: "📥 下载 28.7MB 官方 PDF",
+    tab_l1: "🏃 01·启航准备",
+    tab_l2: "📸 02·首卷实战",
+    tab_l3: "🎯 03·精准曝光",
+    tab_l4: "🔧 04·进阶绝技",
+    tab_manual: "📖 05·80页原版手册",
+    tab_film: "🎞️ 06·120胶卷档案",
+    tab_download: "📥 07·资料下载与路径",
+    story_badge: "THE LEGENDARY MEDIUM FORMAT TITAN · 前世今生",
+    story_title: "为什么 Pentax 67II 是摄影史上一座无法逾越的丰碑？",
+    story_p1: "在中画幅胶片相机的殿堂里，如果说哈苏代表了北欧的精密与理性，禄来代表了双反的古典与优雅，那么 <strong>PENTAX 67 系列，就是纯粹为手持创作与狂热画质而生的「终极重炮」</strong>。",
+    story_p2: "从 1969 年日本旭光学工业株式会社（Asahi Optical Co.）发布最初的 Asahi Pentax 6×7，到 1989 年更名为 Pentax 67 的机械淬炼，再到 <strong>1998 年集三十年机械与电子光学大成的终极完全体 —— PENTAX 67II</strong>，它完成了中画幅单反史上最完美的进化。",
+    story_quote: "“56×67mm 的巨大底片面积是 135 全画幅的整整 4.5 倍。当你凝视对焦屏里那巨大明亮的三维空间，按下一声如雷贯耳的快门震响，底片上记录的每一个毛孔、每一缕空气中的光尘，都在向你宣告何为中画幅的绝对统治力。”",
+    story_p3: "<strong>神话级的光学遗产：</strong>特别是那支传说中的 <strong>SMC Pentax 67 105mm F2.4</strong>，被公认为世界摄影史上最迷人的人像镜头之一 —— 极浅的景深与如奶油般化开的焦外过渡，让无数摄影大师（荒木经惟、滨田英明、上田义彦、Bruce Weber）将其视作不可替代的灵魂利器。",
+    story_p4: "手握这台 1.7kg 沉甸甸的纯金属机身，每一次过片、每一次快门释放，都是一次庄严的仪式。<strong>现在，让我们从最基础的机身装配开始，一步步解锁这台传奇机皇的全部威力，开启通往摄影大师的实战进阶之旅！</strong>",
+    manual_archive_badge: "OFFICIAL ARCHIVE · 80 HIGH-RES PAGES",
+    manual_archive_title: "📖 旭光学（PENTAX）原厂官方说明书 80 页完整画廊",
+    manual_archive_desc: "逐页扫描自 80 页官方说明书。支持单页精读、双页画册展开、章节直达与全屏灯箱放大。",
+    btn_prev: "⬅ 上一步",
+    btn_next: "下一步 ➔",
+    theme_light: "银盐画册白",
+    theme_dark: "暗室黑金"
+  },
+  en: {
+    meta_title: "PENTAX 67II · The Medium Format 6×7 Legend & Field Guide",
+    brand_sub: "Medium Format 6×7",
+    hero_tag: "1998 · The Definitive Medium Format SLR Masterpiece",
+    hero_title: "PENTAX 67II",
+    hero_sub: "The 6×7 Medium Format Legend · Field Guide & Archive",
+    spec_format: "Format 56×67mm (6×7)",
+    spec_film: "Film 120 (10 exp) / 220 (21 exp)",
+    spec_metering: "Metering TTL 6-Segment / Center / Spot",
+    spec_shutter: "Shutter 1/1000s to 30s + Bulb",
+    spec_features: "Features Mirror Lock-Up (MLU) · Multi-Exp",
+    btn_start: "⚡ Start Field Guide",
+    btn_manual: "📖 Explore 80-Page Manual",
+    btn_download_pdf: "📥 Download 28.7MB Official PDF",
+    tab_l1: "🏃 01·Preparation",
+    tab_l2: "📸 02·First Roll",
+    tab_l3: "🎯 03·Exposure",
+    tab_l4: "🔧 04·Mastery",
+    tab_manual: "📖 05·80P Manual",
+    tab_film: "🎞️ 06·120 Films",
+    tab_download: "📥 07·Downloads",
+    story_badge: "THE LEGENDARY TITAN · HERITAGE & ORIGIN",
+    story_title: "Why the Pentax 67II Remains an Unsurpassed Monument in Photography",
+    story_p1: "In the pantheon of medium format cameras, if Hasselblad represents Nordic precision and Rolleiflex embodies twin-lens poise, the <strong>PENTAX 67 series is the ultimate hand-held titan born for uncompromising image quality</strong>.",
+    story_p2: "From the original Asahi Pentax 6×7 introduced by Asahi Optical Co. in 1969, through the mechanical refinement of the Pentax 67 in 1989, to <strong>1998's definitive pinnacle — the PENTAX 67II</strong>, it completed the greatest evolution in medium format SLR history.",
+    story_quote: "“The 56×67mm negative area is 4.5 times larger than 35mm full frame. When you look through the vast, luminous viewfinder and release that earth-shaking focal-plane shutter, the sheer resolution and spatial presence reveal the undisputed power of medium format.”",
+    story_p3: "<strong>Legendary Optical Heritage:</strong> Most revered is the mythical <strong>SMC Pentax 67 105mm F2.4</strong>, hailed as one of the most mesmerizing portrait lenses ever made — delivering razor-thin depth of field and creamy bokeh that defined the work of masters like Nobuyoshi Araki, Hideaki Hamada, Yoshihiko Ueda, and Bruce Weber.",
+    story_p4: "Holding this 1.7kg metal powerhouse turns every advance and shutter release into a sacred ritual. <strong>Let us master this legendary camera and elevate your photographic craft!</strong>",
+    manual_archive_badge: "OFFICIAL ARCHIVE · 80 HIGH-RES PAGES",
+    manual_archive_title: "📖 Asahi Optical (PENTAX) Official Manual · 80-Page High-Res Archive",
+    manual_archive_desc: "Scanned page-by-page from the official 80-page manual. Supports single page, spread view, chapter quick-jump, and fullscreen lightbox.",
+    btn_prev: "⬅ Previous Step",
+    btn_next: "Next Step ➔",
+    theme_light: "Warm Baryta Paper",
+    theme_dark: "Darkroom Black"
+  },
+  ja: {
+    meta_title: "PENTAX 67II · 中判6×7の伝説・撮影完全マスターガイド＆アーカイブ",
+    brand_sub: "Medium Format 6×7",
+    hero_tag: "1998 · 旭光学中判一眼レフの最高峰",
+    hero_title: "PENTAX 67II",
+    hero_sub: "中判6×7の伝説 · 撮影完全マスターガイド＆アーカイブ",
+    spec_format: "画面寸法 56×67mm (6×7判)",
+    spec_film: "フィルム 120 (10枚撮り) / 220 (21枚撮り)",
+    spec_metering: "測光 TTL 6分割マルチ / 中央重点 / スポット",
+    spec_shutter: "シャッター 1/1000秒〜30秒、バルブ",
+    spec_features: "機能 ミラーアップ (MLU) · 多重露出 (ME)",
+    btn_start: "⚡ マスターガイドを始める",
+    btn_manual: "📖 80P取扱説明書を見る",
+    btn_download_pdf: "📥 28.7MB 公式PDFダウンロード",
+    tab_l1: "🏃 01·準備と装填",
+    tab_l2: "📸 02·初撮影実践",
+    tab_l3: "🎯 03·露出制御",
+    tab_l4: "🔧 04·応用機能",
+    tab_manual: "📖 05·80P説明書",
+    tab_film: "🎞️ 06·120フィルム",
+    tab_download: "📥 07·ダウンロード",
+    story_badge: "THE LEGENDARY TITAN · 歴史と系譜",
+    story_title: "なぜ PENTAX 67II は写真史における不滅の金字塔なのか？",
+    story_p1: "中判フィルムカメラの頂点において、ハッセルブラッドが北欧の精密さを、ローライフレックスが二眼レフの気品を象徴するならば、<strong>PENTAX 67シリーズは、圧倒的な描写力と手持ち撮影の情熱が生んだ「唯一無二の巨砲」</strong>です。",
+    story_p2: "1969年に旭光学工業株式会社が発表した『アサヒペンタックス 6×7』、1989年の『ペンタックス 67』、そして<strong>1998年、30年の技術を結集した究極の完成形『PENTAX 67II』</strong>へ。中判一眼レフの頂点がここに極まりました。",
+    story_quote: "“56×67mmの巨大な画面寸法は、35mmフルサイズの実に約4.5倍。明るく巨大なファインダーを見つめ、大地を揺るがすような重厚なシャッター音を響かせた瞬間、中判だけの圧倒的な立体感と空気感がフィルムに刻まれます。”",
+    story_p3: "<strong>神話的光学遺産：</strong> とりわけ伝説の名玉 <strong>SMCペンタックス67 105mm F2.4</strong> は、写真史上最も魅力的な標準レンズの一つとして称賛され、極浅の被写界深度ととろけるようなボケ味が、荒木経惟、濱田英明、上田義彦、ブルース・ウェーバーら巨匠たちの表現を支え続けました。",
+    story_p4: "1.7kgの金属ボディを構え、巻き上げ、シャッターを切る。それは一枚の光を永遠に刻む儀式です。<strong>さあ、中判6×7の王者を手にするマスターガイドを始めましょう！</strong>",
+    manual_archive_badge: "OFFICIAL ARCHIVE · 80 HIGH-RES PAGES",
+    manual_archive_title: "📖 旭光学（PENTAX）公式取扱説明書 · 全80ページ高精細アーカイブ",
+    manual_archive_desc: "全80ページの公式説明書を高精細スキャン。単ページ精読、見開き表示、章別ジャンプ、全画面拡大に対応。",
+    btn_prev: "⬅ 前のステップ",
+    btn_next: "次のステップ ➔",
+    theme_light: "銀塩ペーパー白",
+    theme_dark: "暗室ブラック"
+  }
+};
+
+let currentLang = 'zh';
+
+function toggleLangMenu() {
+  document.getElementById('langDropdown').classList.toggle('open');
+}
+
+function selectLang(lang) {
+  if (!I18N[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('pentax67_lang', lang);
+  document.getElementById('langDropdown').classList.remove('open');
+  applyTranslations();
+}
+
+function applyTranslations() {
+  const t = I18N[currentLang];
+  document.title = t.meta_title;
+  
+  const langNames = { zh: "中文", en: "EN", ja: "日本語" };
+  document.getElementById('currentLangLabel').textContent = langNames[currentLang];
+  
+  // Hero texts
+  const heroTag = document.querySelector('.hero-tag-wrap span');
+  if (heroTag) heroTag.textContent = t.hero_tag;
+  const heroSub = document.querySelector('.hero-sub');
+  if (heroSub) heroSub.textContent = t.hero_sub;
+  
+  // Specs bar
+  const specs = document.querySelectorAll('.spec-pill');
+  if (specs.length >= 5) {
+    specs[0].innerHTML = `<strong>${currentLang==='en'?'Format':(currentLang==='ja'?'画面寸法':'画幅')}</strong> 56×67mm (6×7)`;
+    specs[1].innerHTML = `<strong>${currentLang==='en'?'Film':(currentLang==='ja'?'フィルム':'胶卷')}</strong> 120 (10 exp) / 220 (21 exp)`;
+    specs[2].innerHTML = `<strong>${currentLang==='en'?'Metering':(currentLang==='ja'?'測光':'测光')}</strong> TTL 6-Segment / Center / Spot`;
+    specs[3].innerHTML = `<strong>${currentLang==='en'?'Shutter':(currentLang==='ja'?'シャッター':'快门')}</strong> 1/1000s ~ 30s + B`;
+    specs[4].innerHTML = `<strong>${currentLang==='en'?'Features':(currentLang==='ja'?'機能':'机能')}</strong> MLU · ME`;
+  }
+  
+  // Hero CTA buttons
+  const heroBtns = document.querySelectorAll('.hero-actions .btn');
+  if (heroBtns.length >= 3) {
+    heroBtns[0].querySelector('span').textContent = t.btn_start;
+    heroBtns[1].querySelector('span').textContent = t.btn_manual;
+    heroBtns[2].querySelector('span').textContent = t.btn_download_pdf;
+  }
+  
+  // Nav tabs
+  const tabBtns = document.querySelectorAll('.nav-tabs .tab-btn');
+  if (tabBtns.length >= 7) {
+    tabBtns[0].textContent = t.tab_l1;
+    tabBtns[1].textContent = t.tab_l2;
+    tabBtns[2].textContent = t.tab_l3;
+    tabBtns[3].textContent = t.tab_l4;
+    tabBtns[4].textContent = t.tab_manual;
+    tabBtns[5].textContent = t.tab_film;
+    tabBtns[6].textContent = t.tab_download;
+  }
+  
+  // Story banner
+  const storyCard = document.querySelector('#level1 .legend-story-card');
+  if (storyCard) {
+    storyCard.querySelector('.story-header-tag').textContent = t.story_badge;
+    storyCard.querySelector('.story-title').textContent = t.story_title;
+    const body = storyCard.querySelector('.story-body');
+    body.innerHTML = `
+      <p>${t.story_p1}</p>
+      <p>${t.story_p2}</p>
+      <div class="story-quote">${t.story_quote}</div>
+      <p>${t.story_p3}</p>
+      <p>${t.story_p4}</p>
+    `;
+  }
+  
+  // Manual viewer header
+  const manualCard = document.querySelector('#manual .legend-story-card');
+  if (manualCard) {
+    manualCard.querySelector('.story-header-tag').textContent = t.manual_archive_badge;
+    manualCard.querySelector('.story-title').textContent = t.manual_archive_title;
+    manualCard.querySelector('p').textContent = t.manual_archive_desc;
+  }
+  
+  // Theme button label update
+  const themeLabel = document.getElementById('themeLabel');
+  if (themeLabel) {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    themeLabel.textContent = isDark ? t.theme_dark : t.theme_light;
+  }
+}
+
+// Close dropdown on outside click
+document.addEventListener('click', (e) => {
+  const wrap = document.querySelector('.lang-switch-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    document.getElementById('langDropdown').classList.remove('open');
+  }
+});
+
 /* ─── Init on Load ─── */
 document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('pentax67_lang') || 'zh';
+  currentLang = savedLang;
+  applyTranslations();
   const savedTheme = localStorage.getItem('pentax67_theme') || 'paper';
   setTheme(savedTheme);
   initThumbStrip();
