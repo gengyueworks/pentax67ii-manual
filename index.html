@@ -194,35 +194,6 @@ body {
   gap: 12px;
 }
 
-.progress-hud {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--card-border);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-family: var(--font-mono);
-  color: var(--text-secondary);
-}
-
-.progress-hud-bar {
-  width: 48px;
-  height: 4px;
-  background: var(--card-border-strong);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.progress-hud-fill {
-  height: 100%;
-  width: 0%;
-  background: var(--accent-gold);
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
 .theme-switch-pill {
   background: var(--bg-secondary);
   border: 1px solid var(--card-border-strong);
@@ -443,8 +414,8 @@ body {
   background: var(--card-bg);
   border: 1px solid var(--card-border-gold);
   border-radius: var(--radius-lg);
-  padding: 36px 40px;
-  margin-bottom: 36px;
+  padding: 32px 36px;
+  margin-bottom: 32px;
   box-shadow: var(--shadow-md);
   position: relative;
   overflow: hidden;
@@ -471,10 +442,10 @@ body {
 
 .story-title {
   font-family: var(--font-serif);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   line-height: 1.3;
 }
 
@@ -484,7 +455,7 @@ body {
   line-height: 1.85;
 }
 .story-body p {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 .story-body strong {
   color: var(--text-primary);
@@ -493,17 +464,17 @@ body {
 .story-quote {
   background: var(--bg-secondary);
   border-left: 3px solid var(--accent-gold);
-  padding: 16px 20px;
+  padding: 14px 18px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   font-size: 14px;
   color: var(--text-primary);
-  margin: 18px 0;
+  margin: 16px 0;
   font-style: italic;
 }
 
 /* ─── Step-by-Step Pager (Achievement Focused) ─── */
 .wizard-stepper-wrap {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .wizard-step-pills {
@@ -552,7 +523,7 @@ body {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
-  padding: 36px;
+  padding: 32px;
   box-shadow: var(--shadow-md);
   margin-bottom: 24px;
 }
@@ -576,7 +547,7 @@ body {
 }
 
 .step-card-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
   display: flex;
@@ -640,7 +611,7 @@ body {
   font-size: 12px;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 /* ─── High-Contrast Inline Manual Previews (Fixed Text Visibility) ─── */
@@ -648,7 +619,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 18px;
-  margin: 24px 0;
+  margin: 20px 0;
 }
 
 .manual-inline-preview {
@@ -672,10 +643,9 @@ body {
   display: block;
 }
 
-/* Super Clear High-Contrast Caption (Fixed!) */
 .manual-img-caption {
-  background: #181a20;
-  color: #f4f4f5;
+  background: #27272a;
+  color: #ffffff;
   padding: 10px 14px;
   font-size: 13px;
   font-weight: 600;
@@ -684,14 +654,33 @@ body {
   justify-content: space-between;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
-[data-theme="paper"] .manual-img-caption {
-  background: #27272a;
-  color: #ffffff;
-}
 .manual-img-caption span {
   color: #eab308;
   font-family: var(--font-mono);
   font-size: 11px;
+}
+
+/* ─── Table Styling ─── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+th, td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--card-border);
+  text-align: left;
+}
+th {
+  background: var(--bg-secondary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-gold);
+  text-transform: uppercase;
+}
+tr:hover td {
+  background: rgba(0,0,0,0.02);
 }
 
 /* ─── 80-Page Official Manual Viewer ─── */
@@ -1069,308 +1058,705 @@ body {
 <!-- ═══ MAIN CONTENT ═══ -->
 <main class="container">
 
-  <!-- ══════════ PHASE 1: 启航准备 ══════════ -->
+  <!-- ══════════ PHASE 1: 启航准备 · 认识与装配机身 ══════════ -->
   <section class="tab-content-panel active" id="level1">
     
-    <!-- 传奇图腾与情绪价值 Banner -->
     <div class="legend-story-card">
-      <div class="story-header-tag">THE LEGENDARY MEDIUM FORMAT TITAN · 前世今生</div>
-      <h2 class="story-title">为什么 Pentax 67II 是摄影史上一座无法逾越的丰碑？</h2>
+      <div class="story-header-tag">PHASE 01 · ESSENTIAL PREPARATION</div>
+      <h2 class="story-title">启航准备 · 认识与装配机身</h2>
       <div class="story-body">
-        <p>
-          在中画幅胶片相机的殿堂里，如果说哈苏代表了北欧的精密与理性，禄来代表了双反的古典与优雅，那么 <strong>PENTAX 67 系列，就是纯粹为手持创作与狂热画质而生的「终极重炮」</strong>。
-        </p>
-        <p>
-          从 1969 年 Asahi Pentax 6×7 的初试啼声，到 1989 年 Pentax 67 的工业淬炼，再到 <strong>1998 年集三十年机械与电子光学大成的终极完全体 —— PENTAX 67II</strong>，它完成了中画幅单反史上最完美的进化。
-        </p>
-        
+        <p>让这台 1998 年的中画幅机皇运转起来。完成本阶段，你将掌握装入电池、标准 120 胶卷精准过片、ISO 设定、镜头卡口锁止与机身核心部件布局。</p>
+
         <div class="story-quote">
           “56×67mm 的巨大底片面积是 135 全画幅的整整 4.5 倍。当你凝视对焦屏里那巨大明亮的三维空间，按下一声如雷贯耳的快门震响，底片上记录的每一个毛孔、每一缕空气中的光尘，都在向你宣告何为中画幅的绝对统治力。”
         </div>
-
         <p>
           <strong>神话级的光学遗产：</strong>特别是那支传说中的 <strong>SMC Pentax 67 105mm F2.4</strong>，被公认为世界摄影史上最迷人的人像镜头之一 —— 极浅的景深与如奶油般化开的焦外过渡，让无数摄影大师（荒木经惟、滨田英明、上田义彦、Bruce Weber）将其视作不可替代的灵魂利器。
         </p>
         <p>
           手握这台 1.7kg 沉甸甸的纯金属机身，每一次过片、每一次快门释放，都是一次庄严的仪式。<strong>现在，让我们从最基础的机身装配开始，一步步解锁这台传奇机皇的全部威力，开启通往摄影大师的实战进阶之旅！</strong>
         </p>
+
       </div>
     </div>
 
     <!-- 步骤导航条（Step Pills） -->
     <div class="wizard-stepper-wrap">
       <div class="wizard-step-pills">
-        <button class="step-pill-btn active" onclick="showL1Step(1)">① 装电池</button>
-        <button class="step-pill-btn" onclick="showL1Step(2)">② 装胶卷 (120)</button>
-        <button class="step-pill-btn" onclick="showL1Step(3)">③ 设定 ISO</button>
-        <button class="step-pill-btn" onclick="showL1Step(4)">④ 装卸镜头</button>
-        <button class="step-pill-btn" onclick="showL1Step(5)">⑤ 认识机身 26 处部件</button>
+        <button class="step-pill-btn active" id="pill_level1_1" onclick="showStep('level1', 1)">1. 装电池</button>
+        <button class="step-pill-btn" id="pill_level1_2" onclick="showStep('level1', 2)">2. 装胶卷（120）</button>
+        <button class="step-pill-btn" id="pill_level1_3" onclick="showStep('level1', 3)">3. 设定 ISO</button>
+        <button class="step-pill-btn" id="pill_level1_4" onclick="showStep('level1', 4)">4. 装镜头</button>
+        <button class="step-pill-btn" id="pill_level1_5" onclick="showStep('level1', 5)">5. 认识机身</button>
       </div>
     </div>
 
-    <!-- Step 1: 装电池 -->
-    <div class="step-content-card active" id="l1_step_1">
+    <!-- level1 Step 1: 装电池 -->
+    <div class="step-content-card active" id="step_card_level1_1">
       <div class="step-card-header">
         <div class="step-card-title">
-          <span>🔋 第一步 · 装入电池（注入生命力）</span>
+          <span>装电池</span>
         </div>
         <span class="step-badge">STEP 1 / 5</span>
       </div>
       <div class="lesson-body">
-        <p><strong>Pentax 67II 是一台高度依赖电池供电的电子快门相机。没有电，快门无法释放，机身将完全锁死。</strong></p>
-        <ul>
-          <li><strong>电池型号：</strong>需要两节 <strong>CR123A 3V 锂电池</strong>（装在机身底部）。</li>
-          <li><strong>装填方法：</strong>用一字螺丝刀或硬币旋开底部的电池仓盖，注意电池的 <strong>+ / - 正负极方向</strong>（仓盖内侧有清晰图示），扣紧并旋紧盖子。</li>
-          <li><strong>开机检查：</strong>将电源/快门拨盘拨到 <strong>ON</strong>。如果 LCD 液晶屏亮起且显示当前 ISO 与胶卷计数，即表示通电正常。</li>
-        </ul>
-        <div class="tip-box">
-          💡 <strong>摄影师备忘：</strong>67II 的电量消耗很低，一对优质 CR123A 锂电池通常可以拍摄 30~50 卷胶卷。但由于中画幅反光板巨大，在极度严寒的户外拍摄时，建议随身在贴身口袋里多备一组备用电池保温。
-        </div>
+        <div class="meta">📖 官方说明书参照：<strong>第 5 页</strong></div>
+  <p>67II 需要 2 节 CR123A 锂电池。机身没电池全机罢工（纯电子快门），这是你做的第一件事。</p>
+  <ul>
+    <li>底部电池仓——用硬币逆时针旋开</li>
+    <li>正极朝外（按仓内标记方向），装 2 节</li>
+    <li>拧紧、开关拨到 ON。取景器内有显示 = 通电成功</li>
+  </ul>
+  <div class="tip"><strong>备电习惯：</strong>CR123A 低温表现好但不使用也会缓慢耗电。长时间不用请关机或取出电池。建议随身带一组备用。</div>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_05.jpg', 5)">
+                    <img src="pentax67-manual/page_05.jpg" alt="说明书第 5 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 5 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 5 页 — 电池安装</div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <span></span>
-        <button class="btn btn-primary" onclick="showL1Step(2)">
-          <span>下一步：装填 120 胶卷 ➔</span>
-        </button>
+        <button class="btn btn-primary" onclick="showStep('level1', 2)"><span>下一步：装胶卷（120） ➔</span></button>
       </div>
     </div>
 
-    <!-- Step 2: 装胶卷 -->
-    <div class="step-content-card" id="l1_step_2">
+    <!-- level1 Step 2: 装胶卷（120） -->
+    <div class="step-content-card" id="step_card_level1_2">
       <div class="step-card-header">
         <div class="step-card-title">
-          <span>🎞️ 第二步 · 装填 120 胶卷（生命线）</span>
+          <span>装胶卷（120）</span>
         </div>
         <span class="step-badge">STEP 2 / 5</span>
       </div>
       <div class="lesson-body">
-        <p>中画幅使用没有暗盒保护的 120 卷轴胶卷。装卷是 67II 最具仪式感也最需细心的关键步骤：</p>
-        <ul>
-          <li><strong>打开后背：</strong>拉起机身左侧的后背释放拨杆，后盖自动弹开。</li>
-          <li><strong>确认压片板设置：</strong>检查后盖内侧的金属压片板，确保箭头指向 <strong>120</strong>（拍摄 10 张）而不是 220（若使用 220 胶卷可滑动切换）。</li>
-          <li><strong>装入供片轴：</strong>拉出左侧底部的轴栓锁并旋转固定，放入全新的 120 胶卷，将片头引纸拉出；右侧放入一个空的收片轴。</li>
-          <li><strong>对齐起始线（极重要）：</strong>将引纸插进右侧收片轴缝隙中，轻轻扳动过片扳手转动几圈，<strong>直到引纸上的「START 起始箭头」精确对齐机身上的红色定位点（红点）</strong>。</li>
-          <li><strong>关闭后盖并过片到第 1 张：</strong>盖紧后盖，连续扳动过片扳手并释放快门（或直接过片），直到顶部 LCD 屏上的计数器从 <code>0</code> 变为 <code>1</code>，相机自动停片就绪！</li>
-        </ul>
-        <div class="warn-box">
-          ⚠️ <strong>避坑警示：</strong>如果起始线没有对准红点就提前盖上后盖，会导致第一张底片重叠或最后一张拍在引纸上浪费底片；请务必确认 START 箭头与红点完美对齐后再合盖！
-        </div>
+        <div class="meta">📖 官方说明书参照：<strong>第 6-7 页</strong></div>
+  <p>67II 用 120 胶卷拍 10 张，220 拍 21 张。你八成买的是 120。</p>
+  <ul>
+    <li>向下推开后背锁（底部），打开后背</li>
+    <li>空片轴装右侧收片仓，按压弹簧固定</li>
+    <li>撕开封条，胶卷装左侧供片仓</li>
+    <li><strong>最关键：</strong>拉出引纸，<strong>从滚轴上方</strong>穿过，插入收片轴槽中</li>
+    <li>慢拨过片杆，引纸缠绕 1-2 圈后关后背</li>
+    <li>持续过片直到计数器显示 1，开始拍摄</li>
+  </ul>
+  <div class="warn"><strong>压片板切换：</strong>120 卷拨到 "120"，220 卷拨到 "220"（打开后背，胶卷导轨旁的黑色拨杆）。位置不对 = 整卷焦点全跑偏。这是新手翻车第一坑。</div>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_06.jpg', 6)">
+                    <img src="pentax67-manual/page_06.jpg" alt="说明书第 6 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 6 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 6 页 — 胶卷安装</div>
+  </div>
       </div>
       <div class="step-footer-nav">
-        <button class="btn btn-secondary" onclick="showL1Step(1)">
-          <span>⬅ 上一步：装电池</span>
-        </button>
-        <button class="btn btn-primary" onclick="showL1Step(3)">
-          <span>下一步：设定 ISO ➔</span>
-        </button>
+        <button class="btn btn-secondary" onclick="showStep('level1', 1)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level1', 3)"><span>下一步：设定 ISO ➔</span></button>
       </div>
     </div>
 
-    <!-- Step 3: 设定 ISO -->
-    <div class="step-content-card" id="l1_step_3">
+    <!-- level1 Step 3: 设定 ISO -->
+    <div class="step-content-card" id="step_card_level1_3">
       <div class="step-card-header">
         <div class="step-card-title">
-          <span>🎯 第三步 · 设定胶卷 ISO 感光度</span>
+          <span>设定 ISO</span>
         </div>
         <span class="step-badge">STEP 3 / 5</span>
       </div>
       <div class="lesson-body">
-        <p>120 胶卷没有 135 胶卷的 DX 自动识别触点，<strong>每次换不同感光度的胶卷，必须手动告知相机 ISO 数值</strong>，否则测光系统会产生严重偏差。</p>
-        <ul>
-          <li><strong>操作方法：</strong>按住机身顶部的 <strong>ISO 按钮</strong>，同时拨动主控制拨轮，观察肩屏上的 ISO 数值变化。</li>
-          <li><strong>设定对应值：</strong>装入 Kodak Portra 400 则设为 <code>400</code>；装入 Fuji Velvia 50 则设为 <code>50</code>。</li>
-          <li><strong>迫冲设定：</strong>如果要将 ISO 400 的胶卷迫冲（Push）至 1600 拍摄，直接在此处将 ISO 调至 <code>1600</code> 即可。</li>
-        </ul>
+        <div class="meta">📖 官方说明书参照：<strong>第 7 页</strong></div>
+  <p>设定胶卷感光度，否则测光不准毁整卷。</p>
+  <ul>
+    <li>提起左肩 ISO 拨盘外环（我在 SVG 里标了 ①）</li>
+    <li>旋转到跟胶卷盒上一样的数字（比如 400）</li>
+    <li>松开外环锁定。取景器左下角会显示当前 ISO</li>
+  </ul>
       </div>
       <div class="step-footer-nav">
-        <button class="btn btn-secondary" onclick="showL1Step(2)">
-          <span>⬅ 上一步：装胶卷</span>
-        </button>
-        <button class="btn btn-primary" onclick="showL1Step(4)">
-          <span>下一步：装卸镜头 ➔</span>
-        </button>
+        <button class="btn btn-secondary" onclick="showStep('level1', 2)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level1', 4)"><span>下一步：装镜头 ➔</span></button>
       </div>
     </div>
 
-    <!-- Step 4: 装卸镜头 -->
-    <div class="step-content-card" id="l1_step_4">
+    <!-- level1 Step 4: 装镜头 -->
+    <div class="step-content-card" id="step_card_level1_4">
       <div class="step-card-header">
         <div class="step-card-title">
-          <span>📷 第四步 · 镜头安装与卡口锁止</span>
+          <span>装镜头</span>
         </div>
         <span class="step-badge">STEP 4 / 5</span>
       </div>
       <div class="lesson-body">
-        <p>Pentax 67 采用双重卡口系统（内卡口用于普通镜头，外卡口用于超长焦大炮），卡口直径巨大、机械咬合极其结实：</p>
-        <ul>
-          <li><strong>安装镜头：</strong>对准镜头尾部的红点与机身卡口上的红点，平稳插入，顺时针旋转，直到听见清脆沉稳的 <strong>“咔哒”</strong> 机械锁定声。</li>
-          <li><strong>拆卸镜头：</strong>按住机身左侧的镜头释放按钮，逆时针旋转镜头即可平稳取下。</li>
-          <li><strong>光圈连动环检查：</strong>安装后旋转镜头上的光圈环，确认光圈叶片收缩与取景器联动顺畅。</li>
-        </ul>
-        <div class="tip-box">
-          💡 <strong>安装手感：</strong>中画幅镜头（如 105mm F2.4、90mm F2.8、55mm F4）玻璃用料极足，单颗镜头重量可达 600g~1kg，旋转安装时请托稳镜身。
-        </div>
+        <div class="meta">📖 官方说明书参照：<strong>第 16 页</strong></div>
+  <ul>
+    <li><strong>装：</strong>镜头红点对齐机身卡口红点，插入后顺时针旋转约 60° 到锁紧</li>
+    <li><strong>卸：</strong>按住镜头释放钮（正面的圆形按钮），逆时针旋下</li>
+  </ul>
+  <div class="warn">老款 Takumar 镜头在 67II 上测光不工作！认准 SMC Pentax 67 字样。SMC 全兼容。</div>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_16.jpg', 16)">
+                    <img src="pentax67-manual/page_16.jpg" alt="说明书第 16 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 16 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 16 页 — 镜头装卸</div>
+  </div>
       </div>
       <div class="step-footer-nav">
-        <button class="btn btn-secondary" onclick="showL1Step(3)">
-          <span>⬅ 上一步：设定 ISO</span>
-        </button>
-        <button class="btn btn-primary" onclick="showL1Step(5)">
-          <span>下一步：认识机身 26 处核心部件 ➔</span>
-        </button>
+        <button class="btn btn-secondary" onclick="showStep('level1', 3)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level1', 5)"><span>下一步：认识机身 ➔</span></button>
       </div>
     </div>
 
-    <!-- Step 5: 认识机身部件 -->
-    <div class="step-content-card" id="l1_step_5">
+    <!-- level1 Step 5: 认识机身 -->
+    <div class="step-content-card" id="step_card_level1_5">
       <div class="step-card-header">
         <div class="step-card-title">
-          <span>🔍 第五步 · 认识机身 26 处核心部件全解</span>
+          <span>认识机身</span>
         </div>
-        <span class="step-badge">STEP 5 / 5 · 终章</span>
+        <span class="step-badge">STEP 5 / 5</span>
       </div>
       <div class="lesson-body">
-        <p>在正式按下快门前，必须熟悉 67II 各个控制拨轮与按键的物理位置。以下是官方中文说明书核心部件名称高清图解（点击图片可全屏高清放大）：</p>
-        
-        <div class="img-group">
-          <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_05.jpg', 5)">
-            <img src="pentax67-manual/page_05.jpg" alt="说明书第 5 页 · 机身各部件名称及功能">
-            <div class="manual-img-caption">
-              <strong>📖 说明书第 5 页 · 机身正视图与顶视图</strong>
-              <span>点击无损放大 ↗</span>
-            </div>
-          </div>
-          <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_06.jpg', 6)">
-            <img src="pentax67-manual/page_06.jpg" alt="说明书第 6 页 · 机身后视图与底视图">
-            <div class="manual-img-caption">
-              <strong>📖 说明书第 6 页 · 机身后视图与控制面板</strong>
-              <span>点击无损放大 ↗</span>
-            </div>
-          </div>
-        </div>
+        <div class="meta">📖 官方说明书参照：<strong>第 2-4 页</strong></div>
+  <p>现在相机能动起来了。花 5 分钟认认这 20 个操作件的位置，不用背，知道在哪就行。</p>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_02.jpg', 2)">
+                    <img src="pentax67-manual/page_02.jpg" alt="说明书第 2 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 2 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 2 页 — 正面/上面部件</div>
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_03.jpg', 3)">
+                    <img src="pentax67-manual/page_03.jpg" alt="说明书第 3 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 3 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 3 页 — 背面/局部</div>
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_04.jpg', 4)">
+                    <img src="pentax67-manual/page_04.jpg" alt="说明书第 4 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 4 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 4 页 — LCD/取景器信息</div>
+  </div>
+</div>
 
-        <p><strong>最核心的 5 个关键部件速记：</strong></p>
-        <ol>
-          <li><strong>主控制拨轮：</strong>用于调整快门速度、ISO 数值与曝光补偿。</li>
-          <li><strong>AE-L 按钮（机背）：</strong>用于锁定测光数值，先测光再平移构图。</li>
-          <li><strong>MLU 反光镜预升拨杆（机身正面右侧）：</strong>慢速快门消除震动的神技。</li>
-          <li><strong>测光模式切换拨盘（AE 棱镜顶部）：</strong>六分区 / 中央重点 / 点测光三档切换。</li>
-          <li><strong>ME 多重曝光按键：</strong>按住即可重复上弦而不走片。</li>
-        </ol>
+<div style="text-align:center; margin-top:24px;">
+  <button onclick="switchTab('2')" style="background:var(--accent); color:#fff; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">学完了，进入第二课 →</button>
       </div>
       <div class="step-footer-nav">
-        <button class="btn btn-secondary" onclick="showL1Step(4)">
-          <span>⬅ 上一步：装卸镜头</span>
-        </button>
-        <button class="btn btn-primary" onclick="switchTab('level2')">
-          <span>🎉 恭喜完成！进入第二阶段：首卷实战 ➔</span>
-        </button>
+        <button class="btn btn-secondary" onclick="showStep('level1', 4)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="switchTab('level2')"><span>🎉 完成本阶段！进入阶段二 · 首卷实战 ➔</span></button>
       </div>
     </div>
 
   </section>
 
-  <!-- ══════════ PHASE 2: 首卷实战 ══════════ -->
+  <!-- ══════════ PHASE 2: 首卷实战 · 拍出第一卷 6×7 ══════════ -->
   <section class="tab-content-panel" id="level2">
+    
     <div class="legend-story-card">
       <div class="story-header-tag">PHASE 02 · FIRST ROLL MASTER</div>
-      <h2 class="story-title">第二课 · 拍出你的第一卷 6×7 中画幅杰作</h2>
+      <h2 class="story-title">首卷实战 · 拍出第一卷 6×7</h2>
       <div class="story-body">
-        <p>机身装配完毕，现在让我们带它走进真实的光影世界。第一卷建议使用 <strong>光圈优先（A 档）</strong> 配合 AE 测光顶，专注于构图、对焦与感受中画幅底片的成像魅力。</p>
+        <p>体验中画幅无可替代的底片细节与立体景深。掌握光圈优先 AE 模式、裂像微棱对焦精准咬合、手持 1.7kg 机身的肌肉记忆与拍摄呼吸节奏。</p>
+
       </div>
     </div>
-    
-    <div class="step-content-card active" style="display:block;">
+
+    <!-- 步骤导航条（Step Pills） -->
+    <div class="wizard-stepper-wrap">
+      <div class="wizard-step-pills">
+        <button class="step-pill-btn active" id="pill_level2_1" onclick="showStep('level2', 1)">1. 光圈优先 AE 模式</button>
+        <button class="step-pill-btn" id="pill_level2_2" onclick="showStep('level2', 2)">2. 对焦</button>
+        <button class="step-pill-btn" id="pill_level2_3" onclick="showStep('level2', 3)">3. 握持与安全快门</button>
+        <button class="step-pill-btn" id="pill_level2_4" onclick="showStep('level2', 4)">4. 第一卷的拍摄节奏</button>
+      </div>
+    </div>
+
+    <!-- level2 Step 1: 光圈优先 AE 模式 -->
+    <div class="step-content-card active" id="step_card_level2_1">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>光圈优先 AE 模式</span>
+        </div>
+        <span class="step-badge">STEP 1 / 4</span>
+      </div>
       <div class="lesson-body">
-        <h3 style="font-size:20px; margin-bottom:12px;">📸 核心实战技巧速成：</h3>
-        <ol style="margin-left:24px; line-height:1.9;">
-          <li><strong>光圈优先 AE 模式：</strong>将主快门速度拨轮转到 <strong>A</strong> 档。此时你只需在镜头上转动光圈环（如 F2.4 拍人像，F8 拍风光），机身内置的 TTL 测光计算机会在 1/1000s 至 30 秒之间自动匹配最佳快门速度。</li>
-          <li><strong>裂像与微棱对焦咬合：</strong>67II 标配明亮的裂像对焦屏。将中央裂像圆对准主体的垂直线条（如眼睫毛、鼻梁、门窗边框），转动对焦环，直至上下错开的线条完美拼合在一起，即为绝对合焦。</li>
-          <li><strong>1.7kg 持机力学与安全快门：</strong>由于 67II 的反光板面积相当于一块小豆腐，击发瞬间有明显的机械动量：
-            <ul>
-              <li><strong>手持极限：</strong>105mm 镜头手持建议快门速度不低于 <strong>1/125s</strong>；</li>
-              <li><strong>姿势：</strong>左手手掌稳稳托住机身底部与镜头，两肘紧贴肋部，按下快门前深吸一口气，在呼气过半时用指腹柔和按下快门。</li>
-            </ul>
-          </li>
-          <li><strong>一卷 10 张的拍摄节奏：</strong>中画幅没有连拍，每一张都是真金白银。学会「观察 10 分钟，构图 2 分钟，呼吸定格 1 秒」的沉稳节奏。</li>
-        </ol>
+        <div class="meta">📖 官方说明书参照：<strong>第 10 页</strong></div>
+  <p>67II 最好用的模式。你定光圈（决定景深），相机自动匹配快门速度。</p>
+  <ul>
+    <li>将右肩快门速度拨盘转到 <strong>A</strong>（绿色位置）</li>
+    <li>镜头光圈环转到想要的光圈值（比如 f/5.6 或 f/8）</li>
+    <li>半按快门——取景器内显示相机选的快门速度</li>
+    <li>速度够快（手持不低于 1/125s）→ 全按快门</li>
+  </ul>
+  <div class="tip"><strong>建议：</strong>第一卷全部用 AE 模式 + f/8 光圈 + Portra 400。这样就只剩对焦和构图，成功率最高。</div>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_10.jpg', 10)">
+                    <img src="pentax67-manual/page_10.jpg" alt="说明书第 10 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 10 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 10 页 — AE 光圈优先曝光</div>
+  </div>
       </div>
       <div class="step-footer-nav">
-        <button class="btn btn-secondary" onclick="switchTab('level1')">
-          <span>⬅ 返回第一课</span>
-        </button>
-        <button class="btn btn-primary" onclick="switchTab('level3')">
-          <span>进阶：第三课 · 精准曝光控制 ➔</span>
-        </button>
+        <button class="btn btn-secondary" onclick="switchTab('level1')"><span>⬅ 返回上一阶段</span></button>
+        <button class="btn btn-primary" onclick="showStep('level2', 2)"><span>下一步：对焦 ➔</span></button>
       </div>
     </div>
+
+    <!-- level2 Step 2: 对焦 -->
+    <div class="step-content-card" id="step_card_level2_2">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>对焦</span>
+        </div>
+        <span class="step-badge">STEP 2 / 4</span>
+      </div>
+      <div class="lesson-body">
+        <p>67II 标配对焦屏是 裂像 + 微棱镜 + 磨砂 三合一。</p>
+  <ul>
+    <li><strong>裂像：</strong>取景器中央的圆圈，里面有一条线。线两侧的影像对齐了 = 合焦</li>
+    <li><strong>玩法：</strong>快门设 A → 光圈开到最大（比如 f/2.4）→ 对焦更亮、更清晰 → 再把光圈收到 f/8 拍</li>
+    <li>大光圈（f/2.4）景深极浅，对焦必须精准。用裂像对准眼睛</li>
+    <li>不要对焦后重新构图（余弦误差）——直接对焦拍</li>
+  </ul>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level2', 1)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level2', 3)"><span>下一步：握持与安全快门 ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level2 Step 3: 握持与安全快门 -->
+    <div class="step-content-card" id="step_card_level2_3">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>握持与安全快门</span>
+        </div>
+        <span class="step-badge">STEP 3 / 4</span>
+      </div>
+      <div class="lesson-body">
+        <p>67II + 105mm f/2.4 约 2kg，拿不稳会糊片。</p>
+  <ul>
+    <li>右手握手柄，食指在快门上；左手托镜头底部</li>
+    <li>双脚与肩宽，左手肘贴胸口（三角支撑）</li>
+    <li><strong>安全快门：</strong>手持不低于 1/125s（标头）。长焦更高</li>
+    <li>吸一口气，轻按快门，不要猛戳</li>
+  </ul>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level2', 2)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level2', 4)"><span>下一步：第一卷的拍摄节奏 ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level2 Step 4: 第一卷的拍摄节奏 -->
+    <div class="step-content-card" id="step_card_level2_4">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>第一卷的拍摄节奏</span>
+        </div>
+        <span class="step-badge">STEP 4 / 4</span>
+      </div>
+      <div class="lesson-body">
+        <ul>
+    <li>每张都检查：ISO 设对了没有 + 光圈环到位了没有 + 快门拨盘在 A 没有</li>
+    <li>拍完立刻过片。67II 不会自动过片</li>
+    <li>计数器显示到 10（120 卷）就拍完了，开背后自动归零</li>
+    <li>拍完立刻记下补偿拨盘是否归零（如果没有，下卷你就带着 +2 拍了 10 张）</li>
+  </ul>
+  <div class="tip"><strong>第一卷胶卷推荐：</strong>Kodak Portra 400（宽容度高，欠曝过曝 2 档都能救）。先别用 Velvia 50（宽容度极窄，新手容易翻车）。</div>
+</div>
+
+<div style="text-align:center; margin-top:24px;">
+  <button onclick="switchTab('3')" style="background:var(--accent); color:#fff; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">学完了，进入第三课 →</button>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level2', 3)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="switchTab('level3')"><span>🎉 完成本阶段！进入阶段三 · 精准曝光控制 ➔</span></button>
+      </div>
+    </div>
+
   </section>
 
-  <!-- ══════════ PHASE 3: 精准曝光 ══════════ -->
+  <!-- ══════════ PHASE 3: 精准曝光 · 掌控画面明暗意图 ══════════ -->
   <section class="tab-content-panel" id="level3">
+    
     <div class="legend-story-card">
       <div class="story-header-tag">PHASE 03 · EXPOSURE CONTROL</div>
-      <h2 class="story-title">第三课 · 掌控光影明暗意图与手动精控</h2>
+      <h2 class="story-title">精准曝光 · 掌控画面明暗意图</h2>
       <div class="story-body">
-        <p>脱离初学者的被动测光，让相机的测光系统成为实现你艺术意图的精准画笔。</p>
+        <p>脱离初学者被动测光。熟练掌握 6 分区/中央重点/点测光三大模式切换、AE-L 曝光锁定、曝光补偿拨盘与全手动 M 档精控。</p>
+
       </div>
     </div>
 
-    <div class="step-content-card active" style="display:block;">
-      <div class="lesson-body">
-        <h3 style="font-size:20px; margin-bottom:12px;">🎯 三大测光模式与 AE-L 锁定技巧：</h3>
-        <ul>
-          <li><strong>六分区多区测光（日常全能）：</strong>相机将画面分为六个独立区域智能加权，适合顺光、日常扫街与反差适中的场景。</li>
-          <li><strong>中央重点测光（经典人像）：</strong>以画面中央 60% 区域为主，适合主体位于画面中心的人像与纪实。</li>
-          <li><strong>点测光（大光比与反转片必备）：</strong>仅测量对焦屏中心 2.5% 的极小圆形区域。在大逆光、舞台、黑白高反差或拍摄反转片时，直接对准皮肤或想要保留细节的高光点进行精确测量。</li>
-          <li><strong>AE 锁定（AE-L 按钮）：</strong>在光圈优先模式下，用点测光对准人物面部，按住机身背面的 AE-L 按钮锁定曝光数值，然后平移相机重新构图，按下快门！</li>
-          <li><strong>曝光补偿拨盘：</strong>在雪景、大面积白色背景下 +1 ~ +2 EV；在暗色深邃背景下 -1 EV。</li>
-        </ul>
-      </div>
-      <div class="step-footer-nav">
-        <button class="btn btn-secondary" onclick="switchTab('level2')">
-          <span>⬅ 返回第二课</span>
-        </button>
-        <button class="btn btn-primary" onclick="switchTab('level4')">
-          <span>进入第四课：进阶绝技与 MLU 预升 ➔</span>
-        </button>
+    <!-- 步骤导航条（Step Pills） -->
+    <div class="wizard-stepper-wrap">
+      <div class="wizard-step-pills">
+        <button class="step-pill-btn active" id="pill_level3_1" onclick="showStep('level3', 1)">1. 三张测光模式怎么选</button>
+        <button class="step-pill-btn" id="pill_level3_2" onclick="showStep('level3', 2)">2. AE 锁定（AE-L·按</button>
+        <button class="step-pill-btn" id="pill_level3_3" onclick="showStep('level3', 3)">3. 曝光补偿（拨盘②）</button>
+        <button class="step-pill-btn" id="pill_level3_4" onclick="showStep('level3', 4)">4. 手动曝光模式</button>
       </div>
     </div>
+
+    <!-- level3 Step 1: 三张测光模式怎么选 -->
+    <div class="step-content-card active" id="step_card_level3_1">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>三张测光模式怎么选</span>
+        </div>
+        <span class="step-badge">STEP 1 / 4</span>
+      </div>
+      <div class="lesson-body">
+        <div class="meta">📖 官方说明书参照：<strong>第 11 页</strong></div>
+  <p>按机身背面测光模式按钮（⑱）循环切换：</p>
+  <ul>
+    <li><strong>6 分区多模式</strong> — 日常大部分场景用这个就好，相机自动判断</li>
+    <li><strong>中央重点</strong> — 人物在画面中央时用，比如半身人像</li>
+    <li><strong>点测光</strong> — 只测中央极小区域。高反差环境（逆光/舞台）的杀器</li>
+  </ul>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_11.jpg', 11)">
+                    <img src="pentax67-manual/page_11.jpg" alt="说明书第 11 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 11 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 11 页 — 测光方式</div>
+  </div>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="switchTab('level2')"><span>⬅ 返回上一阶段</span></button>
+        <button class="btn btn-primary" onclick="showStep('level3', 2)"><span>下一步：AE 锁定（AE-L ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level3 Step 2: AE 锁定（AE-L·按钮⑰） -->
+    <div class="step-content-card" id="step_card_level3_2">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>AE 锁定（AE-L·按钮⑰）</span>
+        </div>
+        <span class="step-badge">STEP 2 / 4</span>
+      </div>
+      <div class="lesson-body">
+        <div class="meta">📖 官方说明书参照：<strong>第 12 页</strong></div>
+  <p>逆光人像的标配操作。核心逻辑：先测光，再锁定，后构图。</p>
+  <ul>
+    <li>点测或中央重点对准主体（人脸）→ 半按快门得到读数</li>
+    <li><strong>按住 AE-L（⑰）不动</strong>——曝光值被锁住</li>
+    <li>松开快门，重新构图（主体不再在中央）→ 全按拍摄</li>
+    <li>按住 AE-L 期间曝光不变，松手后恢复实时测光</li>
+  </ul>
+  <div class="tip"><strong>最佳搭档：</strong>点测光 + AE-L 是拍逆光人像的王牌组合。先点测人脸，锁定曝光，再退一步构全景。</div>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_12.jpg', 12)">
+                    <img src="pentax67-manual/page_12.jpg" alt="说明书第 12 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 12 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 12 页 — AE 锁</div>
+  </div>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level3', 1)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level3', 3)"><span>下一步：曝光补偿（拨盘②） ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level3 Step 3: 曝光补偿（拨盘②） -->
+    <div class="step-content-card" id="step_card_level3_3">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>曝光补偿（拨盘②）</span>
+        </div>
+        <span class="step-badge">STEP 3 / 4</span>
+      </div>
+      <div class="lesson-body">
+        <div class="meta">📖 官方说明书参照：<strong>第 12 页</strong></div>
+  <p>只在 AE 模式生效。±3 EV，1/3 步进。按下小钮才能转。用完立刻归零。</p>
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin:8px 0;">
+    <tr style="background:var(--highlight);"><th style="padding:6px 10px;text-align:left;">场景</th><th style="padding:6px 10px;text-align:left;">补偿</th><th style="padding:6px 10px;text-align:left;">原因</th></tr>
+    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">雪地 / 沙滩</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);"><strong>+1 ~ +2</strong></td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">亮色骗过测光表，会欠曝</td></tr>
+    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">黑色背景</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);"><strong>-1 ~ -2</strong></td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">暗色骗过测光表，会过曝</td></tr>
+    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">逆光人像</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);"><strong>+1 ~ +2</strong></td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">背景太亮导致人脸欠曝</td></tr>
+    <tr><td style="padding:6px 10px;">舞台聚光灯</td><td style="padding:6px 10px;"><strong>-1 ~ -2</strong></td><td style="padding:6px 10px;">暗背景骗测光表过曝亮部</td></tr>
+  </table>
+  <div class="warn"><strong>一生记一个习惯：</strong>拍完立刻归零。拍摄时心里记着"补偿现在是多少"，这是 67II 最常翻车的操作，没有之一。</div>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level3', 2)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level3', 4)"><span>下一步：手动曝光模式 ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level3 Step 4: 手动曝光模式 -->
+    <div class="step-content-card" id="step_card_level3_4">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>手动曝光模式</span>
+        </div>
+        <span class="step-badge">STEP 4 / 4</span>
+      </div>
+      <div class="lesson-body">
+        <div class="meta">📖 官方说明书参照：<strong>第 9-10 页</strong></div>
+  <ul>
+    <li>快门拨盘（③）离开 A，转到你要的速度</li>
+    <li>镜头光圈环手动设光圈</li>
+    <li>半按快门——取景器显示的是<strong>相机建议值</strong>（不是你实际设的）</li>
+    <li>调光圈或快门直到你满意</li>
+  </ul>
+  <p>手动模式用熟了之后，你会理解每一张画面的曝光取舍——控制权完全在你手里。</p>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_09.jpg', 9)">
+                    <img src="pentax67-manual/page_09.jpg" alt="说明书第 9 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 9 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 9 页 — 快门速度 / 手动曝光</div>
+  </div>
+</div>
+
+<div style="text-align:center; margin-top:24px;">
+  <button onclick="switchTab('4')" style="background:var(--accent); color:#fff; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">学完了，进入第四课 →</button>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level3', 3)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="switchTab('level4')"><span>🎉 完成本阶段！进入阶段四 · 进阶绝技 ➔</span></button>
+      </div>
+    </div>
+
   </section>
 
-  <!-- ══════════ PHASE 4: 进阶绝技 ══════════ -->
+  <!-- ══════════ PHASE 4: 进阶绝技 · 榨干机皇全部潜能 ══════════ -->
   <section class="tab-content-panel" id="level4">
+    
     <div class="legend-story-card">
       <div class="story-header-tag">PHASE 04 · ADVANCED MASTERY</div>
-      <h2 class="story-title">第四课 · 榨干机皇潜能：MLU 反光镜预升与进阶机能</h2>
+      <h2 class="story-title">进阶绝技 · 榨干机皇全部潜能</h2>
       <div class="story-body">
-        <p>解锁专业摄影师的压箱底操作：彻底消除机身震动、双重曝光、景深预览与三脚架风光长曝光实战。</p>
+        <p>解锁专业摄影师的压箱底操作：反光镜预升（MLU）彻底消除震动、多重曝光（ME）、景深预览、B 门长曝光、棚拍闪光同步与常见故障速查。</p>
+
       </div>
     </div>
 
-    <div class="step-content-card active" style="display:block;">
-      <div class="lesson-body">
-        <h3 style="font-size:20px; margin-bottom:12px;">🔧 进阶摄影秘籍：</h3>
-        <ul>
-          <li><strong>反光镜预升（MLU·拨杆⑩）：</strong>
-            慢速快门（1/30s ~ 2s）是反光板震动最容易造成画面微抖的区域。在三脚架上构好图并对焦后，<strong>向上扳动机身右侧的 MLU 拨杆，巨大的反光镜会提前安静抬起（取景器变黑）</strong>；等待 2-3 秒机身完全平稳后，用快门线按下快门，即可获得刀刻般锋利的 100% 极限画质！
-          </li>
-          <li><strong>多重曝光（ME·按钮⑲）：</strong>
-            在拍摄完第一张后，按住机身上的 ME 按钮并扳动过片扳手，此时快门重新上弦但胶卷不会向前走片，实现完美的原位双重/多重曝光。
-          </li>
-          <li><strong>B 门 / 长时间夜景曝光：</strong>配合机械快门线锁定快门，用于拍摄星轨、车流与夜间长曝光风光。</li>
-          <li><strong>闪光同步速度（1/30s）：</strong>67II 的焦平面布帘快门闪光同步速度为 1/30s，棚拍使用引闪器时请务必将快门速度设为 1/30s 或更慢。</li>
-        </ul>
-      </div>
-      <div class="step-footer-nav">
-        <button class="btn btn-secondary" onclick="switchTab('level3')">
-          <span>⬅ 返回第三课</span>
-        </button>
-        <button class="btn btn-primary" onclick="switchTab('manual')">
-          <span>📖 查看 80 页官方原版说明书 ➔</span>
-        </button>
+    <!-- 步骤导航条（Step Pills） -->
+    <div class="wizard-stepper-wrap">
+      <div class="wizard-step-pills">
+        <button class="step-pill-btn active" id="pill_level4_1" onclick="showStep('level4', 1)">1. 反光镜预升（MLU·拨杆</button>
+        <button class="step-pill-btn" id="pill_level4_2" onclick="showStep('level4', 2)">2. 多重曝光（ME·按钮⑲）</button>
+        <button class="step-pill-btn" id="pill_level4_3" onclick="showStep('level4', 3)">3. 景深预览（按钮⑫）</button>
+        <button class="step-pill-btn" id="pill_level4_4" onclick="showStep('level4', 4)">4. B 门 / 长时间曝光</button>
+        <button class="step-pill-btn" id="pill_level4_5" onclick="showStep('level4', 5)">5. 闪光 / 棚拍</button>
+        <button class="step-pill-btn" id="pill_level4_6" onclick="showStep('level4', 6)">6. 常见问题速查</button>
       </div>
     </div>
+
+    <!-- level4 Step 1: 反光镜预升（MLU·拨杆⑩） -->
+    <div class="step-content-card active" id="step_card_level4_1">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>反光镜预升（MLU·拨杆⑩）</span>
+        </div>
+        <span class="step-badge">STEP 1 / 6</span>
+      </div>
+      <div class="lesson-body">
+        <div class="meta">📖 官方说明书参照：<strong>第 13 页</strong></div>
+  <p>67II 反光镜巨大（6×7 规格），拍 1/30s ~ 1s 区间必定震糊。MLU 是你的核心技能。</p>
+
+  <!-- MLU lever position close-up SVG -->
+  <div style="text-align:center; margin:12px 0;">
+    <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" style="max-width:380px; border:1px solid var(--border); border-radius:8px; background:#faf6f0;">
+      <!-- Camera front section (simplified) -->
+      <rect x="20" y="40" width="360" height="200" rx="12" fill="#4a3f33" stroke="#3a2f23" stroke-width="1.5"/>
+      <!-- Prism hump -->
+      <rect x="80" y="20" width="240" height="50" rx="10" fill="#5c5042" stroke="#3a2f23" stroke-width="1"/>
+      <!-- Lens mount area -->
+      <circle cx="200" cy="150" r="90" fill="#2c2416" stroke="#8a7a64" stroke-width="2"/>
+      <circle cx="200" cy="150" r="70" fill="#3a3024" stroke="#5c5042" stroke-width="1.5"/>
+      <circle cx="200" cy="150" r="40" fill="#2c2416"/>
+      <!-- MLU lever - highlighted position -->
+      <rect x="185" y="72" width="30" height="20" rx="4" fill="#dc3545" stroke="#a01020" stroke-width="2"/>
+      <text x="200" y="86" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">MLU</text>
+      <!-- Arrow pointing to MLU -->
+      <line x1="200" y1="72" x2="200" y2="0" stroke="#dc3545" stroke-width="2" marker-end="url(#mluarr)"/>
+      <!-- Lens release button -->
+      <circle cx="120" cy="175" r="10" fill="#8a7a64" stroke="#6b5e4a" stroke-width="1.5"/>
+      <text x="120" y="179" text-anchor="middle" font-size="6" fill="#2c2416">释放</text>
+      <defs><marker id="mluarr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#dc3545"/></marker></defs>
+    </svg>
+    <div style="font-size:13px; color:var(--text-light); margin-top:4px;">🔴 红色 = MLU 拨杆位置（卡口正上方，棱镜下方）</div>
+  </div>
+
+  <p><strong>怎么操作：</strong></p>
+  <ul>
+    <li>这个银色小拨杆就在镜头卡口正上方的棱镜底部（见红色的位置图示）</li>
+    <li><strong>向上推 = 反光镜预升升起并锁定</strong>（取景器瞬间变黑——别慌，这是正常的）</li>
+    <li>拍完后快门释放一次，反光镜自动落回原位</li>
+  </ul>
+
+  <p><strong>什么时候用：</strong>任何 1/30 ~ 1 秒区间、长曝光、<strong>拍风景必用</strong>。手持拍摄不需要用（反光镜震动对手持影响不大）。</p>
+
+  <p><strong>完整操作流程：</strong></p>
+  <ol style="margin:8px 0 8px 20px; font-size:14px;">
+    <li>构图、对焦（<strong>必须在预升前做完</strong>——预升后取景器全黑）</li>
+    <li>推上 MLU 拨杆（取景器变黑）</li>
+    <li>等 1-2 秒，让震动消散</li>
+    <li>用快门线（或自拍）释放快门</li>
+    <li>快门释放一次后 MLU 自动复位</li>
+  </ol>
+
+  <div class="tip"><strong>没有快门线：</strong>用自拍（12 秒延迟）替代——按自拍按钮后反光镜自动预升，12 秒后自动拍。这是紧急情况的 MLU + 快门线合一体。</div>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_13.jpg', 13)">
+                    <img src="pentax67-manual/page_13.jpg" alt="说明书第 13 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 13 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 13 页 — MLU / 多次曝光（点击放大）</div>
+  </div>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="switchTab('level3')"><span>⬅ 返回上一阶段</span></button>
+        <button class="btn btn-primary" onclick="showStep('level4', 2)"><span>下一步：多重曝光（ME·按钮 ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level4 Step 2: 多重曝光（ME·按钮⑲） -->
+    <div class="step-content-card" id="step_card_level4_2">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>多重曝光（ME·按钮⑲）</span>
+        </div>
+        <span class="step-badge">STEP 2 / 6</span>
+      </div>
+      <div class="lesson-body">
+        <ul>
+    <li>正常拍第一张 → 按 ME 按钮（⑲）→ 拨过片杆（只上弦不卷片）→ 拍第二张</li>
+    <li>无限重复叠加。不按 ME 正常过片即退出多曝</li>
+    <li><strong>曝光计算：</strong>叠加 n 次，每次减到 1/n。两次叠加各欠曝 1 档</li>
+  </ul>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level4', 1)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level4', 3)"><span>下一步：景深预览（按钮⑫） ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level4 Step 3: 景深预览（按钮⑫） -->
+    <div class="step-content-card" id="step_card_level4_3">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>景深预览（按钮⑫）</span>
+        </div>
+        <span class="step-badge">STEP 3 / 6</span>
+      </div>
+      <div class="lesson-body">
+        <p>按下机身右侧的按钮（⑫），光圈收缩到设定值。取景器变暗，但你能看到真实景深范围。松手恢复全开。</p>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level4', 2)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level4', 4)"><span>下一步：B 门 / 长时间曝 ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level4 Step 4: B 门 / 长时间曝光 -->
+    <div class="step-content-card" id="step_card_level4_4">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>B 门 / 长时间曝光</span>
+        </div>
+        <span class="step-badge">STEP 4 / 6</span>
+      </div>
+      <div class="lesson-body">
+        <ul>
+    <li>快门拨盘转到 B</li>
+    <li>快门线插在快门按钮中央的螺纹孔</li>
+    <li>锁定快门线 → 快门打开 → 解锁关闭</li>
+    <li><strong>必须：</strong>MLU（预升）+ 三脚架 + 快门线。B 门耗电，用新电池</li>
+    <li><strong>倒易律失效：</strong>曝光 >1 秒需要加更多曝光（查胶卷 datasheet）</li>
+  </ul>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level4', 3)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level4', 5)"><span>下一步：闪光 / 棚拍 ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level4 Step 5: 闪光 / 棚拍 -->
+    <div class="step-content-card" id="step_card_level4_5">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>闪光 / 棚拍</span>
+        </div>
+        <span class="step-badge">STEP 5 / 6</span>
+      </div>
+      <div class="lesson-body">
+        <div class="meta">📖 官方说明书参照：<strong>第 20 页</strong></div>
+  <ul>
+    <li>快门拨到 <strong>X</strong> 档（1/30 秒同步速度，不能更快）</li>
+    <li>PC 同步线连机身左侧 X 端子（⑭）触发棚拍灯</li>
+    <li><strong>户外补光：</strong>1/30s 是焦平面中画幅的限制。强光下需收光圈或加 ND 镜</li>
+    <li>用兼容 TTL 闪灯（AF400T/AF500FTZ）可自动闪光</li>
+  </ul>
+  <div class="img-group">
+    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_20.jpg', 20)">
+                    <img src="pentax67-manual/page_20.jpg" alt="说明书第 20 页" loading="lazy">
+                    <div class="manual-img-caption">
+                        <strong>📖 说明书第 20 页 · 官方图解</strong>
+                        <span>点击无损放大 ↗</span>
+                    </div>
+                </div><div class="label">第 20 页 — 闪光灯操作</div>
+  </div>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level4', 4)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="showStep('level4', 6)"><span>下一步：常见问题速查 ➔</span></button>
+      </div>
+    </div>
+
+    <!-- level4 Step 6: 常见问题速查 -->
+    <div class="step-content-card" id="step_card_level4_6">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>常见问题速查</span>
+        </div>
+        <span class="step-badge">STEP 6 / 6</span>
+      </div>
+      <div class="lesson-body">
+        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+    <tr style="background:var(--highlight);"><th style="padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);">状况</th><th style="padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);">原因</th><th style="padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);">解决</th></tr>
+    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">快门按不下</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">没电 / 开关 OFF / 没过片</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">换电池 → ON → 过片</td></tr>
+    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">取景器全黑</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">MLU 打开了 / 没电</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">检查 MLU（⑩）→ 换电池</td></tr>
+    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">全卷焦点虚</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">压片板 120/220 设错</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">120 拨 120，220 拨 220</td></tr>
+    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">漏光条纹</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">后背海绵老化</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">更换海绵（维修便宜）</td></tr>
+    <tr><td style="padding:6px 10px;">闪光不同步</td><td style="padding:6px 10px;">快门 > 1/30</td><td style="padding:6px 10px;">拨到 X 档</td></tr>
+  </table>
+      </div>
+      <div class="step-footer-nav">
+        <button class="btn btn-secondary" onclick="showStep('level4', 5)"><span>⬅ 上一步</span></button>
+        <button class="btn btn-primary" onclick="switchTab('manual')"><span>🎉 完成本阶段！翻阅 80 页官方原版说明书 ➔</span></button>
+      </div>
+    </div>
+
   </section>
 
   <!-- ══════════ MANUAL VIEWER ══════════ -->
@@ -1544,6 +1930,7 @@ function switchTab(tabId) {
   document.querySelectorAll('.tab-content-panel').forEach(panel => {
     panel.classList.toggle('active', panel.id === tabId);
   });
+  
   const target = document.getElementById(tabId);
   if (target) {
     const navOffset = 130;
@@ -1552,23 +1939,28 @@ function switchTab(tabId) {
     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
   }
 }
+
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.onclick = () => switchTab(btn.dataset.tab);
 });
 
-/* ─── Level 1 Step Wizard ─── */
-function showL1Step(stepNum) {
-  for (let i = 1; i <= 5; i++) {
-    const card = document.getElementById('l1_step_' + i);
-    if (card) card.classList.toggle('active', i === stepNum);
-  }
-  const pills = document.querySelectorAll('.step-pill-btn');
+/* ─── Universal Step Wizard for All Levels ─── */
+function showStep(lvlId, stepNum) {
+  // Find all step cards in this level
+  const levelEl = document.getElementById(lvlId);
+  if (!levelEl) return;
+  
+  const cards = levelEl.querySelectorAll('.step-content-card');
+  cards.forEach((card, idx) => {
+    card.classList.toggle('active', idx + 1 === stepNum);
+  });
+  
+  const pills = levelEl.querySelectorAll('.step-pill-btn');
   pills.forEach((p, idx) => {
     p.classList.toggle('active', idx + 1 === stepNum);
   });
   
-  // smooth scroll to step card top
-  const activeCard = document.getElementById('l1_step_' + stepNum);
+  const activeCard = document.getElementById('step_card_' + lvlId + '_' + stepNum);
   if (activeCard) {
     const navOffset = 140;
     const pos = activeCard.getBoundingClientRect().top + window.pageYOffset - navOffset;
