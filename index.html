@@ -670,73 +670,81 @@ body {
   margin-bottom: 14px;
 }
 
-/* ─── High-Contrast Inline Manual Previews (Fixed Text Visibility) ─── */
-.img-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin: 20px 0;
-}
 
-.manual-inline-preview {
-  position: relative;
-  border-radius: var(--radius-sm);
+/* ─── Naturally Large Manual Frames (No tiny squeezed images!) ─── */
+.manual-figure-card {
+  width: 100%;
+  max-width: 760px;
+  margin: 24px auto;
+  border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--card-border-strong);
-  background: #111215;
-  cursor: pointer;
-  transition: all 0.25s ease;
+  background: var(--bg-secondary);
   box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
 }
-.manual-inline-preview:hover {
+.manual-figure-card:hover {
   border-color: var(--accent-gold);
-  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
-.manual-inline-preview img {
+.manual-figure-card img {
   width: 100%;
   height: auto;
   display: block;
+  cursor: zoom-in;
 }
-
-.manual-img-caption {
-  background: #27272a;
-  color: #ffffff;
-  padding: 10px 14px;
+.manual-figure-caption {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: 12px 18px;
   font-size: 13px;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid var(--card-border);
 }
-.manual-img-caption span {
-  color: #eab308;
+[data-theme="dark"] .manual-figure-caption {
+  background: #181a20;
+}
+.manual-figure-caption span {
+  color: var(--text-gold);
   font-family: var(--font-mono);
   font-size: 11px;
 }
 
-/* ─── Table Styling ─── */
-table {
-  width: 100%;
-  border-collapse: collapse;
+/* ─── Key Step Highlight Box (Breathing room & prominence) ─── */
+.key-step-box {
+  background: var(--accent-gold-bg);
+  border: 1px solid var(--card-border-gold);
+  border-left: 5px solid var(--accent-gold);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.step-action-list {
+  list-style: none;
   margin: 16px 0;
-  font-size: 14px;
+  padding: 0;
 }
-th, td {
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--card-border);
-  text-align: left;
+.step-action-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  line-height: 1.75;
 }
-th {
-  background: var(--bg-secondary);
+.step-action-list li::before {
+  content: "→";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  color: var(--accent-gold);
+  font-weight: 700;
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-gold);
-  text-transform: uppercase;
-}
-tr:hover td {
-  background: rgba(0,0,0,0.02);
 }
 
 /* ─── 80-Page Official Manual Viewer ─── */
@@ -1536,14 +1544,23 @@ tr:hover td {
     <li>拧紧、开关拨到 ON。取景器内有显示 = 通电成功</li>
   </ul>
   <div class="tip"><strong>备电习惯：</strong>CR123A 低温表现好但不使用也会缓慢耗电。长时间不用请关机或取出电池。建议随身带一组备用。</div>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_05.jpg', 5)">
-                    <img src="pentax67-manual/page_05.jpg" alt="说明书第 5 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 5 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 5 页 — 电池安装</div>
+  
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_05.jpg" alt="说明书第 5 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_05.jpg', 5)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 5 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_05.jpg" alt="说明书第 5 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_05.jpg', 5)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 5 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+</div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1561,26 +1578,42 @@ tr:hover td {
         <span class="step-badge">STEP 2 / 5</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 6-7 页</strong></div>
-  <p>67II 用 120 胶卷拍 10 张，220 拍 21 张。你八成买的是 120。</p>
-  <ul>
-    <li>向下推开后背锁（底部），打开后背</li>
-    <li>空片轴装右侧收片仓，按压弹簧固定</li>
-    <li>撕开封条，胶卷装左侧供片仓</li>
-    <li><strong>最关键：</strong>拉出引纸，<strong>从滚轴上方</strong>穿过，插入收片轴槽中</li>
-    <li>慢拨过片杆，引纸缠绕 1-2 圈后关后背</li>
-    <li>持续过片直到计数器显示 1，开始拍摄</li>
+  <div class="meta">📖 官方说明书参照：<strong>第 6-7 页</strong></div>
+  
+  <p>Pentax 67II 使用标准 120 胶卷可拍摄 10 张（6×7 经典画幅），使用 220 胶卷可拍摄 21 张。<br>装填胶卷是中画幅仪式感最强、也最需要细心的一步：</p>
+
+  <ul class="step-action-list">
+    <li><strong>第一步 · 打开机身后背：</strong>向下推开机身左侧底部的后背释放锁，后盖自动弹开。</li>
+    <li><strong>第二步 · 装入空片轴：</strong>将空的塑料卷轴装入右侧的收片仓，按压底部弹簧轴栓顺畅固定。</li>
+    <li><strong>第三步 · 放置全新胶卷：</strong>撕开全新 120 胶卷封条，拉出左侧底部轴栓锁，将胶卷稳稳装入左侧供片仓。</li>
   </ul>
-  <div class="warn"><strong>压片板切换：</strong>120 卷拨到 "120"，220 卷拨到 "220"（打开后背，胶卷导轨旁的黑色拨杆）。位置不对 = 整卷焦点全跑偏。这是新手翻车第一坑。</div>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_06.jpg', 6)">
-                    <img src="pentax67-manual/page_06.jpg" alt="说明书第 6 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 6 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 6 页 — 胶卷安装</div>
+
+  <!-- 独立空行与高亮核心步骤 -->
+  <div class="key-step-box">
+    <strong>🔴 最关键的一步（对齐红点，新手必看）：</strong><br>
+    拉出胶卷引纸，<strong>务必从金属导纸滚轴上方</strong>平整穿过，插入右侧空卷轴的卡槽中。<br><br>
+    慢慢扳动过片扳手 1~2 次，观察引纸平顺卷入，<strong>直到引纸上的「START 起始箭头」精确对准机身上的红色标记点（红点）！</strong>
   </div>
+
+  <ul class="step-action-list">
+    <li><strong>第四步 · 盖上后盖并过片：</strong>对齐红点后盖紧后盖，持续扳动过片扳手，直到肩屏计数器从 <code>0</code> 变为 <code>1</code>，相机自动锁止停片，即可开始拍摄！</li>
+  </ul>
+
+  <!-- 独立空行与避坑警告 -->
+  <div class="warn-box">
+    ⚠️ <strong>压片板设置（新手翻车第一坑）：</strong><br>
+    合上后盖前，请检查后盖内侧的金属压片板——装 120 胶卷必须滑到 <strong>"120"</strong>，装 220 胶卷必须滑到 <strong>"220"</strong>。<br>
+    若位置拨错，整卷胶卷的平整度将受损，导致整卷照片焦点严重跑偏！
+  </div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_06.jpg" alt="说明书第 6 页 · 胶卷装填与红点对齐" onclick="openLightbox('pentax67-manual/page_06.jpg', 6)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 6 页 · 120 胶卷装填、红点对齐与压片板切换图解</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
+  </div>
+
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level1', 1)"><span>⬅ 上一步</span></button>
@@ -1626,14 +1659,23 @@ tr:hover td {
     <li><strong>卸：</strong>按住镜头释放钮（正面的圆形按钮），逆时针旋下</li>
   </ul>
   <div class="warn">老款 Takumar 镜头在 67II 上测光不工作！认准 SMC Pentax 67 字样。SMC 全兼容。</div>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_16.jpg', 16)">
-                    <img src="pentax67-manual/page_16.jpg" alt="说明书第 16 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 16 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 16 页 — 镜头装卸</div>
+  
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_16.jpg" alt="说明书第 16 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_16.jpg', 16)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 16 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_16.jpg" alt="说明书第 16 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_16.jpg', 16)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 16 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+</div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1653,28 +1695,37 @@ tr:hover td {
       <div class="lesson-body">
         <div class="meta">📖 官方说明书参照：<strong>第 2-4 页</strong></div>
   <p>现在相机能动起来了。花 5 分钟认认这 20 个操作件的位置，不用背，知道在哪就行。</p>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_02.jpg', 2)">
-                    <img src="pentax67-manual/page_02.jpg" alt="说明书第 2 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 2 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 2 页 — 正面/上面部件</div>
+  
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_02.jpg" alt="说明书第 2 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_02.jpg', 2)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 2 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_02.jpg" alt="说明书第 2 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_02.jpg', 2)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 2 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+</div>
     <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_03.jpg', 3)">
                     <img src="pentax67-manual/page_03.jpg" alt="说明书第 3 页" loading="lazy">
                     <div class="manual-img-caption">
                         <strong>📖 说明书第 3 页 · 官方图解</strong>
                         <span>点击无损放大 ↗</span>
                     </div>
-                </div><div class="label">第 3 页 — 背面/局部</div>
+                </div>
     <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_04.jpg', 4)">
                     <img src="pentax67-manual/page_04.jpg" alt="说明书第 4 页" loading="lazy">
                     <div class="manual-img-caption">
                         <strong>📖 说明书第 4 页 · 官方图解</strong>
                         <span>点击无损放大 ↗</span>
                     </div>
-                </div><div class="label">第 4 页 — LCD/取景器信息</div>
+                </div>
   </div>
 </div>
 
@@ -1729,14 +1780,23 @@ tr:hover td {
     <li>速度够快（手持不低于 1/125s）→ 全按快门</li>
   </ul>
   <div class="tip"><strong>建议：</strong>第一卷全部用 AE 模式 + f/8 光圈 + Portra 400。这样就只剩对焦和构图，成功率最高。</div>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_10.jpg', 10)">
-                    <img src="pentax67-manual/page_10.jpg" alt="说明书第 10 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 10 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 10 页 — AE 光圈优先曝光</div>
+  
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_10.jpg" alt="说明书第 10 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_10.jpg', 10)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 10 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_10.jpg" alt="说明书第 10 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_10.jpg', 10)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 10 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+</div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1858,14 +1918,23 @@ tr:hover td {
     <li><strong>中央重点</strong> — 人物在画面中央时用，比如半身人像</li>
     <li><strong>点测光</strong> — 只测中央极小区域。高反差环境（逆光/舞台）的杀器</li>
   </ul>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_11.jpg', 11)">
-                    <img src="pentax67-manual/page_11.jpg" alt="说明书第 11 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 11 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 11 页 — 测光方式</div>
+  
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_11.jpg" alt="说明书第 11 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_11.jpg', 11)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 11 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_11.jpg" alt="说明书第 11 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_11.jpg', 11)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 11 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+</div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1892,14 +1961,23 @@ tr:hover td {
     <li>按住 AE-L 期间曝光不变，松手后恢复实时测光</li>
   </ul>
   <div class="tip"><strong>最佳搭档：</strong>点测光 + AE-L 是拍逆光人像的王牌组合。先点测人脸，锁定曝光，再退一步构全景。</div>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_12.jpg', 12)">
-                    <img src="pentax67-manual/page_12.jpg" alt="说明书第 12 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 12 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 12 页 — AE 锁</div>
+  
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_12.jpg" alt="说明书第 12 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_12.jpg', 12)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 12 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_12.jpg" alt="说明书第 12 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_12.jpg', 12)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 12 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+</div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1951,14 +2029,23 @@ tr:hover td {
     <li>调光圈或快门直到你满意</li>
   </ul>
   <p>手动模式用熟了之后，你会理解每一张画面的曝光取舍——控制权完全在你手里。</p>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_09.jpg', 9)">
-                    <img src="pentax67-manual/page_09.jpg" alt="说明书第 9 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 9 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 9 页 — 快门速度 / 手动曝光</div>
+  
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_09.jpg" alt="说明书第 9 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_09.jpg', 9)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 9 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_09.jpg" alt="说明书第 9 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_09.jpg', 9)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 9 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+</div>
   </div>
 </div>
 
@@ -2052,14 +2139,23 @@ tr:hover td {
   </ol>
 
   <div class="tip"><strong>没有快门线：</strong>用自拍（12 秒延迟）替代——按自拍按钮后反光镜自动预升，12 秒后自动拍。这是紧急情况的 MLU + 快门线合一体。</div>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_13.jpg', 13)">
-                    <img src="pentax67-manual/page_13.jpg" alt="说明书第 13 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 13 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 13 页 — MLU / 多次曝光（点击放大）</div>
+  
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_13.jpg" alt="说明书第 13 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_13.jpg', 13)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 13 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_13.jpg" alt="说明书第 13 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_13.jpg', 13)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 13 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+</div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -2145,14 +2241,23 @@ tr:hover td {
     <li><strong>户外补光：</strong>1/30s 是焦平面中画幅的限制。强光下需收光圈或加 ND 镜</li>
     <li>用兼容 TTL 闪灯（AF400T/AF500FTZ）可自动闪光</li>
   </ul>
-  <div class="img-group">
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_20.jpg', 20)">
-                    <img src="pentax67-manual/page_20.jpg" alt="说明书第 20 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 20 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div><div class="label">第 20 页 — 闪光灯操作</div>
+  
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_20.jpg" alt="说明书第 20 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_20.jpg', 20)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 20 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+
+<div class="manual-figure-card">
+  <img src="pentax67-manual/page_20.jpg" alt="说明书第 20 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_20.jpg', 20)" loading="lazy">
+  <div class="manual-figure-caption">
+    <strong>📖 说明书第 20 页 · 官方原版说明书图解</strong>
+    <span>点击全屏无损放大 ↗</span>
+  </div>
+</div>
+</div>
   </div>
       </div>
       <div class="step-footer-nav">
