@@ -714,6 +714,42 @@ body {
 }
 
 /* ─── Key Step Highlight Box (Breathing room & prominence) ─── */
+
+/* ─── PureFlow Spacious Action Items (One Action, One Line, Breathable Gaps) ─── */
+.pureflow-action-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--accent-gold);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+.pureflow-action-card:hover {
+  border-color: var(--accent-gold);
+  background: var(--bg-tertiary);
+}
+.pureflow-action-card strong {
+  color: var(--text-primary);
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.pureflow-action-card .action-desc {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.step-flow-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
+}
+
 .key-step-box {
   background: var(--accent-gold-bg);
   border: 1px solid var(--card-border-gold);
@@ -1536,31 +1572,39 @@ body {
         <span class="step-badge">STEP 1 / 5</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 5 页</strong></div>
-  <p>67II 需要 2 节 CR123A 锂电池。机身没电池全机罢工（纯电子快门），这是你做的第一件事。</p>
-  <ul>
-    <li>底部电池仓——用硬币逆时针旋开</li>
-    <li>正极朝外（按仓内标记方向），装 2 节</li>
-    <li>拧紧、开关拨到 ON。取景器内有显示 = 通电成功</li>
-  </ul>
-  <div class="tip"><strong>备电习惯：</strong>CR123A 低温表现好但不使用也会缓慢耗电。长时间不用请关机或取出电池。建议随身带一组备用。</div>
+  <div class="meta">📖 官方说明书参照：<strong>第 5 页</strong></div>
   
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_05.jpg" alt="说明书第 5 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_05.jpg', 5)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 5 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
+  <p>Pentax 67II 是一台高度依赖电力驱动的电子控制快门相机。<br>没有电池供电时，快门将无法释放，机身处于保护锁死状态：</p>
 
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_05.jpg" alt="说明书第 5 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_05.jpg', 5)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 5 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 电池规格与采购：</strong>
+      <div class="action-desc">需要两节 <strong>CR123A 3V 锂电池</strong>（机身底部供电仓）。建议选择松下（Panasonic）或麦克赛尔（Maxell）工业级锂电。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 旋开底盖与装入：</strong>
+      <div class="action-desc">用一枚硬币或指甲旋开机身底部的圆形电池仓盖。<br>对照仓盖内侧的 <strong>+ / - 正负极标识</strong> 顺畅装入两节电池，合盖并旋紧。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 开机通电与状态检查：</strong>
+      <div class="action-desc">将电源/快门释放拨盘拨到 <strong>ON</strong> 位置。<br>观察机顶 LCD 液晶肩屏是否正常点亮并显示 ISO 数值与计数器。</div>
+    </div>
   </div>
-</div>
-</div>
+
+  <div class="tip-box">
+    💡 <strong>摄影师备忘（低温防掉电）：</strong><br>
+    67II 一组优质锂电池通常可支持拍摄 30~50 卷胶卷。<br>
+    在严寒户外拍摄时，巨大反光板的机械动作对瞬间电压要求较高，建议随身贴身口袋备一组温热的备用电池。
+  </div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_05.jpg" alt="说明书第 5 页 · 电池安装与机身部件" onclick="openLightbox('pentax67-manual/page_05.jpg', 5)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 5 页 · 电池装填、仓盖结构与电源开关图解</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1630,13 +1674,31 @@ body {
         <span class="step-badge">STEP 3 / 5</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 7 页</strong></div>
-  <p>设定胶卷感光度，否则测光不准毁整卷。</p>
-  <ul>
-    <li>提起左肩 ISO 拨盘外环（我在 SVG 里标了 ①）</li>
-    <li>旋转到跟胶卷盒上一样的数字（比如 400）</li>
-    <li>松开外环锁定。取景器左下角会显示当前 ISO</li>
-  </ul>
+  <div class="meta">📖 官方说明书参照：<strong>第 8 页</strong></div>
+  
+  <p>120 中画幅胶卷没有 135 胶卷的自动 DX 触点。<br>每次换入不同感光度的胶卷，必须手动完成 ISO 标定：</p>
+
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 按住机顶 ISO 按钮：</strong>
+      <div class="action-desc">用左手拇指按住机身顶部的 <strong>ISO 设置按钮</strong> 不放。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 旋转主控制拨轮：</strong>
+      <div class="action-desc">右手拨动机身快门旁的主拨轮，观察肩屏上的数字连续跳动。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 精准设定胶卷感光度：</strong>
+      <div class="action-desc">装入 Kodak Portra 400 设为 <code>400</code>；装入 Fuji Velvia 50 设为 <code>50</code>；装入 Tri-X 400 设为 <code>400</code>。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>④ 迫冲（Push）设定技巧：</strong>
+      <div class="action-desc">若计划在弱光下将 ISO 400 胶卷迫冲两档（Push 2 stops）拍摄，直接将 ISO 调至 <code>1600</code> 即可，测光计算将完全自动匹配。</div>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level1', 2)"><span>⬅ 上一步</span></button>
@@ -1653,29 +1715,39 @@ body {
         <span class="step-badge">STEP 4 / 5</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 16 页</strong></div>
-  <ul>
-    <li><strong>装：</strong>镜头红点对齐机身卡口红点，插入后顺时针旋转约 60° 到锁紧</li>
-    <li><strong>卸：</strong>按住镜头释放钮（正面的圆形按钮），逆时针旋下</li>
-  </ul>
-  <div class="warn">老款 Takumar 镜头在 67II 上测光不工作！认准 SMC Pentax 67 字样。SMC 全兼容。</div>
+  <div class="meta">📖 官方说明书参照：<strong>第 16 页</strong></div>
   
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_16.jpg" alt="说明书第 16 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_16.jpg', 16)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 16 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
+  <p>Pentax 67 采用双重插刀式卡口系统（内卡口与外卡口）。<br>中画幅镜头镜片口径大、用料足，装卸需保持沉稳双手操作：</p>
 
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_16.jpg" alt="说明书第 16 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_16.jpg', 16)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 16 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 对准红点平稳卡入：</strong>
+      <div class="action-desc">对准镜头尾部的定位红点与机身卡口上的红点，水平平稳插入卡口槽。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 顺时针旋转直至锁止：</strong>
+      <div class="action-desc">托住镜身顺时针旋转，直到听见清脆沉稳的 <strong>“咔哒”</strong> 机械锁止声。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 拆卸镜头安全手法：</strong>
+      <div class="action-desc">左手按住机身左侧下方的镜头释放按钮，右手托稳镜头逆时针旋转，即可平稳取下。</div>
+    </div>
   </div>
-</div>
-</div>
+
+  <div class="tip-box">
+    💡 <strong>手感与重心提醒：</strong><br>
+    经典的 SMC 105mm F2.4 镜头重约 600g，90mm F2.8 约 480g。<br>
+    安装时建议将机身平放在桌面或挂在颈部，双手托稳镜头旋紧，切忌悬空单手硬扭。
+  </div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_16.jpg" alt="说明书第 16 页 · 镜头装卸" onclick="openLightbox('pentax67-manual/page_16.jpg', 16)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 16 页 · 双重卡口镜头装卸与锁定释放图解</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1693,44 +1765,52 @@ body {
         <span class="step-badge">STEP 5 / 5</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 2-4 页</strong></div>
-  <p>现在相机能动起来了。花 5 分钟认认这 20 个操作件的位置，不用背，知道在哪就行。</p>
+  <div class="meta">📖 官方说明书参照：<strong>第 2-4 页</strong></div>
   
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_02.jpg" alt="说明书第 2 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_02.jpg', 2)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 2 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
+  <p>在正式按下快门前，建议花 2 分钟将机身最核心的 5 个控制机构记在肌肉记忆里：</p>
 
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_02.jpg" alt="说明书第 2 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_02.jpg', 2)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 2 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
-</div>
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_03.jpg', 3)">
-                    <img src="pentax67-manual/page_03.jpg" alt="说明书第 3 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 3 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div>
-    <div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_04.jpg', 4)">
-                    <img src="pentax67-manual/page_04.jpg" alt="说明书第 4 页" loading="lazy">
-                    <div class="manual-img-caption">
-                        <strong>📖 说明书第 4 页 · 官方图解</strong>
-                        <span>点击无损放大 ↗</span>
-                    </div>
-                </div>
-  </div>
-</div>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 主控制拨轮（快门旁）：</strong>
+      <div class="action-desc">控制快门速度选择、ISO 数值调整与曝光补偿档位。</div>
+    </div>
 
-<div style="text-align:center; margin-top:24px;">
-  <button onclick="switchTab('2')" style="background:var(--accent); color:#fff; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">学完了，进入第二课 →</button>
+    <div class="pureflow-action-card">
+      <strong>② AE-L 锁定按钮（机背右上角）：</strong>
+      <div class="action-desc">右手拇指一键锁定当前测光读数，方便先对人脸测光、再平移重新构图。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ MLU 反光镜预升拨杆（机身右侧正面）：</strong>
+      <div class="action-desc">向上拨起即可提前升起反光镜，彻底消除慢速快门下的微震动。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>④ 测光模式拨盘（AE 棱镜取景器上）：</strong>
+      <div class="action-desc">六分区多区测光 / 中央重点测光 / 点测光三档快速切换。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>⑤ ME 多重曝光按键（过片轴旁）：</strong>
+      <div class="action-desc">按住 ME 键同时扳动过片手柄，只重新上弦快门而不移动底片。</div>
+    </div>
+  </div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_02.jpg" alt="说明书第 2 页 · 正面与顶视图" onclick="openLightbox('pentax67-manual/page_02.jpg', 2)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 2 页 · 机身正面、顶视图与各控制拨轮名称</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
+  </div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_03.jpg" alt="说明书第 3 页 · 背面与局部" onclick="openLightbox('pentax67-manual/page_03.jpg', 3)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 3 页 · 机身后背控制面板、AE-L 按键与取景器显示</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level1', 4)"><span>⬅ 上一步</span></button>
@@ -1771,32 +1851,38 @@ body {
         <span class="step-badge">STEP 1 / 4</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 10 页</strong></div>
-  <p>67II 最好用的模式。你定光圈（决定景深），相机自动匹配快门速度。</p>
-  <ul>
-    <li>将右肩快门速度拨盘转到 <strong>A</strong>（绿色位置）</li>
-    <li>镜头光圈环转到想要的光圈值（比如 f/5.6 或 f/8）</li>
-    <li>半按快门——取景器内显示相机选的快门速度</li>
-    <li>速度够快（手持不低于 1/125s）→ 全按快门</li>
-  </ul>
-  <div class="tip"><strong>建议：</strong>第一卷全部用 AE 模式 + f/8 光圈 + Portra 400。这样就只剩对焦和构图，成功率最高。</div>
+  <div class="meta">📖 官方说明书参照：<strong>第 10 页</strong></div>
   
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_10.jpg" alt="说明书第 10 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_10.jpg', 10)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 10 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
+  <p>第一卷建议从 <strong>光圈优先（A 档）</strong> 开始。<br>把曝光时间的计算交给相机内部精密的 TTL 测光计算机，让你专注于对焦、构图与捕捉光影：</p>
 
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_10.jpg" alt="说明书第 10 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_10.jpg', 10)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 10 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 将快门拨盘转到 A 档：</strong>
+      <div class="action-desc">拨动主快门拨盘，将其对准红色 <strong>A</strong> 标识。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 手动旋转镜头光圈环：</strong>
+      <div class="action-desc">根据创作意图设定光圈——拍摄人像虚化选 <code>F2.4 / F2.8</code>；日常纪实扫街选 <code>F5.6</code>；风光大景深选 <code>F8 / F11</code>。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 观察取景器内部快门速度：</strong>
+      <div class="action-desc">半按快门按钮，取景器底部的绿色 LCD 会即时显示相机计算出的精准快门速度（如 <code>1/250</code>、<code>1/500</code>）。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>④ 安全快门判断：</strong>
+      <div class="action-desc">若读数低于 <code>1/125</code> 秒，请托稳手臂寻找支撑，或调大一档光圈提升快门速度。</div>
+    </div>
   </div>
-</div>
-</div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_10.jpg" alt="说明书第 10 页 · 光圈优先 AE 操作" onclick="openLightbox('pentax67-manual/page_10.jpg', 10)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 10 页 · 光圈优先 AE 曝光与取景器内部参数显示</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1814,13 +1900,26 @@ body {
         <span class="step-badge">STEP 2 / 4</span>
       </div>
       <div class="lesson-body">
-        <p>67II 标配对焦屏是 裂像 + 微棱镜 + 磨砂 三合一。</p>
-  <ul>
-    <li><strong>裂像：</strong>取景器中央的圆圈，里面有一条线。线两侧的影像对齐了 = 合焦</li>
-    <li><strong>玩法：</strong>快门设 A → 光圈开到最大（比如 f/2.4）→ 对焦更亮、更清晰 → 再把光圈收到 f/8 拍</li>
-    <li>大光圈（f/2.4）景深极浅，对焦必须精准。用裂像对准眼睛</li>
-    <li>不要对焦后重新构图（余弦误差）——直接对焦拍</li>
-  </ul>
+  <div class="meta">📖 官方说明书参照：<strong>第 14 页</strong></div>
+  
+  <p>Pentax 67II 标配三合一明亮对焦屏（中央裂像 + 微棱环 + 外圈磨砂）。<br>中画幅大光圈景深极浅，对焦需掌握精准咬合技巧：</p>
+
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 裂像对焦（主体有明显线条时）：</strong>
+      <div class="action-desc">将取景器正中央的裂像圆对准主体的垂直轮廓（如人物眼睫毛、鼻梁线条、门窗边缘）。<br>转动对焦环，直到上下错开的两截线条完全合缝归位，即为绝对焦点。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 微棱镜对焦（主体为纯色或柔和表面时）：</strong>
+      <div class="action-desc">观察裂像圆外围的微棱环。未对准焦点时微棱会呈现明显的细碎闪烁颗粒感；<br>转动对焦环直至闪烁颗粒完全消失、画面瞬间变得通透清晰，即对焦成功。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 磨砂屏边缘构图确认：</strong>
+      <div class="action-desc">对焦确认后，视线扫视磨砂屏边缘，检查整体四角构图是否平稳。</div>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level2', 1)"><span>⬅ 上一步</span></button>
@@ -1837,13 +1936,36 @@ body {
         <span class="step-badge">STEP 3 / 4</span>
       </div>
       <div class="lesson-body">
-        <p>67II + 105mm f/2.4 约 2kg，拿不稳会糊片。</p>
-  <ul>
-    <li>右手握手柄，食指在快门上；左手托镜头底部</li>
-    <li>双脚与肩宽，左手肘贴胸口（三角支撑）</li>
-    <li><strong>安全快门：</strong>手持不低于 1/125s（标头）。长焦更高</li>
-    <li>吸一口气，轻按快门，不要猛戳</li>
-  </ul>
+  <div class="meta">📖 官方摄影动作力学规范</div>
+  
+  <p>Pentax 67II 机身连同 105mm F2.4 镜头全重约 1.7~2.0kg，且拥有巨大的反光镜与布帘快门。<br>掌握标准持机姿势与动作分解，是保证底片纤毫毕现的基石：</p>
+
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 右手握紧手柄，食指自然搭在快门上：</strong>
+      <div class="action-desc">右手虎口紧贴机身握柄，指腹轻搭快门按钮，手腕保持自然放松。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 左手托稳机身底部与镜头光圈环：</strong>
+      <div class="action-desc">左手手掌完全向上摊开，像托起碗底一样托住机身底部，左手拇指与食指随时调节镜头对焦环。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 双肘紧贴两侧肋部（黄金三角支撑）：</strong>
+      <div class="action-desc">双臂肘部紧紧夹住自己身体两侧，利用上半身骨骼形成稳固的三角力学支撑。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>④ 呼吸与快门释放节奏：</strong>
+      <div class="action-desc">构图完成后深吸一口气，在平缓呼气呼到一半时，屏住呼吸，用右手食指第一节指腹柔和缓慢按下快门。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>⑤ 安全快门底线：</strong>
+      <div class="action-desc">105mm 标准镜头手持拍摄，快门速度建议不低于 <strong>1/125 秒</strong>；低于 1/60 秒请务必使用三脚架。</div>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level2', 2)"><span>⬅ 上一步</span></button>
@@ -1860,17 +1982,31 @@ body {
         <span class="step-badge">STEP 4 / 4</span>
       </div>
       <div class="lesson-body">
-        <ul>
-    <li>每张都检查：ISO 设对了没有 + 光圈环到位了没有 + 快门拨盘在 A 没有</li>
-    <li>拍完立刻过片。67II 不会自动过片</li>
-    <li>计数器显示到 10（120 卷）就拍完了，开背后自动归零</li>
-    <li>拍完立刻记下补偿拨盘是否归零（如果没有，下卷你就带着 +2 拍了 10 张）</li>
-  </ul>
-  <div class="tip"><strong>第一卷胶卷推荐：</strong>Kodak Portra 400（宽容度高，欠曝过曝 2 档都能救）。先别用 Velvia 50（宽容度极窄，新手容易翻车）。</div>
-</div>
+  <div class="meta">📖 中画幅经典创作节奏</div>
+  
+  <p>一卷 120 胶卷只有 10 张底片。慢下来，是中画幅最迷人的修行：</p>
 
-<div style="text-align:center; margin-top:24px;">
-  <button onclick="switchTab('3')" style="background:var(--accent); color:#fff; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">学完了，进入第三课 →</button>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 拍摄前例行检查（每张 3 秒核验）：</strong>
+      <div class="action-desc">检查 ISO 是否正确 ➔ 检查光圈设定 ➔ 确认快门速度在安全范围内。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 沉着构图与呼吸定格：</strong>
+      <div class="action-desc">观察环境光线 10 分钟，调整机位构图 2 分钟，屏息定格 1 秒。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 拍完第 10 张后的收卷动作：</strong>
+      <div class="action-desc">第 10 张拍摄完毕后，持续多次扳动过片手柄，直到感觉过片阻力明显变轻（整卷引纸已全部卷入右侧收片轴）。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>④ 取出与避光封口：</strong>
+      <div class="action-desc">在背阴处打开后盖，取出胶卷，立刻用胶卷自带的不干胶封条紧紧贴合封死，防止边缘漏光。</div>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level2', 3)"><span>⬅ 上一步</span></button>
@@ -1911,30 +2047,33 @@ body {
         <span class="step-badge">STEP 1 / 4</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 11 页</strong></div>
-  <p>按机身背面测光模式按钮（⑱）循环切换：</p>
-  <ul>
-    <li><strong>6 分区多模式</strong> — 日常大部分场景用这个就好，相机自动判断</li>
-    <li><strong>中央重点</strong> — 人物在画面中央时用，比如半身人像</li>
-    <li><strong>点测光</strong> — 只测中央极小区域。高反差环境（逆光/舞台）的杀器</li>
-  </ul>
+  <div class="meta">📖 官方说明书参照：<strong>第 11 页</strong></div>
   
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_11.jpg" alt="说明书第 11 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_11.jpg', 11)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 11 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
+  <p>Pentax 67II 拥有中画幅单反中最先进的测光系统之一，提供三种独立测光模式：</p>
 
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_11.jpg" alt="说明书第 11 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_11.jpg', 11)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 11 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 六分区多区测光（日常顺光与全能抓拍）：</strong>
+      <div class="action-desc">相机将画面均分为六个独立区域加权计算，自动平衡亮暗部，适合日常顺光、阴天与大部分纪实场景。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 中央重点测光（经典人像与主体突出）：</strong>
+      <div class="action-desc">以画面中央约 60% 区域为主计算曝光，适合人物主体位于画面中心、背景光比适中的人像拍摄。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 点测光（大光比逆光与正片反转片）：</strong>
+      <div class="action-desc">仅精确测量对焦屏正中央约 2.5% 的极小圆形区域。大逆光、剪影、舞台光或拍摄 Velvia 反转片时必备。</div>
+    </div>
   </div>
-</div>
-</div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_11.jpg" alt="说明书第 11 页 · 三大测光模式" onclick="openLightbox('pentax67-manual/page_11.jpg', 11)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 11 页 · 六分区 / 中央重点 / 点测光切换拨盘与覆盖区域</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1952,32 +2091,33 @@ body {
         <span class="step-badge">STEP 2 / 4</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 12 页</strong></div>
-  <p>逆光人像的标配操作。核心逻辑：先测光，再锁定，后构图。</p>
-  <ul>
-    <li>点测或中央重点对准主体（人脸）→ 半按快门得到读数</li>
-    <li><strong>按住 AE-L（⑰）不动</strong>——曝光值被锁住</li>
-    <li>松开快门，重新构图（主体不再在中央）→ 全按拍摄</li>
-    <li>按住 AE-L 期间曝光不变，松手后恢复实时测光</li>
-  </ul>
-  <div class="tip"><strong>最佳搭档：</strong>点测光 + AE-L 是拍逆光人像的王牌组合。先点测人脸，锁定曝光，再退一步构全景。</div>
+  <div class="meta">📖 官方说明书参照：<strong>第 12 页</strong></div>
   
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_12.jpg" alt="说明书第 12 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_12.jpg', 12)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 12 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
+  <p>AE 曝光锁定（AE-L）是人像与高反差场景下最实用的专业技能：</p>
 
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_12.jpg" alt="说明书第 12 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_12.jpg', 12)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 12 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 切换点测光对准面部：</strong>
+      <div class="action-desc">将测光模式切到点测光，将中央对焦点对准人物面部最重要的高光/肤色区域。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 右手拇指按下 AE-L 键：</strong>
+      <div class="action-desc">按住机身背面的 <strong>AE-L 按钮</strong>，取景器内的曝光参数将被完全锁定不变。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 平移相机重新构图并释放快门：</strong>
+      <div class="action-desc">保持按住 AE-L，平移相机将人物移到黄金分割点或画面边缘，重新对焦并按下快门！</div>
+    </div>
   </div>
-</div>
-</div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_12.jpg" alt="说明书第 12 页 · AE-L 锁定" onclick="openLightbox('pentax67-manual/page_12.jpg', 12)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 12 页 · AE-L 曝光锁定按钮位置与实战平移构图</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -1995,16 +2135,26 @@ body {
         <span class="step-badge">STEP 3 / 4</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 12 页</strong></div>
-  <p>只在 AE 模式生效。±3 EV，1/3 步进。按下小钮才能转。用完立刻归零。</p>
-  <table style="width:100%; border-collapse:collapse; font-size:14px; margin:8px 0;">
-    <tr style="background:var(--highlight);"><th style="padding:6px 10px;text-align:left;">场景</th><th style="padding:6px 10px;text-align:left;">补偿</th><th style="padding:6px 10px;text-align:left;">原因</th></tr>
-    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">雪地 / 沙滩</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);"><strong>+1 ~ +2</strong></td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">亮色骗过测光表，会欠曝</td></tr>
-    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">黑色背景</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);"><strong>-1 ~ -2</strong></td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">暗色骗过测光表，会过曝</td></tr>
-    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">逆光人像</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);"><strong>+1 ~ +2</strong></td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">背景太亮导致人脸欠曝</td></tr>
-    <tr><td style="padding:6px 10px;">舞台聚光灯</td><td style="padding:6px 10px;"><strong>-1 ~ -2</strong></td><td style="padding:6px 10px;">暗背景骗测光表过曝亮部</td></tr>
-  </table>
-  <div class="warn"><strong>一生记一个习惯：</strong>拍完立刻归零。拍摄时心里记着"补偿现在是多少"，这是 67II 最常翻车的操作，没有之一。</div>
+  <div class="meta">📖 官方说明书参照：<strong>第 12 页</strong></div>
+  
+  <p>胶片摄影经典法则 ——「白加黑减」曝光补偿：</p>
+
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 顺光大面积白色（雪景/白墙/婚纱）：</strong>
+      <div class="action-desc">测光系统容易被大面积白色欺骗导致画面发灰，向 <strong>+</strong> 方向调节 <strong>+1.0 ~ +2.0 EV</strong>。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 暗调深邃背景（黑衣服/夜景/深色吸光背景）：</strong>
+      <div class="action-desc">测光系统会误以为光线不足导致过曝发白，向 <strong>-</strong> 方向调节 <strong>-0.5 ~ -1.0 EV</strong>。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 补偿后务必归零：</strong>
+      <div class="action-desc">拍摄完毕后记得将补偿拨盘归位至 <code>0</code>，避免影响后续场景。</div>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level3', 2)"><span>⬅ 上一步</span></button>
@@ -2021,36 +2171,34 @@ body {
         <span class="step-badge">STEP 4 / 4</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 9-10 页</strong></div>
-  <ul>
-    <li>快门拨盘（③）离开 A，转到你要的速度</li>
-    <li>镜头光圈环手动设光圈</li>
-    <li>半按快门——取景器显示的是<strong>相机建议值</strong>（不是你实际设的）</li>
-    <li>调光圈或快门直到你满意</li>
-  </ul>
-  <p>手动模式用熟了之后，你会理解每一张画面的曝光取舍——控制权完全在你手里。</p>
+  <div class="meta">📖 官方说明书参照：<strong>第 9-10 页</strong></div>
   
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_09.jpg" alt="说明书第 9 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_09.jpg', 9)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 9 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
+  <p>全手动 M 档模式让你拥有 100% 的绝对控制权：</p>
 
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_09.jpg" alt="说明书第 9 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_09.jpg', 9)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 9 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
-</div>
-  </div>
-</div>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 拨盘转离 A 档选择具体快门速度：</strong>
+      <div class="action-desc">选择如 <code>1/500</code>、<code>1/250</code>、<code>1/125</code> 等具体数值。</div>
+    </div>
 
-<div style="text-align:center; margin-top:24px;">
-  <button onclick="switchTab('4')" style="background:var(--accent); color:#fff; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">学完了，进入第四课 →</button>
+    <div class="pureflow-action-card">
+      <strong>② 半按快门观察取景器曝光指示条：</strong>
+      <div class="action-desc">取景器内会显示当前设置与测光推荐值的偏差（<code>+</code> 代表过曝，<code>-</code> 代表欠曝）。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 调节光圈或快门达到理想曝光：</strong>
+      <div class="action-desc">转动镜头光圈环或调整快门拨轮，直至指示条位于居中理想位置。</div>
+    </div>
+  </div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_09.jpg" alt="说明书第 9 页 · 手动曝光" onclick="openLightbox('pentax67-manual/page_09.jpg', 9)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 9 页 · 手动快门速度拨盘与取景器曝光指示条</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level3', 3)"><span>⬅ 上一步</span></button>
@@ -2093,69 +2241,43 @@ body {
         <span class="step-badge">STEP 1 / 6</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 13 页</strong></div>
-  <p>67II 反光镜巨大（6×7 规格），拍 1/30s ~ 1s 区间必定震糊。MLU 是你的核心技能。</p>
-
-  <!-- MLU lever position close-up SVG -->
-  <div style="text-align:center; margin:12px 0;">
-    <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" style="max-width:380px; border:1px solid var(--border); border-radius:8px; background:#faf6f0;">
-      <!-- Camera front section (simplified) -->
-      <rect x="20" y="40" width="360" height="200" rx="12" fill="#4a3f33" stroke="#3a2f23" stroke-width="1.5"/>
-      <!-- Prism hump -->
-      <rect x="80" y="20" width="240" height="50" rx="10" fill="#5c5042" stroke="#3a2f23" stroke-width="1"/>
-      <!-- Lens mount area -->
-      <circle cx="200" cy="150" r="90" fill="#2c2416" stroke="#8a7a64" stroke-width="2"/>
-      <circle cx="200" cy="150" r="70" fill="#3a3024" stroke="#5c5042" stroke-width="1.5"/>
-      <circle cx="200" cy="150" r="40" fill="#2c2416"/>
-      <!-- MLU lever - highlighted position -->
-      <rect x="185" y="72" width="30" height="20" rx="4" fill="#dc3545" stroke="#a01020" stroke-width="2"/>
-      <text x="200" y="86" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">MLU</text>
-      <!-- Arrow pointing to MLU -->
-      <line x1="200" y1="72" x2="200" y2="0" stroke="#dc3545" stroke-width="2" marker-end="url(#mluarr)"/>
-      <!-- Lens release button -->
-      <circle cx="120" cy="175" r="10" fill="#8a7a64" stroke="#6b5e4a" stroke-width="1.5"/>
-      <text x="120" y="179" text-anchor="middle" font-size="6" fill="#2c2416">释放</text>
-      <defs><marker id="mluarr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#dc3545"/></marker></defs>
-    </svg>
-    <div style="font-size:13px; color:var(--text-light); margin-top:4px;">🔴 红色 = MLU 拨杆位置（卡口正上方，棱镜下方）</div>
-  </div>
-
-  <p><strong>怎么操作：</strong></p>
-  <ul>
-    <li>这个银色小拨杆就在镜头卡口正上方的棱镜底部（见红色的位置图示）</li>
-    <li><strong>向上推 = 反光镜预升升起并锁定</strong>（取景器瞬间变黑——别慌，这是正常的）</li>
-    <li>拍完后快门释放一次，反光镜自动落回原位</li>
-  </ul>
-
-  <p><strong>什么时候用：</strong>任何 1/30 ~ 1 秒区间、长曝光、<strong>拍风景必用</strong>。手持拍摄不需要用（反光镜震动对手持影响不大）。</p>
-
-  <p><strong>完整操作流程：</strong></p>
-  <ol style="margin:8px 0 8px 20px; font-size:14px;">
-    <li>构图、对焦（<strong>必须在预升前做完</strong>——预升后取景器全黑）</li>
-    <li>推上 MLU 拨杆（取景器变黑）</li>
-    <li>等 1-2 秒，让震动消散</li>
-    <li>用快门线（或自拍）释放快门</li>
-    <li>快门释放一次后 MLU 自动复位</li>
-  </ol>
-
-  <div class="tip"><strong>没有快门线：</strong>用自拍（12 秒延迟）替代——按自拍按钮后反光镜自动预升，12 秒后自动拍。这是紧急情况的 MLU + 快门线合一体。</div>
+  <div class="meta">📖 官方说明书参照：<strong>第 13 页</strong></div>
   
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_13.jpg" alt="说明书第 13 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_13.jpg', 13)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 13 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
+  <p>反光镜预升（MLU）是 Pentax 67 获得 100% 刀刻般极限画质的终极绝技：</p>
 
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_13.jpg" alt="说明书第 13 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_13.jpg', 13)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 13 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 为什么必须用 MLU？</strong>
+      <div class="action-desc">在 <code>1/30s ~ 2s</code> 慢速快门区间，巨大反光板上弹的微小震动最容易导致风光画面微抖。MLU 能彻底消除这个物理震源。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 第一步 · 上三脚架完成对焦与构图：</strong>
+      <div class="action-desc">相机固定在重型三脚架上，完成精准对焦并锁紧云台。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 第二步 · 向上拨动 MLU 拨杆：</strong>
+      <div class="action-desc">向上拨动机身右侧正面的 MLU 拨杆，巨大的反光板提前静音抬起（此时取景器变黑为正常现象）。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>④ 第三步 · 等待 2-3 秒机械微震衰减：</strong>
+      <div class="action-desc">等待机身完全静止平稳。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>⑤ 第四步 · 用快门线轻柔释放快门：</strong>
+      <div class="action-desc">按下机械快门线，快门布帘安静走过，底片完美曝光，反光镜随后平稳复位！</div>
+    </div>
   </div>
-</div>
-</div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_13.jpg" alt="说明书第 13 页 · MLU 与多次曝光" onclick="openLightbox('pentax67-manual/page_13.jpg', 13)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 13 页 · MLU 反光镜预升拨杆与多重曝光操作图解</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -2173,11 +2295,26 @@ body {
         <span class="step-badge">STEP 2 / 6</span>
       </div>
       <div class="lesson-body">
-        <ul>
-    <li>正常拍第一张 → 按 ME 按钮（⑲）→ 拨过片杆（只上弦不卷片）→ 拍第二张</li>
-    <li>无限重复叠加。不按 ME 正常过片即退出多曝</li>
-    <li><strong>曝光计算：</strong>叠加 n 次，每次减到 1/n。两次叠加各欠曝 1 档</li>
-  </ul>
+  <div class="meta">📖 官方说明书参照：<strong>第 13 页</strong></div>
+  
+  <p>多重曝光（ME）用于在同一张底片上叠加两次或多次影像：</p>
+
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 正常完成第一次曝光拍摄：</strong>
+      <div class="action-desc">拍摄主体（例如人像剪影）。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 按住 ME 按钮同时扳动过片手柄：</strong>
+      <div class="action-desc">按住机身上的 ME 按钮不放，同时扳动过片手柄——此时快门重新上弦，但胶卷完全停留在原位，计数器不跳动。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>③ 完成第二次叠加曝光：</strong>
+      <div class="action-desc">对准第二重景物（例如花卉或光斑）按下快门，即可在一张底片上获得梦幻的双重曝光！</div>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level4', 1)"><span>⬅ 上一步</span></button>
@@ -2194,7 +2331,21 @@ body {
         <span class="step-badge">STEP 3 / 6</span>
       </div>
       <div class="lesson-body">
-        <p>按下机身右侧的按钮（⑫），光圈收缩到设定值。取景器变暗，但你能看到真实景深范围。松手恢复全开。</p>
+  <div class="meta">📖 官方说明书参照：<strong>第 15 页</strong></div>
+  
+  <p>景深预览让你在按下快门前，肉眼在取景器里真实看见虚化和清晰范围：</p>
+
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 按下机身右侧景深预览按钮：</strong>
+      <div class="action-desc">镜头光圈叶片立即收缩到当前设定的光圈值（如 F8 / F11）。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 观察清晰范围变化：</strong>
+      <div class="action-desc">取景器画面会稍变暗，但前后景物的清晰范围（景深）一览无余。松开按钮，光圈自动恢复全开明亮状态。</div>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level4', 2)"><span>⬅ 上一步</span></button>
@@ -2211,13 +2362,21 @@ body {
         <span class="step-badge">STEP 4 / 6</span>
       </div>
       <div class="lesson-body">
-        <ul>
-    <li>快门拨盘转到 B</li>
-    <li>快门线插在快门按钮中央的螺纹孔</li>
-    <li>锁定快门线 → 快门打开 → 解锁关闭</li>
-    <li><strong>必须：</strong>MLU（预升）+ 三脚架 + 快门线。B 门耗电，用新电池</li>
-    <li><strong>倒易律失效：</strong>曝光 >1 秒需要加更多曝光（查胶卷 datasheet）</li>
-  </ul>
+  <div class="meta">📖 官方说明书参照：<strong>第 9 页</strong></div>
+  
+  <p>B 门用于拍摄星轨、车流、夜景长曝光与光绘：</p>
+
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 快门拨盘转到 B 档：</strong>
+      <div class="action-desc">将快门拨轮旋转到 <strong>B</strong>（Bulb 门）。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 配合机械快门线锁定制动：</strong>
+      <div class="action-desc">将快门线拧入快门按钮中心的螺口，按下快门线并锁定制动环进行计时长曝光。</div>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level4', 3)"><span>⬅ 上一步</span></button>
@@ -2234,30 +2393,28 @@ body {
         <span class="step-badge">STEP 5 / 6</span>
       </div>
       <div class="lesson-body">
-        <div class="meta">📖 官方说明书参照：<strong>第 20 页</strong></div>
-  <ul>
-    <li>快门拨到 <strong>X</strong> 档（1/30 秒同步速度，不能更快）</li>
-    <li>PC 同步线连机身左侧 X 端子（⑭）触发棚拍灯</li>
-    <li><strong>户外补光：</strong>1/30s 是焦平面中画幅的限制。强光下需收光圈或加 ND 镜</li>
-    <li>用兼容 TTL 闪灯（AF400T/AF500FTZ）可自动闪光</li>
-  </ul>
+  <div class="meta">📖 官方说明书参照：<strong>第 20 页</strong></div>
   
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_20.jpg" alt="说明书第 20 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_20.jpg', 20)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 20 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
-  </div>
-</div>
+  <p>棚拍与外接闪光灯的核心同步规则：</p>
 
-<div class="manual-figure-card">
-  <img src="pentax67-manual/page_20.jpg" alt="说明书第 20 页 · 官方原版说明书图解" onclick="openLightbox('pentax67-manual/page_20.jpg', 20)" loading="lazy">
-  <div class="manual-figure-caption">
-    <strong>📖 说明书第 20 页 · 官方原版说明书图解</strong>
-    <span>点击全屏无损放大 ↗</span>
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>① 闪光同步速度（1/30s）：</strong>
+      <div class="action-desc">Pentax 67II 的焦平面快门闪光同步速度最高为 <strong>1/30 秒</strong>（快门拨盘上的 <code>X</code> 档或慢于 1/30s 的档位）。</div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>② 严禁快于 1/30s 触发闪光：</strong>
+      <div class="action-desc">若使用 1/125s 或 1/500s 触发闪灯，布帘狭缝会导致底片出现大面积黑边（未同步遮挡）。</div>
+    </div>
   </div>
-</div>
-</div>
+
+  <div class="manual-figure-card">
+    <img src="pentax67-manual/page_20.jpg" alt="说明书第 20 页 · 闪光灯操作" onclick="openLightbox('pentax67-manual/page_20.jpg', 20)" loading="lazy">
+    <div class="manual-figure-caption">
+      <strong>📖 说明书第 20 页 · 热靴闪光灯、PC 同步接口与 1/30s 同步操作</strong>
+      <span>点击全屏无损放大 ↗</span>
+    </div>
   </div>
       </div>
       <div class="step-footer-nav">
@@ -2275,14 +2432,38 @@ body {
         <span class="step-badge">STEP 6 / 6</span>
       </div>
       <div class="lesson-body">
-        <table style="width:100%; border-collapse:collapse; font-size:14px;">
-    <tr style="background:var(--highlight);"><th style="padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);">状况</th><th style="padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);">原因</th><th style="padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);">解决</th></tr>
-    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">快门按不下</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">没电 / 开关 OFF / 没过片</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">换电池 → ON → 过片</td></tr>
-    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">取景器全黑</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">MLU 打开了 / 没电</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">检查 MLU（⑩）→ 换电池</td></tr>
-    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">全卷焦点虚</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">压片板 120/220 设错</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">120 拨 120，220 拨 220</td></tr>
-    <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">漏光条纹</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">后背海绵老化</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">更换海绵（维修便宜）</td></tr>
-    <tr><td style="padding:6px 10px;">闪光不同步</td><td style="padding:6px 10px;">快门 > 1/30</td><td style="padding:6px 10px;">拨到 X 档</td></tr>
-  </table>
+  <div class="meta">📖 官方原厂故障排除速查表（说明书第 78-80 页）</div>
+  
+  <p>遇到问题不要慌，以下是原厂说明书官方排查表：</p>
+
+  <div class="step-flow-wrap">
+    <div class="pureflow-action-card">
+      <strong>🔴 快门按不下去？</strong>
+      <div class="action-desc">
+        1. 检查电源开关是否在 <strong>ON</strong> 位置；<br>
+        2. 检查过片手柄是否已扳动到底（未完全上弦时快门自锁）；<br>
+        3. 检查电池是否耗尽（肩屏无显示则需更换 CR123A 电池）；<br>
+        4. 检查是否空机未装卷（后盖打开时快门处于保护状态）。
+      </div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>🔴 过片手柄一直空转不停？</strong>
+      <div class="action-desc">
+        1. 说明胶卷已拍完第 10 张并已卷入收片轴；<br>
+        2. 确认引纸全部收回后即可开盖取卷。
+      </div>
+    </div>
+
+    <div class="pureflow-action-card">
+      <strong>🔴 照片全部脱焦跑焦？</strong>
+      <div class="action-desc">
+        1. 检查后盖压片板是否设为正确的 <strong>"120"</strong> 档位；<br>
+        2. 检查对焦屏是否装正卡紧；<br>
+        3. 检查手持快门速度是否低于 1/125s 造成微震动。
+      </div>
+    </div>
+  </div>
       </div>
       <div class="step-footer-nav">
         <button class="btn btn-secondary" onclick="showStep('level4', 5)"><span>⬅ 上一步</span></button>
