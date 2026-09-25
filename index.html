@@ -1,126 +1,1120 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pentax 67II 学习课程</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>PENTAX 67II 交互式全景手册与进阶摄影指南 · 6×7 中画幅机皇</title>
+<meta name="description" content="PENTAX 67II 中画幅胶片相机中文说明书全景交互版：从装机启航、AE 测光实战、手动控制到 MLU 反光镜预升与 80 页官方原版说明书高清画廊。">
+
+<!-- Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
 <style>
-  *, *::before { box-sizing:border-box; margin:0; padding:0; }
-  :root {
-    --bg: #f5f0eb; --card: #fff; --text: #2c2416; --text-light: #6b5e4a;
-    --accent: #8b4513; --accent-light: #d4a574; --border: #e0d5c7;
-    --green: #2d6a4f; --green-bg: #edf7f2;
-    --blue: #1a6fb5; --blue-bg: #eef4fa;
-    --gold: #b8860b; --gold-bg: #fdf8f0;
-  }
-  body { font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.8; -webkit-font-smoothing:antialiased; }
-  .max { max-width:960px; margin:0 auto; padding:0 24px; }
+/* ─── CSS Variables System ─── */
+:root {
+  --bg-primary: #0a0b0d;
+  --bg-secondary: #121418;
+  --bg-tertiary: #191c22;
+  --card-bg: #14161c;
+  --card-hover: #181b22;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-strong: rgba(255, 255, 255, 0.16);
+  --card-border-gold: rgba(212, 175, 55, 0.4);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-gold: #d4af37;
+  
+  --accent-gold: #d4af37;
+  --accent-gold-hover: #e6c86e;
+  --accent-gold-bg: rgba(212, 175, 55, 0.12);
+  --accent-red: #e63946;
+  --accent-red-bg: rgba(230, 57, 70, 0.12);
+  --accent-green: #10b981;
+  --accent-green-bg: rgba(16, 185, 129, 0.12);
+  --accent-blue: #38bdf8;
+  --accent-blue-bg: rgba(56, 189, 248, 0.12);
+  
+  --font-serif: "Cinzel", "Newsreader", Georgia, "Noto Serif SC", "Songti SC", serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "Space Grotesk", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 0 24px rgba(212, 175, 55, 0.18);
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
 
-  /* ── Hero ── */
-  .hero { text-align:center; padding:60px 0 40px; }
-  .hero h1 { font-size:36px; font-weight:700; margin-bottom:8px; }
-  .hero .sub { font-size:18px; color:var(--text-light); }
-  .hero .badge { display:inline-block; background:var(--accent); color:#fff; font-size:12px; padding:2px 10px; border-radius:20px; margin-top:8px; letter-spacing:.5px; }
+[data-theme="paper"] {
+  --bg-primary: #f6f3eb;
+  --bg-secondary: #ebe5d8;
+  --bg-tertiary: #dfd7c7;
+  --card-bg: #ffffff;
+  --card-hover: #fcfbfa;
+  --card-border: rgba(60, 45, 25, 0.12);
+  --card-border-strong: rgba(60, 45, 25, 0.24);
+  --card-border-gold: rgba(154, 103, 0, 0.4);
+  
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --text-muted: #8c857b;
+  --text-gold: #9a6700;
+  
+  --accent-gold: #9a6700;
+  --accent-gold-hover: #b87c02;
+  --accent-gold-bg: rgba(154, 103, 0, 0.1);
+  --accent-red: #b91c1c;
+  --accent-red-bg: rgba(185, 28, 28, 0.08);
+  --accent-green: #047857;
+  --accent-green-bg: rgba(4, 120, 87, 0.08);
+  --accent-blue: #0369a1;
+  --accent-blue-bg: rgba(3, 105, 161, 0.08);
+  
+  --shadow-sm: 0 2px 8px rgba(50, 40, 30, 0.06);
+  --shadow-md: 0 8px 24px rgba(50, 40, 30, 0.1);
+  --shadow-lg: 0 16px 48px rgba(50, 40, 30, 0.15);
+  --shadow-gold: 0 0 24px rgba(154, 103, 0, 0.12);
+}
 
-  /* ── Roadmap ── */
-  .roadmap { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin:32px 0; }
-  .rm-step { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; text-align:center; position:relative; }
-  .rm-step .num { width:32px; height:32px; border-radius:50%; background:var(--accent); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-bottom:8px; }
-  .rm-step h3 { font-size:15px; margin-bottom:4px; }
-  .rm-step p { font-size:13px; color:var(--text-light); }
+/* ─── Reset & Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  /*── Nav Tabs ──*/
-  .tabs { display:flex; gap:4px; margin-bottom:32px; overflow-x:auto; scrollbar-width:none; }
-  .tabs::-webkit-scrollbar { display:none; }
-  .tab { padding:10px 18px; border-radius:8px; cursor:pointer; font-size:14px; font-weight:500; white-space:nowrap; background:var(--card); border:1px solid var(--border); color:var(--text-light); transition:all .15s; }
-  .tab:hover { border-color:var(--accent-light); }
-  .tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
 
-  /*── Level sections ──*/
-  .level { display:none; }
-  .level.active { display:block; }
-  .level-header { padding:20px 24px; border-radius:12px; margin-bottom:24px; }
-  .level-header.l1 { background:var(--green-bg); border:1px solid #b7d7c8; }
-  .level-header.l2 { background:var(--blue-bg); border:1px solid #b8cfe4; }
-  .level-header.l3 { background:var(--gold-bg); border:1px solid #e6d5b0; }
-  .level-header h2 { font-size:20px; }
-  .level-header .desc { font-size:14px; color:var(--text-light); margin-top:4px; }
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  /*── Lesson cards ──*/
-  .lesson { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:16px; }
-  .lesson h3 { font-size:17px; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
-  .lesson h3 .ck { width:20px; height:20px; border-radius:4px; border:2px solid var(--border); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; font-size:12px; color:transparent; transition:all .1s; flex-shrink:0; }
-  .lesson h3 .ck.done { background:var(--green); border-color:var(--green); color:#fff; }
-  .lesson p { font-size:14px; margin-bottom:8px; }
-  .lesson ul { margin:8px 0 8px 20px; font-size:14px; }
-  .lesson ul li { margin-bottom:4px; }
-  .lesson .meta { font-size:12px; color:var(--text-light); margin-bottom:12px; }
-  .lesson .img-group { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; }
-  .lesson .img-group a { flex:1; min-width:200px; }
-  .lesson .img-group img { width:100%; border-radius:6px; border:1px solid var(--border); }
-  .lesson .img-group .label { text-align:center; font-size:12px; color:var(--text-light); margin-top:4px; }
-  .tag { display:inline-block; background:#f0e6d8; padding:2px 10px; border-radius:12px; font-size:12px; color:var(--text-light); margin-right:4px; }
-  .tip { background:#fdf8f0; border-left:3px solid var(--gold); padding:10px 14px; border-radius:0 6px 6px 0; margin:8px 0; font-size:14px; }
-  .warn { background:#fff5f5; border-left:3px solid #dc3545; padding:10px 14px; border-radius:0 6px 6px 0; margin:8px 0; font-size:14px; }
-  .done-msg { text-align:center; padding:40px; font-size:16px; color:var(--text-light); }
+/* ─── Container ─── */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
-  /*── Manual full viewer ──*/
-  .gallery-nav { display:flex; gap:8px; justify-content:center; align-items:center; flex-wrap:wrap; margin:16px 0; }
-  .gallery-nav button { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:6px 14px; font-size:14px; cursor:pointer; color:var(--text); font-weight:500; }
-  .gallery-nav button:hover { border-color:var(--accent-light); }
-  .gallery-nav .pi { font-size:14px; color:var(--text-light); min-width:80px; text-align:center; }
-  .g-img { display:none; text-align:center; }
-  .g-img.active { display:block; }
-  .g-img img { max-width:100%; border-radius:8px; border:1px solid var(--border); }
-  .g-thumbs { display:grid; grid-template-columns:repeat(auto-fill,minmax(80px,1fr)); gap:4px; max-height:300px; overflow-y:auto; padding:8px; background:var(--card); border-radius:8px; border:1px solid var(--border); margin-bottom:12px; }
-  .g-thumbs img { width:100%; border-radius:3px; cursor:pointer; border:2px solid transparent; }
-  .g-thumbs img:hover, .g-thumbs img.act { border-color:var(--accent); }
+/* ─── Top Header & HUD ─── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 11, 13, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--card-border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+[data-theme="paper"] .site-header {
+  background: rgba(246, 243, 235, 0.88);
+}
 
-  @media (max-width:600px) {
-    .hero h1 { font-size:26px; }
-    .roadmap { grid-template-columns:1fr 1fr; }
-    .lesson { padding:16px; }
-  }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 16px;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.brand-logo-mark {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--accent-gold), #9a6700);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.brand-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text-gold);
+  text-transform: uppercase;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-hud {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.progress-hud-bar {
+  width: 48px;
+  height: 4px;
+  background: var(--card-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-hud-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-gold);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.icon-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+.icon-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-1px);
+}
+
+/* ─── Hero Section ─── */
+.hero {
+  position: relative;
+  padding: 72px 0 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--card-border);
+  overflow: hidden;
+}
+
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at center, rgba(212, 175, 55, 0.06) 0%, transparent 70%),
+    linear-gradient(to right, var(--card-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--card-border) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.hero-tag-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px;
+  background: var(--accent-gold-bg);
+  border: 1px solid var(--card-border-gold);
+  border-radius: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: var(--text-gold);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.hero-sub {
+  font-size: clamp(15px, 2vw, 18px);
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+.hero-specs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.spec-pill {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.spec-pill strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold), #b8860b);
+  color: #0b0c0e;
+  border: 1px solid #d4af37;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.25);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border-strong);
+  color: var(--text-primary);
+}
+.btn-secondary:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+/* ─── Navigation Tabs Bar ─── */
+.nav-tabs-wrapper {
+  position: sticky;
+  top: 64px;
+  z-index: 90;
+  background: rgba(10, 11, 13, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+  padding: 8px 0;
+}
+[data-theme="paper"] .nav-tabs-wrapper {
+  background: rgba(246, 243, 235, 0.95);
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 2px 0;
+}
+.nav-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.tab-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+.tab-btn.active {
+  background: var(--accent-gold-bg);
+  border-color: var(--card-border-gold);
+  color: var(--accent-gold);
+}
+
+/* ─── Level Sections ─── */
+.tab-content-panel {
+  display: none;
+  padding: 40px 0 80px;
+}
+.tab-content-panel.active {
+  display: block;
+}
+
+.level-header-banner {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--accent-gold);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.level-meta-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.level-header-banner h2 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.level-header-banner p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  max-width: 760px;
+}
+
+/* ─── Lesson Cards ─── */
+.lesson-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.lesson-card:hover {
+  border-color: var(--card-border-strong);
+  box-shadow: var(--shadow-md);
+}
+.lesson-card.completed {
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.lesson-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.lesson-title-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lesson-check-toggle {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 2px solid var(--card-border-strong);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+.lesson-check-toggle:hover {
+  border-color: var(--accent-gold);
+  transform: scale(1.08);
+}
+.lesson-check-toggle.checked {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  color: #ffffff;
+}
+
+.lesson-title-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.lesson-num-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border: 1px solid var(--card-border);
+}
+
+.lesson-body {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.8;
+}
+
+.lesson-body p {
+  margin-bottom: 12px;
+}
+
+.lesson-body ul, .lesson-body ol {
+  margin: 12px 0 16px 24px;
+}
+
+.lesson-body li {
+  margin-bottom: 6px;
+}
+
+/* ─── Inset Callouts ─── */
+.tip-box, .tip {
+  background: var(--accent-gold-bg);
+  border-left: 3px solid var(--accent-gold);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 16px 0;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.warn-box, .warn {
+  background: var(--accent-red-bg);
+  border-left: 3px solid var(--accent-red);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 16px 0;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.tag {
+  display: inline-block;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--card-border);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  margin-right: 4px;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-bottom: 12px;
+}
+
+/* ─── Inline Manual Previews ─── */
+.img-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.manual-inline-preview {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.manual-inline-preview:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.manual-inline-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.manual-inline-preview .preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+.manual-inline-preview:hover .preview-overlay {
+  opacity: 1;
+}
+.preview-badge {
+  background: var(--accent-gold);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+}
+
+/* ─── 80-Page Official Manual Viewer ─── */
+.manual-viewer-wrap {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+}
+
+.chapter-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.chapter-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.chapter-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background: var(--bg-tertiary);
+}
+
+.viewer-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+
+.viewer-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.v-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.v-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.page-indicator-badge {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-gold);
+  padding: 4px 12px;
+  background: var(--accent-gold-bg);
+  border-radius: 4px;
+  border: 1px solid var(--card-border-gold);
+}
+
+.page-display-frame {
+  position: relative;
+  min-height: 500px;
+  background: var(--bg-primary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.page-spread-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.manual-page-img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--card-border);
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+.manual-page-img:hover {
+  transform: scale(1.01);
+}
+
+/* ─── Filmstrip Thumbnail Track ─── */
+.thumb-strip-track {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  scrollbar-width: thin;
+}
+.thumb-strip-item {
+  flex: 0 0 72px;
+  height: 96px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.thumb-strip-item:hover {
+  opacity: 0.9;
+  border-color: var(--card-border-strong);
+}
+.thumb-strip-item.active {
+  opacity: 1;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+.thumb-strip-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumb-label {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  background: rgba(0,0,0,0.75);
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: #fff;
+  text-align: center;
+  padding: 1px 0;
+}
+
+/* ─── 120 Film Guide Cards ─── */
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.film-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.film-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--film-stripe, var(--accent-gold));
+}
+.film-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+.film-card .film-type {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.film-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ─── Download & Archive Section ─── */
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.download-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.download-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+.download-card .file-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.path-box {
+  background: var(--bg-primary);
+  border: 1px solid var(--card-border);
+  padding: 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  word-break: break-all;
+  margin: 12px 0 16px;
+  position: relative;
+}
+
+/* ─── Lightbox Modal ─── */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(12px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.lightbox-modal.active {
+  display: flex;
+}
+.lightbox-img-wrap {
+  max-width: 92vw;
+  max-height: 92vh;
+  position: relative;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 48px rgba(0,0,0,0.8);
+}
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+.lightbox-caption {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-gold);
+  margin-top: 10px;
+}
+
+/* ─── Tweaks Floating Panel ─── */
+.tweaks-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border-gold);
+  color: var(--text-gold);
+  padding: 8px 14px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.tweaks-toggle-btn:hover {
+  transform: translateY(-2px);
+  background: var(--accent-gold);
+  color: #000;
+}
+
+.tweaks-panel {
+  position: fixed;
+  bottom: 70px;
+  right: 24px;
+  z-index: 99;
+  width: 280px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border-strong);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  box-shadow: var(--shadow-lg);
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+}
+.tweaks-panel.open {
+  display: flex;
+}
+.tweak-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+/* ─── Table Styling ─── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+th, td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--card-border);
+  text-align: left;
+}
+th {
+  background: var(--bg-secondary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-gold);
+  text-transform: uppercase;
+}
+tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .hero-title { font-size: 28px; }
+  .lesson-card { padding: 18px; }
+  .chapter-matrix { grid-template-columns: 1fr 1fr; }
+  .viewer-toolbar { flex-direction: column; align-items: stretch; }
+  .viewer-nav-group { justify-content: center; }
+}
 </style>
 </head>
 <body>
 
-<!-- ═══ HERO ═══ -->
-<div class="max">
-<div class="hero">
-  <h1>📷 Pentax 67II 学习课程</h1>
-  <p class="sub">不是说明书翻译 — 是按照「先用起来，再学透」设计的渐进路线</p>
-  <span class="badge">1998 · 中画幅之王</span>
+<!-- ═══ TOP HEADER & HUD ═══ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#hero" class="brand-badge">
+      <div class="brand-logo-mark">67II</div>
+      <div class="brand-titles">
+        <span class="brand-name">PENTAX 67II</span>
+        <span class="brand-sub">Medium Format 6×7</span>
+      </div>
+    </a>
+    
+    <div class="header-controls">
+      <div class="progress-hud" title="你的学习实操进度">
+        <span>已掌握</span>
+        <div class="progress-hud-bar">
+          <div class="progress-hud-fill" id="progressFill"></div>
+        </div>
+        <strong id="progressText" style="color:var(--text-gold)">0/20</strong>
+      </div>
+      
+      <button class="icon-btn" id="themeToggle" title="切换暗房黑金 / 银盐暖纸主题">🌓</button>
+      <button class="icon-btn" onclick="switchTab('manual')" title="直接查看 80 页说明书">📖</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO SECTION ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="hero-tag-wrap">
+      <span>1998 · 中画幅单反终极名机</span>
+    </div>
+    <h1 class="hero-title">PENTAX 67II<br>交互式全景手册与进阶摄影指南</h1>
+    <p class="hero-sub">
+      一台诞生于 1998 年的中画幅胶片机皇，值得拥有一份随时可查、由浅入深的殿堂级中文说明书与实战手册。
+    </p>
+    
+    <div class="hero-specs-bar">
+      <div class="spec-pill"><strong>画幅</strong> 56×67mm (6×7)</div>
+      <div class="spec-pill"><strong>胶卷</strong> 120 (10张) / 220 (21张)</div>
+      <div class="spec-pill"><strong>测光</strong> TTL 六分区 / 中央重点 / 点测</div>
+      <div class="spec-pill"><strong>快门</strong> 1/1000s ~ 30s + B门</div>
+      <div class="spec-pill"><strong>机能</strong> MLU 反光镜预升 · ME 多重曝光</div>
+    </div>
+    
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="switchTab('level1')">
+        <span>⚡ 开始渐进式实操课程</span>
+      </button>
+      <button class="btn btn-secondary" onclick="switchTab('manual')">
+        <span>📖 原版说明书 80 页高清画廊</span>
+      </button>
+      <a href="Pentax67II中文说明书.pdf" download class="btn btn-secondary">
+        <span>📥 下载 28.7MB 官方中文 PDF</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NAV TABS HUD ═══ -->
+<div class="nav-tabs-wrapper">
+  <div class="container">
+    <div class="nav-tabs" id="navTabs">
+      <button class="tab-btn active" data-tab="level1">🏃 01·启航准备</button>
+      <button class="tab-btn" data-tab="level2">📸 02·首卷实战</button>
+      <button class="tab-btn" data-tab="level3">🎯 03·精准曝光</button>
+      <button class="tab-btn" data-tab="level4">🔧 04·进阶绝技</button>
+      <button class="tab-btn" data-tab="manual">📖 05·80页原版手册</button>
+      <button class="tab-btn" data-tab="film">🎞️ 06·120胶卷档案</button>
+      <button class="tab-btn" data-tab="download">📥 07·资料下载与路径</button>
+    </div>
+  </div>
 </div>
 
-<!-- ═══ ROADMAP ═══ -->
-<div class="roadmap">
-  <div class="rm-step"><div class="num">1</div><h3>🏃 出发</h3><p>装电池、装胶卷、装镜头——让相机能动</p></div>
-  <div class="rm-step"><div class="num">2</div><h3>📸 第一卷</h3><p>AE 模式先拍起来，体验 6×7 的魅力</p></div>
-  <div class="rm-step"><div class="num">3</div><h3>🎯 控制</h3><p>手动曝光、测光、补偿——自己决定画面</p></div>
-  <div class="rm-step"><div class="num">4</div><h3>🔧 进阶</h3><p>MLU 预升、多重曝光、闪灯——玩出花样</p></div>
-</div>
+<!-- ═══ MAIN CONTENT ═══ -->
+<main class="container">
 
-<!-- ═══ TAB NAV ═══ -->
-<div class="tabs" id="tabs">
-  <div class="tab active" data-level="1">🏃 1·出发</div>
-  <div class="tab" data-level="2">📸 2·第一卷</div>
-  <div class="tab" data-level="3">🎯 3·控制</div>
-  <div class="tab" data-level="4">🔧 4·进阶</div>
-  <div class="tab" data-level="manual">📖 说明书</div>
-</div>
+  <!-- ══════════ LEVEL1 ══════════ -->
+  <section class="tab-content-panel active" id="level1">
+    <div class="level-header-banner">
+      <div class="level-meta-badge">PHASE 01 · ESSENTIAL PREPARATION</div>
+      <h2>启航准备 · 认识与装配机身</h2>
+      <p>让这台 1998 年的中画幅机皇运转起来。完成本阶段，你将掌握装入电池、标准 120 胶卷精准过片、ISO 设定、镜头卡口锁止与机身核心部件布局。</p>
+    </div>
+    
+    <div class="lessons-container">
 
-<!-- ══════════ LEVEL 1 ══════════ -->
-<div class="level active" id="level1">
-
-<div class="level-header l1">
-  <h2>🏃 第一课 · 出发</h2>
-  <div class="desc">让相机能动起来。学完这课，你能装好电池、装上胶卷、接上镜头、按下快门。</div>
-</div>
-
-<div class="lesson">
-  <h3><span class="ck" data-key="l1-1" onclick="toggle(this)">✓</span> ① 装电池</h3>
-  <div class="meta">说明书参照：第 5 页</div>
+      <article class="lesson-card" id="card_lesson_1_1">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_1_1" onclick="toggleCheck('lesson_1_1')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">装电池</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 1.1</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 5 页</div>
   <p>67II 需要 2 节 CR123A 锂电池。机身没电池全机罢工（纯电子快门），这是你做的第一件事。</p>
   <ul>
     <li>底部电池仓——用硬币逆时针旋开</li>
@@ -129,13 +1123,26 @@
   </ul>
   <div class="tip"><strong>备电习惯：</strong>CR123A 低温表现好但不使用也会缓慢耗电。长时间不用请关机或取出电池。建议随身带一组备用。</div>
   <div class="img-group">
-    <a href="pentax67-manual/page_05.jpg" target="_blank"><img src="pentax67-manual/page_05.jpg" loading="lazy"><div class="label">第 5 页 — 电池安装</div></a>
+    <a href="pentax67-manual/page_05.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_05.jpg', 5)">
+                    <img src="pentax67-manual/page_05.jpg" alt="说明书第 5 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.5 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 5 页 — 电池安装</div></a>
   </div>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l1-2" onclick="toggle(this)">✓</span> ② 装胶卷（120）</h3>
-  <div class="meta">说明书参照：第 6-7 页</div>
+      <article class="lesson-card" id="card_lesson_1_2">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_1_2" onclick="toggleCheck('lesson_1_2')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">装胶卷（120）</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 1.2</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 6-7 页</div>
   <p>67II 用 120 胶卷拍 10 张，220 拍 21 张。你八成买的是 120。</p>
   <ul>
     <li>向下推开后背锁（底部），打开后背</li>
@@ -147,61 +1154,122 @@
   </ul>
   <div class="warn"><strong>压片板切换：</strong>120 卷拨到 "120"，220 卷拨到 "220"（打开后背，胶卷导轨旁的黑色拨杆）。位置不对 = 整卷焦点全跑偏。这是新手翻车第一坑。</div>
   <div class="img-group">
-    <a href="pentax67-manual/page_06.jpg" target="_blank"><img src="pentax67-manual/page_06.jpg" loading="lazy"><div class="label">第 6 页 — 胶卷安装</div></a>
+    <a href="pentax67-manual/page_06.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_06.jpg', 6)">
+                    <img src="pentax67-manual/page_06.jpg" alt="说明书第 6 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.6 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 6 页 — 胶卷安装</div></a>
   </div>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l1-3" onclick="toggle(this)">✓</span> ③ 设定 ISO</h3>
-  <div class="meta">说明书参照：第 7 页</div>
+      <article class="lesson-card" id="card_lesson_1_3">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_1_3" onclick="toggleCheck('lesson_1_3')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">设定 ISO</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 1.3</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 7 页</div>
   <p>设定胶卷感光度，否则测光不准毁整卷。</p>
   <ul>
     <li>提起左肩 ISO 拨盘外环（我在 SVG 里标了 ①）</li>
     <li>旋转到跟胶卷盒上一样的数字（比如 400）</li>
     <li>松开外环锁定。取景器左下角会显示当前 ISO</li>
   </ul>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l1-4" onclick="toggle(this)">✓</span> ④ 装镜头</h3>
-  <div class="meta">说明书参照：第 16 页</div>
+      <article class="lesson-card" id="card_lesson_1_4">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_1_4" onclick="toggleCheck('lesson_1_4')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">装镜头</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 1.4</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 16 页</div>
   <ul>
     <li><strong>装：</strong>镜头红点对齐机身卡口红点，插入后顺时针旋转约 60° 到锁紧</li>
     <li><strong>卸：</strong>按住镜头释放钮（正面的圆形按钮），逆时针旋下</li>
   </ul>
   <div class="warn">老款 Takumar 镜头在 67II 上测光不工作！认准 SMC Pentax 67 字样。SMC 全兼容。</div>
   <div class="img-group">
-    <a href="pentax67-manual/page_16.jpg" target="_blank"><img src="pentax67-manual/page_16.jpg" loading="lazy"><div class="label">第 16 页 — 镜头装卸</div></a>
+    <a href="pentax67-manual/page_16.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_16.jpg', 16)">
+                    <img src="pentax67-manual/page_16.jpg" alt="说明书第 16 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.16 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 16 页 — 镜头装卸</div></a>
   </div>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l1-5" onclick="toggle(this)">✓</span> ⑤ 认识机身</h3>
-  <div class="meta">说明书参照：第 2-4 页</div>
+      <article class="lesson-card" id="card_lesson_1_5">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_1_5" onclick="toggleCheck('lesson_1_5')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">认识机身</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 1.5</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 2-4 页</div>
   <p>现在相机能动起来了。花 5 分钟认认这 20 个操作件的位置，不用背，知道在哪就行。</p>
   <div class="img-group">
-    <a href="pentax67-manual/page_02.jpg" target="_blank"><img src="pentax67-manual/page_02.jpg" loading="lazy"><div class="label">第 2 页 — 正面/上面部件</div></a>
-    <a href="pentax67-manual/page_03.jpg" target="_blank"><img src="pentax67-manual/page_03.jpg" loading="lazy"><div class="label">第 3 页 — 背面/局部</div></a>
-    <a href="pentax67-manual/page_04.jpg" target="_blank"><img src="pentax67-manual/page_04.jpg" loading="lazy"><div class="label">第 4 页 — LCD/取景器信息</div></a>
+    <a href="pentax67-manual/page_02.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_02.jpg', 2)">
+                    <img src="pentax67-manual/page_02.jpg" alt="说明书第 2 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.2 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 2 页 — 正面/上面部件</div></a>
+    <a href="pentax67-manual/page_03.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_03.jpg', 3)">
+                    <img src="pentax67-manual/page_03.jpg" alt="说明书第 3 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.3 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 3 页 — 背面/局部</div></a>
+    <a href="pentax67-manual/page_04.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_04.jpg', 4)">
+                    <img src="pentax67-manual/page_04.jpg" alt="说明书第 4 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.4 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 4 页 — LCD/取景器信息</div></a>
   </div>
 </div>
 
 <div style="text-align:center; margin-top:24px;">
   <button onclick="switchTab('2')" style="background:var(--accent); color:#fff; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">学完了，进入第二课 →</button>
-</div>
-</div>
+        </div>
+      </article>
 
-<!-- ══════════ LEVEL 2 ══════════ -->
-<div class="level" id="level2">
+    </div>
+  </section>
 
-<div class="level-header l2">
-  <h2>📸 第二课 · 拍出第一卷</h2>
-  <div class="desc">用光圈优先 AE 模式拍完第一卷。先别想手动——让相机帮你成功，建立信心。</div>
-</div>
+  <!-- ══════════ LEVEL2 ══════════ -->
+  <section class="tab-content-panel" id="level2">
+    <div class="level-header-banner">
+      <div class="level-meta-badge">PHASE 02 · FIRST ROLL MASTER</div>
+      <h2>首卷实战 · 拍出第一卷 6×7</h2>
+      <p>体验中画幅无可替代的底片细节与立体景深。掌握光圈优先 AE 模式、裂像微棱对焦精准咬合、手持 1.7kg 机身的肌肉记忆与拍摄呼吸节奏。</p>
+    </div>
+    
+    <div class="lessons-container">
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l2-1" onclick="toggle(this)">✓</span> ① 光圈优先 AE 模式</h3>
-  <div class="meta">说明书参照：第 10 页</div>
+      <article class="lesson-card" id="card_lesson_2_1">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_2_1" onclick="toggleCheck('lesson_2_1')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">光圈优先 AE 模式</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 2.1</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 10 页</div>
   <p>67II 最好用的模式。你定光圈（决定景深），相机自动匹配快门速度。</p>
   <ul>
     <li>将右肩快门速度拨盘转到 <strong>A</strong>（绿色位置）</li>
@@ -211,35 +1279,64 @@
   </ul>
   <div class="tip"><strong>建议：</strong>第一卷全部用 AE 模式 + f/8 光圈 + Portra 400。这样就只剩对焦和构图，成功率最高。</div>
   <div class="img-group">
-    <a href="pentax67-manual/page_10.jpg" target="_blank"><img src="pentax67-manual/page_10.jpg" loading="lazy"><div class="label">第 10 页 — AE 光圈优先曝光</div></a>
+    <a href="pentax67-manual/page_10.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_10.jpg', 10)">
+                    <img src="pentax67-manual/page_10.jpg" alt="说明书第 10 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.10 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 10 页 — AE 光圈优先曝光</div></a>
   </div>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l2-2" onclick="toggle(this)">✓</span> ② 对焦</h3>
-  <p>67II 标配对焦屏是 裂像 + 微棱镜 + 磨砂 三合一。</p>
+      <article class="lesson-card" id="card_lesson_2_2">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_2_2" onclick="toggleCheck('lesson_2_2')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">对焦</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 2.2</span>
+        </div>
+        <div class="lesson-body">
+          <p>67II 标配对焦屏是 裂像 + 微棱镜 + 磨砂 三合一。</p>
   <ul>
     <li><strong>裂像：</strong>取景器中央的圆圈，里面有一条线。线两侧的影像对齐了 = 合焦</li>
     <li><strong>玩法：</strong>快门设 A → 光圈开到最大（比如 f/2.4）→ 对焦更亮、更清晰 → 再把光圈收到 f/8 拍</li>
     <li>大光圈（f/2.4）景深极浅，对焦必须精准。用裂像对准眼睛</li>
     <li>不要对焦后重新构图（余弦误差）——直接对焦拍</li>
   </ul>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l2-3" onclick="toggle(this)">✓</span> ③ 握持与安全快门</h3>
-  <p>67II + 105mm f/2.4 约 2kg，拿不稳会糊片。</p>
+      <article class="lesson-card" id="card_lesson_2_3">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_2_3" onclick="toggleCheck('lesson_2_3')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">握持与安全快门</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 2.3</span>
+        </div>
+        <div class="lesson-body">
+          <p>67II + 105mm f/2.4 约 2kg，拿不稳会糊片。</p>
   <ul>
     <li>右手握手柄，食指在快门上；左手托镜头底部</li>
     <li>双脚与肩宽，左手肘贴胸口（三角支撑）</li>
     <li><strong>安全快门：</strong>手持不低于 1/125s（标头）。长焦更高</li>
     <li>吸一口气，轻按快门，不要猛戳</li>
   </ul>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l2-4" onclick="toggle(this)">✓</span> ④ 第一卷的拍摄节奏</h3>
-  <ul>
+      <article class="lesson-card" id="card_lesson_2_4">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_2_4" onclick="toggleCheck('lesson_2_4')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">第一卷的拍摄节奏</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 2.4</span>
+        </div>
+        <div class="lesson-body">
+          <ul>
     <li>每张都检查：ISO 设对了没有 + 光圈环到位了没有 + 快门拨盘在 A 没有</li>
     <li>拍完立刻过片。67II 不会自动过片</li>
     <li>计数器显示到 10（120 卷）就拍完了，开背后自动归零</li>
@@ -250,20 +1347,32 @@
 
 <div style="text-align:center; margin-top:24px;">
   <button onclick="switchTab('3')" style="background:var(--accent); color:#fff; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">学完了，进入第三课 →</button>
-</div>
-</div>
+        </div>
+      </article>
 
-<!-- ══════════ LEVEL 3 ══════════ -->
-<div class="level" id="level3">
+    </div>
+  </section>
 
-<div class="level-header l3">
-  <h2>🎯 第三课 · 自己控制曝光</h2>
-  <div class="desc">告别全自动，学会手动曝光、测光、补偿——对画面有完整的控制权。</div>
-</div>
+  <!-- ══════════ LEVEL3 ══════════ -->
+  <section class="tab-content-panel" id="level3">
+    <div class="level-header-banner">
+      <div class="level-meta-badge">PHASE 03 · EXPOSURE CONTROL</div>
+      <h2>精准曝光 · 掌控画面明暗意图</h2>
+      <p>脱离初学者被动测光。熟练掌握 6 分区/中央重点/点测光三大模式切换、AE-L 曝光锁定、曝光补偿拨盘与全手动 M 档精控。</p>
+    </div>
+    
+    <div class="lessons-container">
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l3-1" onclick="toggle(this)">✓</span> ① 三张测光模式怎么选</h3>
-  <div class="meta">说明书参照：第 11 页</div>
+      <article class="lesson-card" id="card_lesson_3_1">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_3_1" onclick="toggleCheck('lesson_3_1')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">三张测光模式怎么选</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 3.1</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 11 页</div>
   <p>按机身背面测光模式按钮（⑱）循环切换：</p>
   <ul>
     <li><strong>6 分区多模式</strong> — 日常大部分场景用这个就好，相机自动判断</li>
@@ -271,13 +1380,26 @@
     <li><strong>点测光</strong> — 只测中央极小区域。高反差环境（逆光/舞台）的杀器</li>
   </ul>
   <div class="img-group">
-    <a href="pentax67-manual/page_11.jpg" target="_blank"><img src="pentax67-manual/page_11.jpg" loading="lazy"><div class="label">第 11 页 — 测光方式</div></a>
+    <a href="pentax67-manual/page_11.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_11.jpg', 11)">
+                    <img src="pentax67-manual/page_11.jpg" alt="说明书第 11 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.11 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 11 页 — 测光方式</div></a>
   </div>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l3-2" onclick="toggle(this)">✓</span> ② AE 锁定（AE-L·按钮⑰）</h3>
-  <div class="meta">说明书参照：第 12 页</div>
+      <article class="lesson-card" id="card_lesson_3_2">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_3_2" onclick="toggleCheck('lesson_3_2')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">AE 锁定（AE-L·按钮⑰）</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 3.2</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 12 页</div>
   <p>逆光人像的标配操作。核心逻辑：先测光，再锁定，后构图。</p>
   <ul>
     <li>点测或中央重点对准主体（人脸）→ 半按快门得到读数</li>
@@ -287,13 +1409,26 @@
   </ul>
   <div class="tip"><strong>最佳搭档：</strong>点测光 + AE-L 是拍逆光人像的王牌组合。先点测人脸，锁定曝光，再退一步构全景。</div>
   <div class="img-group">
-    <a href="pentax67-manual/page_12.jpg" target="_blank"><img src="pentax67-manual/page_12.jpg" loading="lazy"><div class="label">第 12 页 — AE 锁</div></a>
+    <a href="pentax67-manual/page_12.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_12.jpg', 12)">
+                    <img src="pentax67-manual/page_12.jpg" alt="说明书第 12 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.12 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 12 页 — AE 锁</div></a>
   </div>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l3-3" onclick="toggle(this)">✓</span> ③ 曝光补偿（拨盘②）</h3>
-  <div class="meta">说明书参照：第 12 页</div>
+      <article class="lesson-card" id="card_lesson_3_3">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_3_3" onclick="toggleCheck('lesson_3_3')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">曝光补偿（拨盘②）</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 3.3</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 12 页</div>
   <p>只在 AE 模式生效。±3 EV，1/3 步进。按下小钮才能转。用完立刻归零。</p>
   <table style="width:100%; border-collapse:collapse; font-size:14px; margin:8px 0;">
     <tr style="background:var(--highlight);"><th style="padding:6px 10px;text-align:left;">场景</th><th style="padding:6px 10px;text-align:left;">补偿</th><th style="padding:6px 10px;text-align:left;">原因</th></tr>
@@ -303,11 +1438,19 @@
     <tr><td style="padding:6px 10px;">舞台聚光灯</td><td style="padding:6px 10px;"><strong>-1 ~ -2</strong></td><td style="padding:6px 10px;">暗背景骗测光表过曝亮部</td></tr>
   </table>
   <div class="warn"><strong>一生记一个习惯：</strong>拍完立刻归零。拍摄时心里记着"补偿现在是多少"，这是 67II 最常翻车的操作，没有之一。</div>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l3-4" onclick="toggle(this)">✓</span> ④ 手动曝光模式</h3>
-  <div class="meta">说明书参照：第 9-10 页</div>
+      <article class="lesson-card" id="card_lesson_3_4">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_3_4" onclick="toggleCheck('lesson_3_4')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">手动曝光模式</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 3.4</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 9-10 页</div>
   <ul>
     <li>快门拨盘（③）离开 A，转到你要的速度</li>
     <li>镜头光圈环手动设光圈</li>
@@ -316,26 +1459,43 @@
   </ul>
   <p>手动模式用熟了之后，你会理解每一张画面的曝光取舍——控制权完全在你手里。</p>
   <div class="img-group">
-    <a href="pentax67-manual/page_09.jpg" target="_blank"><img src="pentax67-manual/page_09.jpg" loading="lazy"><div class="label">第 9 页 — 快门速度 / 手动曝光</div></a>
+    <a href="pentax67-manual/page_09.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_09.jpg', 9)">
+                    <img src="pentax67-manual/page_09.jpg" alt="说明书第 9 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.9 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 9 页 — 快门速度 / 手动曝光</div></a>
   </div>
 </div>
 
 <div style="text-align:center; margin-top:24px;">
   <button onclick="switchTab('4')" style="background:var(--accent); color:#fff; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">学完了，进入第四课 →</button>
-</div>
-</div>
+        </div>
+      </article>
 
-<!-- ══════════ LEVEL 4 ══════════ -->
-<div class="level" id="level4">
+    </div>
+  </section>
 
-<div class="level-header l3">
-  <h2>🔧 第四课 · 进阶技术</h2>
-  <div class="desc">学完这些，67II 的潜力你基本吃透了。</div>
-</div>
+  <!-- ══════════ LEVEL4 ══════════ -->
+  <section class="tab-content-panel" id="level4">
+    <div class="level-header-banner">
+      <div class="level-meta-badge">PHASE 04 · ADVANCED MASTERY</div>
+      <h2>进阶绝技 · 榨干机皇全部潜能</h2>
+      <p>解锁专业摄影师的压箱底操作：反光镜预升（MLU）彻底消除震动、多重曝光（ME）、景深预览、B 门长曝光、棚拍闪光同步与 120 胶卷实战选配。</p>
+    </div>
+    
+    <div class="lessons-container">
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l4-1" onclick="toggle(this)">✓</span> ① 反光镜预升（MLU·拨杆⑩）</h3>
-  <div class="meta">说明书参照：第 13 页</div>
+      <article class="lesson-card" id="card_lesson_4_1">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_4_1" onclick="toggleCheck('lesson_4_1')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">反光镜预升（MLU·拨杆⑩）</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 4.1</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 13 页</div>
   <p>67II 反光镜巨大（6×7 规格），拍 1/30s ~ 1s 区间必定震糊。MLU 是你的核心技能。</p>
 
   <!-- MLU lever position close-up SVG -->
@@ -382,38 +1542,75 @@
 
   <div class="tip"><strong>没有快门线：</strong>用自拍（12 秒延迟）替代——按自拍按钮后反光镜自动预升，12 秒后自动拍。这是紧急情况的 MLU + 快门线合一体。</div>
   <div class="img-group">
-    <a href="pentax67-manual/page_13.jpg" target="_blank"><img src="pentax67-manual/page_13.jpg" loading="lazy"><div class="label">第 13 页 — MLU / 多次曝光（点击放大）</div></a>
+    <a href="pentax67-manual/page_13.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_13.jpg', 13)">
+                    <img src="pentax67-manual/page_13.jpg" alt="说明书第 13 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.13 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 13 页 — MLU / 多次曝光（点击放大）</div></a>
   </div>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l4-2" onclick="toggle(this)">✓</span> ② 多重曝光（ME·按钮⑲）</h3>
-  <ul>
+      <article class="lesson-card" id="card_lesson_4_2">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_4_2" onclick="toggleCheck('lesson_4_2')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">多重曝光（ME·按钮⑲）</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 4.2</span>
+        </div>
+        <div class="lesson-body">
+          <ul>
     <li>正常拍第一张 → 按 ME 按钮（⑲）→ 拨过片杆（只上弦不卷片）→ 拍第二张</li>
     <li>无限重复叠加。不按 ME 正常过片即退出多曝</li>
     <li><strong>曝光计算：</strong>叠加 n 次，每次减到 1/n。两次叠加各欠曝 1 档</li>
   </ul>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l4-3" onclick="toggle(this)">✓</span> ③ 景深预览（按钮⑫）</h3>
-  <p>按下机身右侧的按钮（⑫），光圈收缩到设定值。取景器变暗，但你能看到真实景深范围。松手恢复全开。</p>
-</div>
+      <article class="lesson-card" id="card_lesson_4_3">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_4_3" onclick="toggleCheck('lesson_4_3')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">景深预览（按钮⑫）</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 4.3</span>
+        </div>
+        <div class="lesson-body">
+          <p>按下机身右侧的按钮（⑫），光圈收缩到设定值。取景器变暗，但你能看到真实景深范围。松手恢复全开。</p>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l4-4" onclick="toggle(this)">✓</span> ④ B 门 / 长时间曝光</h3>
-  <ul>
+      <article class="lesson-card" id="card_lesson_4_4">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_4_4" onclick="toggleCheck('lesson_4_4')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">B 门 / 长时间曝光</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 4.4</span>
+        </div>
+        <div class="lesson-body">
+          <ul>
     <li>快门拨盘转到 B</li>
     <li>快门线插在快门按钮中央的螺纹孔</li>
     <li>锁定快门线 → 快门打开 → 解锁关闭</li>
     <li><strong>必须：</strong>MLU（预升）+ 三脚架 + 快门线。B 门耗电，用新电池</li>
     <li><strong>倒易律失效：</strong>曝光 >1 秒需要加更多曝光（查胶卷 datasheet）</li>
   </ul>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l4-5" onclick="toggle(this)">✓</span> ⑤ 闪光 / 棚拍</h3>
-  <div class="meta">说明书参照：第 20 页</div>
+      <article class="lesson-card" id="card_lesson_4_5">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_4_5" onclick="toggleCheck('lesson_4_5')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">闪光 / 棚拍</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 4.5</span>
+        </div>
+        <div class="lesson-body">
+          <div class="meta">说明书参照：第 20 页</div>
   <ul>
     <li>快门拨到 <strong>X</strong> 档（1/30 秒同步速度，不能更快）</li>
     <li>PC 同步线连机身左侧 X 端子（⑭）触发棚拍灯</li>
@@ -421,13 +1618,26 @@
     <li>用兼容 TTL 闪灯（AF400T/AF500FTZ）可自动闪光</li>
   </ul>
   <div class="img-group">
-    <a href="pentax67-manual/page_20.jpg" target="_blank"><img src="pentax67-manual/page_20.jpg" loading="lazy"><div class="label">第 20 页 — 闪光灯操作</div></a>
+    <a href="pentax67-manual/page_20.jpg" target="_blank"><div class="manual-inline-preview" onclick="openLightbox('pentax67-manual/page_20.jpg', 20)">
+                    <img src="pentax67-manual/page_20.jpg" alt="说明书第 20 页" loading="lazy">
+                    <div class="preview-overlay">
+                        <span class="preview-badge">说明书 P.20 · 点击高清放大</span>
+                    </div>
+                </div><div class="label">第 20 页 — 闪光灯操作</div></a>
   </div>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l4-6" onclick="toggle(this)">✓</span> ⑥ 常见问题速查</h3>
-  <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <article class="lesson-card" id="card_lesson_4_6">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_4_6" onclick="toggleCheck('lesson_4_6')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">常见问题速查</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 4.6</span>
+        </div>
+        <div class="lesson-body">
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
     <tr style="background:var(--highlight);"><th style="padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);">状况</th><th style="padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);">原因</th><th style="padding:6px 10px;text-align:left;border-bottom:1px solid var(--border);">解决</th></tr>
     <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">快门按不下</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">没电 / 开关 OFF / 没过片</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">换电池 → ON → 过片</td></tr>
     <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">取景器全黑</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">MLU 打开了 / 没电</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">检查 MLU（⑩）→ 换电池</td></tr>
@@ -435,11 +1645,19 @@
     <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">漏光条纹</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">后背海绵老化</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">更换海绵（维修便宜）</td></tr>
     <tr><td style="padding:6px 10px;">闪光不同步</td><td style="padding:6px 10px;">快门 > 1/30</td><td style="padding:6px 10px;">拨到 X 档</td></tr>
   </table>
-</div>
+        </div>
+      </article>
 
-<div class="lesson">
-  <h3><span class="ck" data-key="l4-7" onclick="toggle(this)">✓</span> ⑦ 实用胶卷推荐</h3>
-  <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <article class="lesson-card" id="card_lesson_4_7">
+        <div class="lesson-card-header">
+          <div class="lesson-title-area">
+            <button class="lesson-check-toggle" id="chk_lesson_4_7" onclick="toggleCheck('lesson_4_7')" title="标记已掌握">✓</button>
+            <h3 class="lesson-title-text">实用胶卷推荐</h3>
+          </div>
+          <span class="lesson-num-badge">STEP 4.7</span>
+        </div>
+        <div class="lesson-body">
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
     <tr style="background:var(--highlight);"><th style="padding:6px 10px;text-align:left;">场景</th><th style="padding:6px 10px;text-align:left;">胶卷</th><th style="padding:6px 10px;text-align:left;">特点</th></tr>
     <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">新手第一卷</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">Kodak Portra 400</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">宽容度惊人，欠曝过曝 2 档都能拉回。肤色优美</td></tr>
     <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">风光</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">Kodak Ektar 100</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">色彩艳丽，颗粒极细。6×7 解析力完美搭配</td></tr>
@@ -447,80 +1665,432 @@
     <tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);">低光 / 室内</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">Kodak Portra 800</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);">高感光，适合手持。颗粒比 400 粗但质感很美</td></tr>
     <tr><td style="padding:6px 10px;">黑白经典</td><td style="padding:6px 10px;">Kodak Tri-X 400</td><td style="padding:6px 10px;">宽容度之王，颗粒质感无与伦比。扫街/人文首选</td></tr>
   </table>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══════════ MANUAL VIEWER ══════════ -->
+  <section class="tab-content-panel" id="manual">
+    <div class="level-header-banner">
+      <div class="level-meta-badge">OFFICIAL ARCHIVE · 80 HIGH-RES PAGES</div>
+      <h2>📖 理光官方中文说明书 80 页完整画廊</h2>
+      <p>逐页扫描自 80 页官方中文说明书。支持单页精读、双页画册展开、章节直达与全屏灯箱放大。</p>
+    </div>
+    
+    <div class="manual-viewer-wrap">
+      <!-- Chapter Jump Matrix -->
+      <div class="chapter-matrix">
+        <button class="chapter-btn" onclick="jumpToPage(1)"><strong>01 · 导言与前言</strong> (P.1-4)</button>
+        <button class="chapter-btn" onclick="jumpToPage(5)"><strong>02 · 机身部件名称</strong> (P.5-10)</button>
+        <button class="chapter-btn" onclick="jumpToPage(11)"><strong>03 · 电池与镜头安装</strong> (P.11-18)</button>
+        <button class="chapter-btn" onclick="jumpToPage(19)"><strong>04 · 120胶卷装填</strong> (P.19-28)</button>
+        <button class="chapter-btn" onclick="jumpToPage(29)"><strong>05 · 测光与AE曝光</strong> (P.29-40)</button>
+        <button class="chapter-btn" onclick="jumpToPage(41)"><strong>06 · MLU预升/多重曝光</strong> (P.41-52)</button>
+        <button class="chapter-btn" onclick="jumpToPage(53)"><strong>07 · 闪光摄影</strong> (P.53-62)</button>
+        <button class="chapter-btn" onclick="jumpToPage(63)"><strong>08 · 对焦屏与取景器</strong> (P.63-72)</button>
+        <button class="chapter-btn" onclick="jumpToPage(73)"><strong>09 · 规格参数与维护</strong> (P.73-77)</button>
+        <button class="chapter-btn" onclick="jumpToPage(78)"><strong>10 · 故障排除速查</strong> (P.78-80)</button>
+      </div>
+      
+      <!-- Toolbar -->
+      <div class="viewer-toolbar">
+        <div class="viewer-nav-group">
+          <button class="v-btn" onclick="jumpToPage(1)">⏮ 首页</button>
+          <button class="v-btn" onclick="prevPage()">◀ 上一页</button>
+          <span class="page-indicator-badge" id="pageIndicatorBadge">第 1 / 80 页</span>
+          <button class="v-btn" onclick="nextPage()">下一页 ▶</button>
+          <button class="v-btn" onclick="jumpToPage(80)">末页 ⏭</button>
+        </div>
+        
+        <div class="viewer-nav-group">
+          <button class="v-btn" id="spreadToggleBtn" onclick="toggleSpreadMode()">📖 双页展开模式</button>
+          <button class="v-btn" onclick="openCurrentInLightbox()">🔍 高清全屏放大</button>
+        </div>
+      </div>
+      
+      <!-- Main Page Display Frame -->
+      <div class="page-display-frame">
+        <div class="page-spread-container" id="spreadContainer">
+          <img id="primaryPageImg" class="manual-page-img" src="pentax67-manual/page_01.jpg" alt="说明书第 1 页" onclick="openCurrentInLightbox()">
+          <img id="secondaryPageImg" class="manual-page-img" src="pentax67-manual/page_02.jpg" alt="说明书第 2 页" style="display:none;" onclick="openSecondaryInLightbox()">
+        </div>
+      </div>
+      
+      <!-- Thumbnail Strip -->
+      <div class="thumb-strip-track" id="thumbStripTrack"></div>
+    </div>
+  </section>
+
+  <!-- ══════════ FILM GUIDE ══════════ -->
+  <section class="tab-content-panel" id="film">
+    <div class="level-header-banner">
+      <div class="level-meta-badge">MEDIUM FORMAT 120 FILM EMULSIONS</div>
+      <h2>🎞️ 经典 120 胶卷特性与实战搭配指南</h2>
+      <p>在 6×7 中画幅巨大的 56×67mm 底片面积上，每一款胶卷的乳剂特性都被放大到极致。以下是为 Pentax 67II 量身推荐的经典胶卷档案：</p>
+    </div>
+    
+    <div class="film-grid">
+      <div class="film-card" style="--film-stripe:#d4af37;">
+        <div class="film-type">Color Negative · 彩色负片 · ISO 400</div>
+        <h3>Kodak Portra 400</h3>
+        <p><strong>人像与日光之王：</strong>色彩柔和，肤色表现温润纯净，宽容度极高（过曝 2-3 档依然细节丰富）。在 Pentax 67II 105mm F2.4 镜头下可呈现梦幻的奶油焦外与空气感。</p>
+      </div>
+      
+      <div class="film-card" style="--film-stripe:#e63946;">
+        <div class="film-type">Color Negative · 高感彩负 · ISO 800</div>
+        <h3>Kodak Portra 800</h3>
+        <p><strong>弱光与黄昏首选：</strong>感光度充足，适合在室内或日落弱光下手持拍摄。中画幅底片面积大，即便 ISO 800 颗粒依然细腻醇厚，氛围感无敌。</p>
+      </div>
+      
+      <div class="film-card" style="--film-stripe:#64748b;">
+        <div class="film-type">Black & White · 黑白经典 · ISO 400</div>
+        <h3>Kodak Tri-X 400 (400TX)</h3>
+        <p><strong>纪实摄影圣杯：</strong>影调硬朗，反差适中，颗粒质感无与伦比。极度耐操的宽容度，适合扫街、人文与高反差光影场景。</p>
+      </div>
+      
+      <div class="film-card" style="--film-stripe:#10b981;">
+        <div class="film-type">Color Negative · 日系青绿 · ISO 400</div>
+        <h3>Fujifilm PRO 400H</h3>
+        <p><strong>日系清冷与高光美学：</strong>冷色调偏青绿，高光部分通透干净，极为适合拍摄阴天、绿植、海边与静谧空间。</p>
+      </div>
+      
+      <div class="film-card" style="--film-stripe:#38bdf8;">
+        <div class="film-type">Black & White · 银盐宽容度 · ISO 400</div>
+        <h3>Ilford HP5 Plus 400</h3>
+        <p><strong>传统银盐灰阶之王：</strong>灰阶层次极其丰富细腻，高光与阴影过渡柔顺，极其适合配合不同的黑白显影液进行迫冲与个性化影调控制。</p>
+      </div>
+      
+      <div class="film-card" style="--film-stripe:#f59e0b;">
+        <div class="film-type">Color Reversal · 正片反转片 · ISO 50/100</div>
+        <h3>Fujifilm Velvia 50 / Provia 100F</h3>
+        <p><strong>风光极致色彩：</strong>在 6×7 观片台上看正片是胶片摄影最震撼的体验。色彩饱和度极高，分辨率爆表，但宽容度极窄（±0.5档），必须使用 672 的点测光精准测量。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ DOWNLOADS & LOCAL PATHS ══════════ -->
+  <section class="tab-content-panel" id="download">
+    <div class="level-header-banner">
+      <div class="level-meta-badge">RESOURCES & ARCHIVE PATHS</div>
+      <h2>📥 原版说明书下载与本地资产路径</h2>
+      <p>所有资料均已完好无损地归档在本地工作区及 GitHub 仓库中，可直接本地使用或上传百度网盘分享：</p>
+    </div>
+    
+    <div class="download-grid">
+      <div class="download-card">
+        <div>
+          <h3>📄 官方原版中文说明书 PDF</h3>
+          <div class="file-meta">80 页高清完整版 · 28.7 MB · RICOH / PENTAX 官方中文版</div>
+          <p style="font-size:14px; color:var(--text-secondary); margin-bottom:12px;">包含封面、机身各部位图解、装卷流程、测光系统、MLU预升、配件系统及故障速查全量内容。</p>
+          <div class="path-box" id="pdfPath">/Volumes/拓展坞 1T2022/2 Codex-Workspace/Codex-Workspace-Main/30-项目-网站/gengyueworks-Github/pentax67ii-manual/Pentax67II中文说明书.pdf</div>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <a href="Pentax67II中文说明书.pdf" download class="btn btn-primary" style="flex:1;">📥 直接下载 PDF</a>
+          <button class="btn btn-secondary" onclick="copyPath('pdfPath')">📋 复制路径</button>
+        </div>
+      </div>
+      
+      <div class="download-card">
+        <div>
+          <h3>📱 精装自制 EPUB 电子书</h3>
+          <div class="file-meta">18.0 MB · 适合 Apple Books / 微信读书 / Kindle 随时离线查阅</div>
+          <p style="font-size:14px; color:var(--text-secondary); margin-bottom:12px;">精心重构排版的 EPUB 电子书版，支持手机与 iPad 离线阅读，方便外出外拍随时随地查阅参数。</p>
+          <div class="path-box" id="epubPath">/Volumes/拓展坞 1T2022/2 Codex-Workspace/Codex-Workspace-Main/30-项目-网站/gengyueworks-Github/pentax67ii-manual/Pentax67II中文说明书.epub</div>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <a href="Pentax67II中文说明书.epub" download class="btn btn-primary" style="flex:1;">📥 直接下载 EPUB</a>
+          <button class="btn btn-secondary" onclick="copyPath('epubPath')">📋 复制路径</button>
+        </div>
+      </div>
+
+      <div class="download-card">
+        <div>
+          <h3>🌐 在线部署与 GitHub 仓库</h3>
+          <div class="file-meta">公开开源仓库 · 支持 GitHub Pages 免费直连</div>
+          <p style="font-size:14px; color:var(--text-secondary); margin-bottom:12px;">已部署上线，全球可访问：</p>
+          <div class="path-box">https://gengyueworks.github.io/pentax67ii-manual/</div>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:16px;">
+          <a href="https://github.com/gengyueworks/pentax67ii-manual" target="_blank" class="btn btn-secondary" style="flex:1;">🔗 GitHub 仓库</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══ LIGHTBOX MODAL ═══ -->
+<div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+  <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="放大查看">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
 </div>
 
-<div class="done-msg">
-  🎉 四课都学完了！剩下的就是多拍。<br>
-  每次拍完看底片 / 扫描件，对照你当时的设置——这是中画幅唯一的学习方式。
+<!-- ═══ TWEAKS PANEL ═══ -->
+<button class="tweaks-toggle-btn" onclick="toggleTweaks()">⚙️ Tweaks</button>
+<div class="tweaks-panel" id="tweaksPanel">
+  <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--card-border); padding-bottom:8px;">
+    <strong style="font-family:var(--font-mono); font-size:13px; color:var(--text-gold);">TWEAKS 控制台</strong>
+    <button onclick="toggleTweaks()" style="background:none; border:none; color:var(--text-muted); cursor:pointer;">✕</button>
+  </div>
+  
+  <div class="tweak-row">
+    <span>主题风格</span>
+    <select id="themeSelect" onchange="setTheme(this.value)" style="background:var(--bg-tertiary); color:var(--text-primary); border:1px solid var(--card-border); padding:4px 8px; border-radius:4px;">
+      <option value="dark">Darkroom 黑金</option>
+      <option value="paper">Warm Paper 暖纸</option>
+    </select>
+  </div>
+  
+  <div class="tweak-row">
+    <span>说明书阅览模式</span>
+    <select id="modeSelect" onchange="setSpreadMode(this.value==='spread')" style="background:var(--bg-tertiary); color:var(--text-primary); border:1px solid var(--card-border); padding:4px 8px; border-radius:4px;">
+      <option value="single">单页精读</option>
+      <option value="spread">双页跨页</option>
+    </select>
+  </div>
+  
+  <div class="tweak-row">
+    <span>重置学习打勾</span>
+    <button onclick="resetProgress()" class="v-btn" style="padding:2px 8px; font-size:11px;">清空进度</button>
+  </div>
 </div>
 
-</div>
-
-<!-- ══════════ MANUAL VIEWER ══════════ -->
-<div class="level" id="levelManual">
-
-<h2 style="font-size:20px; margin-bottom:16px;">📖 原版说明书 80 页完整翻看</h2>
-
-<div class="g-thumbs" id="thumbGrid"></div>
-
-<div class="gallery-nav">
-  <button onclick="gp(1)">首页</button>
-  <button onclick="gp(gc-1)">← 上一页</button>
-  <span class="pi" id="pi">第 1 / 80 页</span>
-  <button onclick="gp(gc+1)">下一页 →</button>
-  <button onclick="gp(80)">末页</button>
-</div>
-<div id="galleryContainer"></div>
-<div class="gallery-nav">
-  <button onclick="gp(gc-1)">← 上一页</button>
-  <span class="pi">第 <span id="pi2">1</span> / 80 页</span>
-  <button onclick="gp(gc+1)">下一页 →</button>
-</div>
-
-</div>
-
-</div><!-- /max -->
-
+<!-- ═══ SCRIPTS ═══ -->
 <script>
-/* ── Level Tabs ── */
-function switchTab(n) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.level == n));
-  document.querySelectorAll('.level').forEach(l => l.classList.toggle('active', l.id == 'level' + (n == 'manual' ? 'Manual' : n)));
-  document.getElementById('level' + (n == 'manual' ? 'Manual' : n)).scrollIntoView({behavior:'smooth', block:'start'});
-}
-document.querySelectorAll('.tab').forEach(t => t.onclick = () => switchTab(t.dataset.level));
+/* ─── State Management ─── */
+const TOTAL_PAGES = 80;
+let currentPage = 1;
+let isSpreadMode = false;
+const CHECK_STORAGE_KEY = "pentax67_checked_lessons";
 
-/* ── Checkbox toggles ── */
-function toggle(el) { el.classList.toggle('done'); }
-
-/* ── Gallery ── */
-const TOTAL=80; let gc=1;
-const gcont=document.getElementById('galleryContainer');
-const tg=document.getElementById('thumbGrid');
-
-for (let i=1;i<=TOTAL;i++) {
-  const d=document.createElement('div');
-  d.className='g-img'+(i===1?' active':'');
-  d.id='g_'+i;
-  const n=String(i).padStart(2,'0');
-  d.innerHTML='<img src="pentax67-manual/page_'+n+'.jpg" alt="第'+i+'页" loading="lazy"><div style="font-size:12px;color:var(--text-light);margin-top:4px;">第 '+i+'/'+TOTAL+' 页</div>';
-  gcont.appendChild(d);
-  const th=document.createElement('img');
-  th.src='pentax67-manual/page_'+n+'.jpg';
-  th.alt='第'+i+'页'; th.loading='lazy';
-  th.className=i===1?'act':'';
-  th.onclick=()=>gp(i);
-  tg.appendChild(th);
+/* ─── Tab Switching ─── */
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === tabId);
+  });
+  document.querySelectorAll('.tab-content-panel').forEach(panel => {
+    panel.classList.toggle('active', panel.id === tabId);
+  });
+  const target = document.getElementById(tabId);
+  if (target) {
+    const navOffset = 130;
+    const elementPosition = target.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+  }
 }
-function gp(n) {
-  if(n<1||n>80)return;
-  document.getElementById('g_'+gc).classList.remove('active');
-  document.getElementById('g_'+n).classList.add('active');
-  tg.querySelectorAll('img')[gc-1].classList.remove('act');
-  tg.querySelectorAll('img')[n-1].classList.add('act');
-  gc=n; document.getElementById('pi').textContent='第 '+n+'/'+TOTAL+' 页';
-  document.getElementById('pi2').textContent=n;
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.onclick = () => switchTab(btn.dataset.tab);
+});
+
+/* ─── Checkbox / Progress System ─── */
+function getCheckedItems() {
+  try {
+    return JSON.parse(localStorage.getItem(CHECK_STORAGE_KEY) || "[]");
+  } catch (e) {
+    return [];
+  }
 }
+
+function updateProgressHUD() {
+  const checked = getCheckedItems();
+  const allChecks = document.querySelectorAll('.lesson-check-toggle');
+  const total = allChecks.length;
+  const count = checked.length;
+  
+  allChecks.forEach(btn => {
+    const id = btn.id.replace('chk_', '');
+    const isDone = checked.includes(id);
+    btn.classList.toggle('checked', isDone);
+    const card = document.getElementById('card_' + id);
+    if (card) card.classList.toggle('completed', isDone);
+  });
+  
+  const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = `${count}/${total}`;
+}
+
+function toggleCheck(lessonId) {
+  let checked = getCheckedItems();
+  if (checked.includes(lessonId)) {
+    checked = checked.filter(id => id !== lessonId);
+  } else {
+    checked.push(lessonId);
+  }
+  localStorage.setItem(CHECK_STORAGE_KEY, JSON.stringify(checked));
+  updateProgressHUD();
+}
+
+function resetProgress() {
+  if (confirm("确定要清空所有已掌握的学习进度吗？")) {
+    localStorage.removeItem(CHECK_STORAGE_KEY);
+    updateProgressHUD();
+  }
+}
+
+/* ─── 80-Page Manual Viewer ─── */
+function initThumbStrip() {
+  const track = document.getElementById('thumbStripTrack');
+  track.innerHTML = '';
+  for (let i = 1; i <= TOTAL_PAGES; i++) {
+    const n = String(i).padStart(2, '0');
+    const item = document.createElement('div');
+    item.className = 'thumb-strip-item' + (i === 1 ? ' active' : '');
+    item.id = 'thumb_' + i;
+    item.onclick = () => jumpToPage(i);
+    item.innerHTML = `
+      <img src="pentax67-manual/page_${n}.jpg" alt="P.${i}" loading="lazy">
+      <div class="thumb-label">P.${i}</div>
+    `;
+    track.appendChild(item);
+  }
+}
+
+function updatePageDisplay() {
+  const n1 = String(currentPage).padStart(2, '0');
+  const img1 = document.getElementById('primaryPageImg');
+  img1.src = `pentax67-manual/page_${n1}.jpg`;
+  img1.alt = `说明书第 ${currentPage} 页`;
+  
+  const img2 = document.getElementById('secondaryPageImg');
+  if (isSpreadMode && currentPage < TOTAL_PAGES) {
+    const nextPage = currentPage + 1;
+    const n2 = String(nextPage).padStart(2, '0');
+    img2.src = `pentax67-manual/page_${n2}.jpg`;
+    img2.alt = `说明书第 ${nextPage} 页`;
+    img2.style.display = 'block';
+    document.getElementById('pageIndicatorBadge').textContent = `第 ${currentPage}-${nextPage} / ${TOTAL_PAGES} 页 (跨页模式)`;
+  } else {
+    img2.style.display = 'none';
+    document.getElementById('pageIndicatorBadge').textContent = `第 ${currentPage} / ${TOTAL_PAGES} 页`;
+  }
+  
+  // Highlight thumbnail
+  document.querySelectorAll('.thumb-strip-item').forEach(item => item.classList.remove('active'));
+  const activeThumb = document.getElementById('thumb_' + currentPage);
+  if (activeThumb) {
+    activeThumb.classList.add('active');
+    activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+}
+
+function jumpToPage(n) {
+  if (n < 1) n = 1;
+  if (n > TOTAL_PAGES) n = TOTAL_PAGES;
+  currentPage = n;
+  updatePageDisplay();
+}
+
+function nextPage() {
+  const step = isSpreadMode ? 2 : 1;
+  if (currentPage + step <= TOTAL_PAGES) {
+    jumpToPage(currentPage + step);
+  } else if (currentPage < TOTAL_PAGES) {
+    jumpToPage(TOTAL_PAGES);
+  }
+}
+
+function prevPage() {
+  const step = isSpreadMode ? 2 : 1;
+  if (currentPage - step >= 1) {
+    jumpToPage(currentPage - step);
+  } else if (currentPage > 1) {
+    jumpToPage(1);
+  }
+}
+
+function toggleSpreadMode() {
+  setSpreadMode(!isSpreadMode);
+}
+
+function setSpreadMode(val) {
+  isSpreadMode = val;
+  document.getElementById('spreadToggleBtn').textContent = isSpreadMode ? "📄 单页精读模式" : "📖 双页展开模式";
+  const sel = document.getElementById('modeSelect');
+  if (sel) sel.value = isSpreadMode ? "spread" : "single";
+  updatePageDisplay();
+}
+
+/* ─── Lightbox Modal ─── */
+function openLightbox(src, pageNum) {
+  const modal = document.getElementById('lightboxModal');
+  const img = document.getElementById('lightboxImg');
+  const caption = document.getElementById('lightboxCaption');
+  img.src = src;
+  caption.textContent = pageNum ? `理光官方中文说明书 · 第 ${pageNum} 页` : '';
+  modal.classList.add('active');
+}
+
+function openCurrentInLightbox() {
+  const n = String(currentPage).padStart(2, '0');
+  openLightbox(`pentax67-manual/page_${n}.jpg`, currentPage);
+}
+
+function openSecondaryInLightbox() {
+  if (isSpreadMode && currentPage < TOTAL_PAGES) {
+    const n = String(currentPage + 1).padStart(2, '0');
+    openLightbox(`pentax67-manual/page_${n}.jpg`, currentPage + 1);
+  }
+}
+
+function closeLightbox(e) {
+  document.getElementById('lightboxModal').classList.remove('active');
+}
+
+/* ─── Theme Toggle ─── */
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('pentax67_theme', theme);
+  const sel = document.getElementById('themeSelect');
+  if (sel) sel.value = theme;
+}
+
+document.getElementById('themeToggle').onclick = () => {
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  const next = current === 'dark' ? 'paper' : 'dark';
+  setTheme(next);
+};
+
+/* ─── Tweaks Panel ─── */
+function toggleTweaks() {
+  document.getElementById('tweaksPanel').classList.toggle('open');
+}
+
+/* ─── Copy Path Helper ─── */
+function copyPath(elementId) {
+  const text = document.getElementById(elementId).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert("已复制绝对路径到剪贴板！可直接在访达中按 ⌘+Shift+G 粘贴定位。");
+  }).catch(() => {
+    prompt("请手动复制路径：", text);
+  });
+}
+
+/* ─── Keyboard Navigation ─── */
+window.addEventListener('keydown', (e) => {
+  if (document.getElementById('lightboxModal').classList.contains('active')) {
+    if (e.key === 'Escape') closeLightbox();
+    return;
+  }
+  if (e.key === 'ArrowLeft') prevPage();
+  if (e.key === 'ArrowRight') nextPage();
+  if (e.key === 'Home') jumpToPage(1);
+  if (e.key === 'End') jumpToPage(TOTAL_PAGES);
+});
+
+/* ─── Init on Load ─── */
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('pentax67_theme') || 'dark';
+  setTheme(savedTheme);
+  initThumbStrip();
+  updatePageDisplay();
+  updateProgressHUD();
+});
 </script>
 </body>
 </html>
