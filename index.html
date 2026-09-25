@@ -974,6 +974,303 @@ tr:hover td {
 }
 
 /* ─── Responsive ─── */
+/* ─── Mobile First & Touch Ergonomics (iOS / Android HIG Compliant) ─── */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  
+  body {
+    padding-bottom: 60px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .site-header {
+    height: 56px;
+  }
+  .header-inner {
+    height: 56px;
+  }
+  .brand-logo-mark {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .brand-name {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .brand-sub {
+    font-size: 9px;
+  }
+  
+  .theme-switch-pill {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  /* Hero */
+  .hero {
+    padding: 36px 0 28px;
+  }
+  .hero-tag-wrap {
+    font-size: 10px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  
+  .hero-specs-bar {
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .spec-pill {
+    padding: 4px 8px;
+    font-size: 11px;
+    flex: 1 1 calc(50% - 6px);
+    justify-content: center;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 46px;
+    font-size: 14px;
+  }
+  
+  /* Navigation Tabs HUD */
+  .nav-tabs-wrapper {
+    top: 56px;
+    padding: 6px 0;
+  }
+  .nav-tabs {
+    padding: 0 4px;
+  }
+  .tab-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    min-height: 38px;
+  }
+  
+  /* Content Panels */
+  .tab-content-panel {
+    padding: 24px 0 60px;
+  }
+  
+  /* Story Card */
+  .legend-story-card {
+    padding: 20px 18px;
+    margin-bottom: 24px;
+    border-radius: var(--radius-md);
+  }
+  .story-title {
+    font-size: 20px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+  .story-body {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .story-quote {
+    padding: 12px 14px;
+    font-size: 13px;
+    margin: 14px 0;
+  }
+  
+  /* Wizard Stepper Pills */
+  .wizard-stepper-wrap {
+    margin-bottom: 18px;
+  }
+  .wizard-step-pills {
+    padding: 4px 2px 10px;
+    gap: 6px;
+  }
+  .step-pill-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    min-height: 38px;
+  }
+  
+  /* Step Content Card */
+  .step-content-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+  }
+  .step-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .step-card-title {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  .step-badge {
+    align-self: flex-start;
+  }
+  
+  .lesson-body {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .lesson-body ul, .lesson-body ol {
+    margin: 10px 0 14px 18px;
+  }
+  .lesson-body li {
+    margin-bottom: 8px;
+  }
+  
+  /* Inset Boxes */
+  .tip-box, .tip, .warn-box, .warn {
+    padding: 12px 14px;
+    font-size: 13px;
+    margin: 14px 0;
+  }
+  
+  /* Image Group: Stack vertically on mobile with full width */
+  .img-group {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .manual-inline-preview {
+    border-radius: 8px;
+  }
+  .manual-img-caption {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  
+  /* Step Navigation Buttons */
+  .step-footer-nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 16px;
+  }
+  .step-footer-nav .btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 15px;
+  }
+  
+  /* 80-Page Manual Viewer on Mobile */
+  .manual-viewer-wrap {
+    padding: 16px 12px;
+    border-radius: var(--radius-md);
+  }
+  .chapter-matrix {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .chapter-btn {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+  
+  .viewer-toolbar {
+    padding: 10px;
+    gap: 10px;
+  }
+  .viewer-nav-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .viewer-nav-group .v-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+    min-height: 38px;
+    flex: 1;
+  }
+  .page-indicator-badge {
+    font-size: 12px;
+    padding: 6px 8px;
+    text-align: center;
+    flex: 1.5;
+  }
+  
+  .page-display-frame {
+    min-height: 360px;
+    padding: 8px;
+    margin-bottom: 14px;
+    touch-action: pan-y pinch-zoom;
+  }
+  .manual-page-img {
+    max-height: 65vh;
+  }
+  
+  .thumb-strip-track {
+    padding: 8px 4px;
+    gap: 6px;
+  }
+  .thumb-strip-item {
+    flex: 0 0 56px;
+    height: 76px;
+  }
+  
+  /* Lightbox */
+  .lightbox-modal {
+    padding: 12px;
+  }
+  .lightbox-img-wrap {
+    max-width: 98vw;
+    max-height: 90vh;
+  }
+  .lightbox-close {
+    top: -44px;
+    right: 4px;
+    font-size: 32px;
+    padding: 8px;
+  }
+  
+  /* Downloads */
+  .download-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .download-card {
+    padding: 20px 16px;
+  }
+  .path-box {
+    font-size: 11px;
+    padding: 10px;
+  }
+}
+
+/* Extra small mobile adjustments */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 28px;
+  }
+  .chapter-matrix {
+    grid-template-columns: 1fr;
+  }
+  .spec-pill {
+    flex: 1 1 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-title { font-size: 30px; }
   .legend-story-card { padding: 24px; }
@@ -2107,11 +2404,45 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'End') jumpToPage(TOTAL_PAGES);
 });
 
+
+/* ─── Mobile Swipe Gesture for Manual Viewer ─── */
+let touchStartX = 0;
+let touchEndX = 0;
+
+function initTouchSwipe() {
+  const frame = document.querySelector('.page-display-frame');
+  if (!frame) return;
+  
+  frame.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  
+  frame.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+}
+
+function handleSwipe() {
+  const threshold = 45; // min swipe distance in px
+  const diff = touchEndX - touchStartX;
+  if (Math.abs(diff) < threshold) return;
+  
+  if (diff < 0) {
+    // Swipe Left -> Next Page
+    nextPage();
+  } else {
+    // Swipe Right -> Prev Page
+    prevPage();
+  }
+}
+
 /* ─── Init on Load ─── */
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('pentax67_theme') || 'paper';
   setTheme(savedTheme);
   initThumbStrip();
+  initTouchSwipe();
   updatePageDisplay();
 });
 </script>
