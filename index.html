@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="zh-CN" data-theme="paper">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -14,38 +14,39 @@
 <style>
 /* ─── CSS Variables System ─── */
 :root {
-  --bg-primary: #0a0b0d;
-  --bg-secondary: #121418;
-  --bg-tertiary: #191c22;
-  --card-bg: #14161c;
-  --card-hover: #181b22;
-  --card-border: rgba(255, 255, 255, 0.08);
-  --card-border-strong: rgba(255, 255, 255, 0.16);
-  --card-border-gold: rgba(212, 175, 55, 0.4);
+  /* Default: Paper / Light (High-End Gallery Edition) */
+  --bg-primary: #fcfbfa;
+  --bg-secondary: #f4f1ea;
+  --bg-tertiary: #eae4d7;
+  --card-bg: #ffffff;
+  --card-hover: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-border-strong: rgba(0, 0, 0, 0.16);
+  --card-border-gold: rgba(180, 83, 9, 0.35);
   
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --text-gold: #d4af37;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+  --text-gold: #b45309;
   
-  --accent-gold: #d4af37;
-  --accent-gold-hover: #e6c86e;
-  --accent-gold-bg: rgba(212, 175, 55, 0.12);
-  --accent-red: #e63946;
-  --accent-red-bg: rgba(230, 57, 70, 0.12);
-  --accent-green: #10b981;
-  --accent-green-bg: rgba(16, 185, 129, 0.12);
-  --accent-blue: #38bdf8;
-  --accent-blue-bg: rgba(56, 189, 248, 0.12);
+  --accent-gold: #b45309;
+  --accent-gold-hover: #92400e;
+  --accent-gold-bg: rgba(180, 83, 9, 0.08);
+  --accent-red: #dc2626;
+  --accent-red-bg: rgba(220, 38, 38, 0.08);
+  --accent-green: #059669;
+  --accent-green-bg: rgba(5, 150, 105, 0.08);
+  --accent-blue: #0284c7;
+  --accent-blue-bg: rgba(2, 132, 199, 0.08);
   
   --font-serif: "Cinzel", "Newsreader", Georgia, "Noto Serif SC", "Songti SC", serif;
   --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-mono: "Space Grotesk", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
-  --shadow-gold: 0 0 24px rgba(212, 175, 55, 0.18);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 35px -5px rgba(0, 0, 0, 0.08), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+  --shadow-gold: 0 0 20px rgba(180, 83, 9, 0.15);
   
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -53,37 +54,37 @@
   --radius-xl: 24px;
 }
 
-[data-theme="paper"] {
-  --bg-primary: #f6f3eb;
-  --bg-secondary: #ebe5d8;
-  --bg-tertiary: #dfd7c7;
-  --card-bg: #ffffff;
-  --card-hover: #fcfbfa;
-  --card-border: rgba(60, 45, 25, 0.12);
-  --card-border-strong: rgba(60, 45, 25, 0.24);
-  --card-border-gold: rgba(154, 103, 0, 0.4);
+[data-theme="dark"] {
+  /* Darkroom Edition: Refined Carbon & Brass Gold */
+  --bg-primary: #111215;
+  --bg-secondary: #181a1f;
+  --bg-tertiary: #22252c;
+  --card-bg: #191b21;
+  --card-hover: #1e2128;
+  --card-border: rgba(255, 255, 255, 0.09);
+  --card-border-strong: rgba(255, 255, 255, 0.18);
+  --card-border-gold: rgba(212, 175, 55, 0.45);
   
-  --text-primary: #1c1917;
-  --text-secondary: #57534e;
-  --text-muted: #8c857b;
-  --text-gold: #9a6700;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-gold: #eab308;
   
-  --accent-gold: #9a6700;
-  --accent-gold-hover: #b87c02;
-  --accent-gold-bg: rgba(154, 103, 0, 0.1);
-  --accent-red: #b91c1c;
-  --accent-red-bg: rgba(185, 28, 28, 0.08);
-  --accent-green: #047857;
-  --accent-green-bg: rgba(4, 120, 87, 0.08);
-  --accent-blue: #0369a1;
-  --accent-blue-bg: rgba(3, 105, 161, 0.08);
+  --accent-gold: #eab308;
+  --accent-gold-hover: #facc15;
+  --accent-gold-bg: rgba(234, 179, 8, 0.12);
+  --accent-red: #ef4444;
+  --accent-red-bg: rgba(239, 68, 68, 0.12);
+  --accent-green: #10b981;
+  --accent-green-bg: rgba(16, 185, 129, 0.12);
+  --accent-blue: #38bdf8;
+  --accent-blue-bg: rgba(56, 189, 248, 0.12);
   
-  --shadow-sm: 0 2px 8px rgba(50, 40, 30, 0.06);
-  --shadow-md: 0 8px 24px rgba(50, 40, 30, 0.1);
-  --shadow-lg: 0 16px 48px rgba(50, 40, 30, 0.15);
-  --shadow-gold: 0 0 24px rgba(154, 103, 0, 0.12);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 0 24px rgba(234, 179, 8, 0.2);
 }
-
 /* ─── Reset & Base ─── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -126,7 +127,7 @@ body {
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 [data-theme="paper"] .site-header {
-  background: rgba(246, 243, 235, 0.88);
+  background: rgba(252, 251, 250, 0.9);
 }
 
 .header-inner {
@@ -218,6 +219,25 @@ body {
   transition: width 0.3s ease;
 }
 
+.theme-switch-pill {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border-strong);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+.theme-switch-pill:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-1px);
+}
+
 .icon-btn {
   background: var(--bg-secondary);
   border: 1px solid var(--card-border);
@@ -248,6 +268,24 @@ body {
 }
 
 .hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at center, rgba(180, 83, 9, 0.04) 0%, transparent 70%),
+    linear-gradient(to right, var(--card-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--card-border) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+[data-theme="dark"] .hero-bg-grid {
+  background-image: 
+    radial-gradient(circle at center, rgba(234, 179, 8, 0.08) 0%, transparent 70%),
+    linear-gradient(to right, var(--card-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--card-border) 1px, transparent 1px);
+  opacity: 0.4;
+}
+/* dummy */ .hero-bg-grid-old {
   position: absolute;
   inset: 0;
   background-image: 
@@ -283,7 +321,9 @@ body {
   line-height: 1.15;
   margin-bottom: 16px;
   color: var(--text-primary);
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+[data-theme="dark"] .hero-title {
+  text-shadow: 0 4px 24px rgba(0,0,0,0.6);
 }
 
 .hero-sub {
@@ -375,7 +415,7 @@ body {
   padding: 8px 0;
 }
 [data-theme="paper"] .nav-tabs-wrapper {
-  background: rgba(246, 243, 235, 0.95);
+  background: rgba(252, 251, 250, 0.95);
 }
 
 .nav-tabs {
@@ -1007,7 +1047,18 @@ tr:hover td {
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
-  .hero-title { font-size: 28px; }
+  .hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+[data-theme="dark"] .hero-title {
+  text-shadow: 0 4px 24px rgba(0,0,0,0.6);
+}
   .lesson-card { padding: 18px; }
   .chapter-matrix { grid-template-columns: 1fr 1fr; }
   .viewer-toolbar { flex-direction: column; align-items: stretch; }
@@ -1037,7 +1088,10 @@ tr:hover td {
         <strong id="progressText" style="color:var(--text-gold)">0/20</strong>
       </div>
       
-      <button class="icon-btn" id="themeToggle" title="切换暗房黑金 / 银盐暖纸主题">🌓</button>
+      <button class="theme-switch-pill" id="themeToggle" title="切换明亮画册白 / 暗室黑金">
+  <span id="themeIcon">☀️</span>
+  <span id="themeLabel" style="font-size:12px; font-weight:600; font-family:var(--font-mono);">银盐画册白</span>
+</button>
       <button class="icon-btn" onclick="switchTab('manual')" title="直接查看 80 页说明书">📖</button>
     </div>
   </div>
@@ -2048,6 +2102,18 @@ function setTheme(theme) {
   localStorage.setItem('pentax67_theme', theme);
   const sel = document.getElementById('themeSelect');
   if (sel) sel.value = theme;
+  
+  const icon = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
+  if (icon && label) {
+    if (theme === 'dark') {
+      icon.textContent = '🌙';
+      label.textContent = '暗室黑金';
+    } else {
+      icon.textContent = '☀️';
+      label.textContent = '银盐画册白';
+    }
+  }
 }
 
 document.getElementById('themeToggle').onclick = () => {
@@ -2085,7 +2151,7 @@ window.addEventListener('keydown', (e) => {
 
 /* ─── Init on Load ─── */
 document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('pentax67_theme') || 'dark';
+  const savedTheme = localStorage.getItem('pentax67_theme') || 'paper';
   setTheme(savedTheme);
   initThumbStrip();
   updatePageDisplay();
