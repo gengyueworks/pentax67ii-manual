@@ -1511,6 +1511,7 @@ body {
 <div class="nav-tabs-wrapper">
   <div class="container">
     <div class="nav-tabs" id="navTabs">
+      <button class="tab-btn" data-tab="troubleshoot" style="background:#FFEBEB; color:#D32F2F; font-weight:800; border-color:#FFCDD2;">🚨 00·装卷急救排查</button>
       <button class="tab-btn active" data-tab="level1">🏃 01·启航准备</button>
       <button class="tab-btn" data-tab="level2">📸 02·首卷实战</button>
       <button class="tab-btn" data-tab="level3">🎯 03·精准曝光</button>
@@ -1524,6 +1525,121 @@ body {
 
 <!-- ═══ MAIN CONTENT ═══ -->
 <main class="container">
+
+  <!-- ══════════ PHASE 0: 装卷急救排查 ══════════ -->
+  <section class="tab-content-panel" id="troubleshoot">
+    <div class="legend-story-card" style="padding:24px 28px; margin-bottom:24px; border-left:4px solid #D32F2F;">
+      <div class="story-header-tag" style="color:#D32F2F;">PENTAX 67II 旅途装卷急救指南 · 官方原厂对应</div>
+      <h2 class="story-title" style="font-size:22px; margin-bottom:8px; color:#111;">相机没坏，请按顺序排查这 4 步</h2>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:1.6;">
+        开盖状态下把箭头对准红三角只是起点。<strong>对准后必须关严后盖，右手大拇指持续用力拨动卷片杆，直到自动锁死停住</strong>，肩屏跳出大字【1】，相机才会真正进入拍摄状态。
+      </p>
+    </div>
+
+    <div class="step-content-card active" style="margin-bottom:20px;">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>第 1 步：检查底部右侧轴扣（你说的“右边拨轮”）</span>
+        </div>
+        <span class="step-badge">📖 说明书第 24 页</span>
+      </div>
+      <div class="lesson-body">
+        <p>相机底盘右侧有一个锁空卷轴的圆形旋钮（卷轴槽锁扣）。</p>
+        <div class="warn-box">
+          <strong>⚠️ 排查要点：</strong><br>
+          这个扣子如果<strong>没有顶到底卡进空轴十字槽</strong>，空卷轴本身就是锁死的，手柄肯定拉不动！<br>
+          <strong>做法：</strong>打开底盘上的折叠小把手，<strong>用力往里推到底，顺着箭头方向旋转锁紧</strong>。如果顶不进去，轻轻用手指转动一下卷仓里的空轴对齐孔位，它就会“嗒”地弹入槽内到位。
+        </div>
+        <div class="manual-figure-card">
+          <img src="pentax67-manual/page_24.jpg" alt="说明书第 24 页 · 空轴安装与锁紧" onclick="openLightbox('pentax67-manual/page_24.jpg', 24)">
+          <div class="manual-figure-caption">
+            <strong>📖 说明书第 24 页第 4-6 步：空轴装入后必须按下并旋转轴扣锁紧</strong>
+            <span>点击查看大图 ↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-content-card active" style="margin-bottom:20px;">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>第 2 步：检查后盖内侧的“压片板”档位</span>
+        </div>
+        <span class="step-badge">📖 说明书第 23 页</span>
+      </div>
+      <div class="lesson-body">
+        <p>打开相机后背，观察后盖内侧那一整块平整的金属压片板。</p>
+        <div class="warn-box">
+          <strong>⚠️ 说明书原厂警告：</strong><br>
+          “如果使用 120 胶卷时错误选择了 220 压片位置，<strong>上片及过片时便会出现困难（阻力极大、拉不动）</strong>。”<br>
+          <strong>做法：</strong>观察压片板右边的小方窗，<strong>必须明确显示【120】</strong>。如果停在【220】或中间卡着，用手指按住压片板向 120 方向推到底卡紧。
+        </div>
+        <div class="manual-figure-card">
+          <img src="pentax67-manual/page_23.jpg" alt="说明书第 23 页 · 压片板切换" onclick="openLightbox('pentax67-manual/page_23.jpg', 23)">
+          <div class="manual-figure-caption">
+            <strong>📖 说明书第 23 页：120 胶卷必须滑到 120 档位</strong>
+            <span>点击查看大图 ↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-content-card active" style="margin-bottom:20px;">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>第 3 步：关上后盖，继续连续过卷直到出现数字 1</span>
+        </div>
+        <span class="step-badge">📖 说明书第 27 页</span>
+      </div>
+      <div class="lesson-body">
+        <p><strong>为什么关上盖子屏幕没数字、拍不了？</strong></p>
+        <div class="tip-box">
+          <strong>💡 核心机制（看说明书第 27 页第 13 步）：</strong><br>
+          开盖对齐红三角只是起点，<strong>此时底片还没卷到拍摄位置！</strong>相机为了防止空拍，此时快门是自锁的，屏幕上也绝不会显示张数。<br><br>
+          <strong>操作方法：</strong><br>
+          1. 关严后盖（必须听到清脆咔哒锁严声）。<br>
+          2. 将机身电源拨盘开到 <strong>i (ON)</strong> 位置。<br>
+          3. <strong>右手大拇指继续连续拨动卷片手柄 2~3 次</strong>，一直拨到手柄彻底锁死停住！<br>
+          4. 此时抬头看液晶肩屏，屏幕上会正式跳出 <strong>大字【1】</strong> 与 <strong>【FILM】</strong> 标志。<br>
+          5. 只有出现【1】时，快门才正式解锁，就可以按快门拍摄了。
+        </div>
+        <div class="manual-figure-card">
+          <img src="pentax67-manual/page_27.jpg" alt="说明书第 27 页 · 关盖过卷跳出第1格" onclick="openLightbox('pentax67-manual/page_27.jpg', 27)">
+          <div class="manual-figure-caption">
+            <strong>📖 说明书第 27 页第 13-14 步：关上机背持续过卷，直到锁定并显示第 1 格</strong>
+            <span>点击查看大图 ↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-content-card active" style="margin-bottom:20px;">
+      <div class="step-card-header">
+        <div class="step-card-title">
+          <span>第 4 步：如果现在手柄已经卡死扳不动了，做一次机身复位</span>
+        </div>
+        <span class="step-badge">📖 说明书第 28 页</span>
+      </div>
+      <div class="lesson-body">
+        <p>如果你之前尝试过程中导致快门与过卷机构卡在半路上，按原厂方法做一次机械复位：</p>
+        <div class="tip-box">
+          <strong>复位步骤：</strong><br>
+          1. 打开相机后盖。<br>
+          2. 找到快门旁边的<strong>多重曝光杆（ME 杆）</strong>，用手指按住不要松。<br>
+          3. <strong>按住 ME 杆的同时，过卷扳手掰到底上弦，然后按一下快门</strong>。<br>
+          4. 听到快门咔嚓释放后，机身就复位了。<br>
+          5. 重新盖紧后盖，继续过卷直到液晶屏跳出数字【1】。
+        </div>
+        <div class="manual-figure-card">
+          <img src="pentax67-manual/page_28.jpg" alt="说明书第 28 页 · 开盖释放快门复位方法" onclick="openLightbox('pentax67-manual/page_28.jpg', 28)">
+          <div class="manual-figure-caption">
+            <strong>📖 说明书第 28 页倒数第 1 条：打开机背按住多重曝光按钮可释放快门复位</strong>
+            <span>点击查看大图 ↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ══════════ PHASE 1: 启航准备 · 认识与装配机身 ══════════ -->
   <section class="tab-content-panel active" id="level1">
@@ -2664,6 +2780,14 @@ function switchTab(tabId) {
     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
   }
 }
+
+// 检查 URL hash 自动切换 Tab (如 #troubleshoot)
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.replace('#', '');
+  if (hash && document.getElementById(hash)) {
+    switchTab(hash);
+  }
+});
 
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.onclick = () => switchTab(btn.dataset.tab);
