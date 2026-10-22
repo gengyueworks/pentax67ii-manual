@@ -3,369 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Pentax 67II 装卷急救与故障排查指南</title>
+  <title>Pentax 67II 装卷急救步骤</title>
   <style>
-    :root {
-      --bg: #F9F9F8;
-      --card-bg: #FFFFFF;
-      --text: #1C1C1E;
-      --text-sec: #636366;
-      --accent: #E03E3E;
-      --blue: #0066CC;
-      --green: #2E7D32;
-      --border: #E5E5EA;
-      --radius: 14px;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      -webkit-font-smoothing: antialiased;
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+      background: #FFFFFF;
+      color: #111111;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
-      padding: 16px;
-      padding-bottom: 60px;
-    }
-
-    .container {
-      max-width: 680px;
+      padding: 16px 14px 60px 14px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    /* 顶部急救横幅 */
-    .emergency-banner {
-      background: linear-gradient(135deg, #FFF3CD, #FFEAA7);
-      border: 1px solid #FFE082;
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    /* 顶部重点提示 */
+    .top-alert {
+      border: 2px solid #111111;
+      padding: 14px;
+      margin-bottom: 24px;
+      background: #FAFAFA;
     }
 
-    .emergency-title {
-      font-size: 19px;
-      font-weight: 700;
-      color: #856404;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .top-alert h1 {
+      font-size: 18px;
+      font-weight: 900;
       margin-bottom: 6px;
     }
 
-    .emergency-desc {
+    .top-alert p {
       font-size: 14px;
-      color: #664D03;
-      line-height: 1.5;
+      color: #333333;
     }
 
-    /* 卡片体系 */
-    .step-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    /* 步骤区块 */
+    .step-section {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #E5E5E5;
     }
 
-    .step-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-      padding-bottom: 12px;
-      border-bottom: 1px dashed var(--border);
-    }
-
-    .step-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .step-badge .num {
-      background: var(--blue);
-      color: #FFF;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-    }
-
-    .manual-tag {
-      font-size: 12px;
-      font-weight: 600;
-      background: #EEF4FA;
-      color: var(--blue);
-      padding: 4px 10px;
-      border-radius: 20px;
-      text-decoration: none;
-    }
-
-    .step-content p {
-      font-size: 15px;
-      margin-bottom: 12px;
-      color: #2C2C2E;
-    }
-
-    .step-content strong {
-      color: #000;
-    }
-
-    .highlight-box {
-      background: #F4F8FA;
-      border-left: 4px solid var(--blue);
-      padding: 12px 14px;
-      border-radius: 4px 8px 8px 4px;
-      font-size: 14px;
-      color: #1A365D;
-      margin: 14px 0;
-      line-height: 1.5;
-    }
-
-    .warning-box {
-      background: #FFF5F5;
-      border-left: 4px solid var(--accent);
-      padding: 12px 14px;
-      border-radius: 4px 8px 8px 4px;
-      font-size: 14px;
-      color: #742A2A;
-      margin: 14px 0;
-      line-height: 1.5;
-    }
-
-    /* 原厂说明书原图插图 */
-    .img-wrap {
-      margin: 16px 0 8px 0;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid #EAEAEA;
-      background: #FAFAFA;
-      text-align: center;
-    }
-
-    .img-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .img-caption {
-      font-size: 12px;
-      color: var(--text-sec);
-      padding: 8px 12px;
-      background: #F2F2F7;
-      text-align: center;
-      border-top: 1px solid #EAEAEA;
-    }
-
-    /* 快捷清单 */
-    .checklist {
-      list-style: none;
-      margin: 12px 0;
-    }
-
-    .checklist li {
-      position: relative;
-      padding-left: 26px;
+    .step-title {
+      font-size: 17px;
+      font-weight: 800;
       margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .step-desc {
       font-size: 15px;
+      color: #222222;
+      margin-bottom: 12px;
+    }
+
+    .point-box {
+      background: #F5F5F7;
+      padding: 10px 12px;
+      font-size: 14px;
+      margin-bottom: 14px;
       line-height: 1.5;
     }
 
-    .checklist li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 18px;
-      height: 18px;
-      background: #E8F5E9;
-      color: var(--green);
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: bold;
+    .point-box strong {
+      color: #D32F2F;
     }
 
-    .btn-manual {
-      display: block;
+    /* 说明书原图展示 */
+    .img-box {
       width: 100%;
-      text-align: center;
-      background: #1C1C1E;
-      color: #FFF;
-      text-decoration: none;
-      padding: 14px 0;
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: var(--radius);
-      margin-top: 24px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      border: 1px solid #DDD;
+      margin: 10px 0;
+      background: #F9F9F9;
     }
 
-    .footer {
+    .img-box img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .img-tag {
+      font-size: 12px;
+      color: #666;
+      padding: 6px 10px;
+      background: #F0F0F0;
+      border-top: 1px solid #DDD;
+      font-weight: 600;
+    }
+
+    .footer-link {
+      margin-top: 30px;
       text-align: center;
       font-size: 13px;
-      color: var(--text-sec);
-      margin-top: 32px;
+    }
+
+    .footer-link a {
+      color: #0066CC;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-
-  <!-- 急救顶部提示 -->
-  <div class="emergency-banner">
-    <div class="emergency-title">
-      <span>⚡ 结论：相机没坏，是安全连锁未解除</span>
-    </div>
-    <div class="emergency-desc">
-      你在开盖状态把箭头对准红三角是对的，但<strong>对准后必须关上后盖并继续过卷直到停住</strong>，胶卷才会真正进入第 1 张。只要按下面 4 步排查，马上就能正常拍摄！
-    </div>
+  <div class="top-alert">
+    <h1>相机没坏，请按顺序排查这 4 步：</h1>
+    <p>箭头对准红三角后，<strong>必须关紧后盖并继续用力掰过卷手柄</strong>，机器才会真正进入第 1 张。以下每一步都配有原厂说明书原图：</p>
   </div>
 
   <!-- 步骤 1 -->
-  <div class="step-card">
-    <div class="step-header">
-      <div class="step-badge">
-        <span class="num">1</span>
-        <span>检查底部右侧轴扣（你说的“右边拨轮”）</span>
-      </div>
-      <span class="manual-tag">📖 说明书第 24 页</span>
+  <div class="step-section">
+    <div class="step-title">
+      <span>第 1 步：</span>
+      <span>检查底部右侧轴扣（你说的“右边拨轮”）</span>
     </div>
-    <div class="step-content">
-      <p>装空卷轴的收片仓，底盘上有一个带折叠小曲柄的旋钮（胶卷轴锁扣）。</p>
-      
-      <div class="warning-box">
-        <strong>⚠️ 常见卡死原因：</strong><br>
-        如果这个底部旋钮没有完全卡入卷轴孔内，或者没有顺着箭头旋转锁平，空卷轴本身就会被卡死，导致上面的过卷扳手无论如何都拨不动！
-      </div>
-
-      <ul class="checklist">
-        <li>打开底壳折叠小把手，将底部圆钮<strong>用力往里推到底</strong>。</li>
-        <li>顺着把手上的箭头方向<strong>旋转锁平</strong>。</li>
-        <li>如果顶不进去：用手指轻轻转动一下上面的空卷轴，对齐十字槽，它就会“嗒”地弹入槽内到位。</li>
-      </ul>
-
-      <div class="img-wrap">
-        <img src="../pentax67-manual/page_24.jpg" alt="说明书第24页：底部轴扣操作">
-        <div class="img-caption">说明书第 24 页第 4-6 步：空轴装入后必须按下并旋转轴扣锁紧</div>
-      </div>
+    <div class="step-desc">
+      相机底盘右侧有一个锁空卷轴的圆形扣子。
+    </div>
+    <div class="point-box">
+      <strong>排查要点：</strong><br>
+      这个扣子如果<strong>没有顶到底卡进空轴十字槽</strong>，空卷轴本身就是锁死的，手柄肯定拉不动！<br>
+      <strong>做法：</strong>打开小曲柄，<strong>用力往里推到底，顺着箭头转平锁紧</strong>。如果顶不进去，轻轻用手指转动一下卷仓里的空轴对齐孔位。
+    </div>
+    <div class="img-box">
+      <img src="pentax67-manual/page_24.jpg" alt="说明书第24页">
+      <div class="img-tag">📖 原厂说明书第 24 页：空卷轴装入与锁紧步骤</div>
     </div>
   </div>
 
   <!-- 步骤 2 -->
-  <div class="step-card">
-    <div class="step-header">
-      <div class="step-badge">
-        <span class="num">2</span>
-        <span>检查后盖内侧的“压片板”档位</span>
-      </div>
-      <span class="manual-tag">📖 说明书第 23 页</span>
+  <div class="step-section">
+    <div class="step-title">
+      <span>第 2 步：</span>
+      <span>检查后盖内侧的“压片板”</span>
     </div>
-    <div class="step-content">
-      <p>打开相机后背，观察后盖内侧的那块平整黑色金属板（胶卷压片板）。</p>
-
-      <div class="warning-box">
-        <strong>⚠️ 说明书原厂警告：</strong><br>
-        “如果使用 120 胶卷时错误选择了 220 压片位置，<strong>上片及过片时便会出现困难（阻力极大、拉不动）</strong>。”
-      </div>
-
-      <ul class="checklist">
-        <li>观察压片板右边的小方窗，<strong>必须明确显示【120】</strong>。</li>
-        <li>如果停在【220】或中间卡着：用手指按住压片板向 120 方向推到底卡紧。</li>
-      </ul>
-
-      <div class="img-wrap">
-        <img src="../pentax67-manual/page_23.jpg" alt="说明书第23页：压片板120/220切换">
-        <div class="img-caption">说明书第 23 页：120 胶卷必须滑到 120 档位</div>
-      </div>
+    <div class="step-desc">
+      打开后盖，看后盖内侧那一整块黑色铁板。
+    </div>
+    <div class="point-box">
+      <strong>排查要点：</strong><br>
+      右边小指示窗<strong>必须显示【120】</strong>！<br>
+      如果错选在【220】，压片阻力极大，<strong>说明书明确写了会导致上片困难、卷轴拉不动</strong>。如果选错了，用手按住铁板推回 120 档卡牢。
+    </div>
+    <div class="img-box">
+      <img src="pentax67-manual/page_23.jpg" alt="说明书第23页">
+      <div class="img-tag">📖 原厂说明书第 23 页：120 与 220 压片板切换</div>
     </div>
   </div>
 
   <!-- 步骤 3 -->
-  <div class="step-card">
-    <div class="step-header">
-      <div class="step-badge">
-        <span class="num">3</span>
-        <span>关键一步：关盖后继续过卷进第 1 张</span>
-      </div>
-      <span class="manual-tag">📖 说明书第 27 页</span>
+  <div class="step-section">
+    <div class="step-title">
+      <span>第 3 步：</span>
+      <span>关上后盖，继续连续过卷直到出现数字 1</span>
     </div>
-    <div class="step-content">
-      <p><strong>为什么关上盖子后屏幕没数字、快门按不下？</strong></p>
-      
-      <div class="highlight-box">
-        <strong>💡 核心机制（看说明书第 27 页第 13 步）：</strong><br>
-        你在开盖时把箭头对准红三角，仅仅是“起跑线”。此时胶卷还在引纸阶段，根本还没卷到第 1 张底片！相机为了防止空拍，此时<strong>快门是自锁的，屏幕上也绝不会显示张数</strong>。
-      </div>
-
-      <ul class="checklist">
-        <li><strong>关严后盖</strong>：双手用力扣上后盖，听到清脆的“咔哒”一声锁严。</li>
-        <li><strong>开机</strong>：电源开关拨到 <strong>i (ON)</strong>，不要留在 d。</li>
-        <li><strong>继续连续过卷</strong>：<strong>右手大拇指持续拨动右上角的卷片杆 2~4 次，直到卷片杆彻底锁死拉不动为止！</strong></li>
-        <li><strong>抬头看液晶屏</strong>：此时屏上会正式跳出 <strong>大字【1】</strong> 与 <strong>【FILM】</strong> 标志。</li>
-        <li><strong>进入拍摄</strong>：此时快门正式解锁，随时可以对焦按下快门拍摄！</li>
-      </ul>
-
-      <div class="img-wrap">
-        <img src="../pentax67-manual/page_27.jpg" alt="说明书第27页：关盖过卷跳出第1格">
-        <div class="img-caption">说明书第 27 页第 13-14 步：关上机背持续过卷，直到锁定并显示第 1 格</div>
-      </div>
+    <div class="step-desc">
+      <strong>为什么关上盖子屏幕没数字、拍不了？</strong>
+    </div>
+    <div class="point-box">
+      <strong>排查要点：</strong><br>
+      开盖对齐红三角只是起点，<strong>此时底片还没到拍摄位置！</strong>机器为了防误拍，此时快门是自锁的，屏幕也绝不显示张数。<br>
+      <strong>做法：</strong><br>
+      1. 关严后盖（必须听到清脆咔哒锁严声）。<br>
+      2. <strong>右手大拇指继续连续拨动卷片手柄 2~3 次</strong>，一直拨到手柄彻底锁死停住！<br>
+      3. 此时抬头看液晶肩屏，屏幕上会正式跳出 <strong>大字【1】</strong>。<br>
+      4. 只有出现【1】时，快门才正式解锁，就可以按快门拍摄了。
+    </div>
+    <div class="img-box">
+      <img src="pentax67-manual/page_27.jpg" alt="说明书第27页">
+      <div class="img-tag">📖 原厂说明书第 27 页：关盖过卷跳出第 1 格说明</div>
     </div>
   </div>
 
   <!-- 步骤 4 -->
-  <div class="step-card">
-    <div class="step-header">
-      <div class="step-badge">
-        <span class="num">4</span>
-        <span>万一现在机身已经卡死，如何一键复位？</span>
-      </div>
-      <span class="manual-tag">📖 说明书第 28 页</span>
+  <div class="step-section">
+    <div class="step-title">
+      <span>第 4 步：</span>
+      <span>如果现在卷片手柄已经卡死扳不动了</span>
     </div>
-    <div class="step-content">
-      <p>如果你之前反复尝试导致快门与过卷机构卡在半路上，按原厂方法做一次机械复位：</p>
-
-      <ul class="checklist">
-        <li>推开机背释放锁，<strong>打开后盖</strong>。</li>
-        <li>找到快门拨盘旁边的 <strong>多重曝光拨杆（ME 拨杆）</strong>，用手指按住它不要松手。</li>
-        <li>按住 ME 杆的同时，过卷扳手扳到底上弦，然后按一下快门按钮。</li>
-        <li>听到快门清脆释放后，整机就完全复位了。</li>
-        <li>重新关紧后盖，继续连续拨动卷片杆直到停住，屏幕跳出【1】即可。</li>
-      </ul>
-
-      <div class="img-wrap">
-        <img src="../pentax67-manual/page_28.jpg" alt="说明书第28页：开盖释放快门复位方法">
-        <div class="img-caption">说明书第 28 页倒数第 1 条：打开机背按住多重曝光按钮可释放快门复位</div>
-      </div>
+    <div class="step-desc">
+      做一次机身机械复位，解除卡死状态：
+    </div>
+    <div class="point-box">
+      <strong>排查要点：</strong><br>
+      1. 打开相机后盖。<br>
+      2. 找到快门旁边的<strong>多重曝光杆（ME 杆）</strong>，用手指按住不要松。<br>
+      3. <strong>按住 ME 杆的同时，过卷扳手掰到底上弦，然后按一下快门</strong>。<br>
+      4. 听到快门咔嚓释放后，机身就复位了。<br>
+      5. 重新盖紧后盖，继续过卷直到液晶屏跳出数字【1】。
+    </div>
+    <div class="img-box">
+      <img src="pentax67-manual/page_28.jpg" alt="说明书第28页">
+      <div class="img-tag">📖 原厂说明书第 28 页：开盖释放快门复位方法</div>
     </div>
   </div>
 
-  <a class="btn-manual" href="https://gengyueworks.github.io/pentax67ii-manual/" target="_blank">
-    📖 查看 80 页完整官方中文说明书画廊 →
-  </a>
-
-  <div class="footer">
-    Pentax 67II 旅途应急指南 · 旭光学原厂操作规范
+  <div class="footer-link">
+    <a href="https://gengyueworks.github.io/pentax67ii-manual/" target="_blank">查看 80 页完整官方中文说明书 →</a>
   </div>
-
-</div>
 
 </body>
 </html>
