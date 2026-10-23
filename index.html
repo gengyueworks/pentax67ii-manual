@@ -1451,6 +1451,10 @@ body {
     </a>
     
     <div class="header-controls">
+      <a href="#troubleshoot" onclick="switchTab('troubleshoot')" class="theme-switch-pill" style="background:#FFF5F5; border-color:#FFCDD2; color:#D32F2F; font-weight:700; text-decoration:none;" title="旅途装卷急救与故障排查">
+        <span>🚨</span>
+        <span>装卷急救</span>
+      </a>
       
       <div class="lang-switch-wrap">
         <button class="lang-switch-btn" id="langBtn" onclick="toggleLangMenu()" title="切换语言 / Switch Language / 言語切替">
@@ -1494,7 +1498,10 @@ body {
     </div>
     
     <div class="hero-actions">
-      <button class="btn btn-primary" onclick="switchTab('level1')">
+      <button class="btn btn-primary" onclick="switchTab('troubleshoot')" style="background:#D32F2F; border-color:#D32F2F; color:#FFF; font-weight:700;">
+        <span>🚨 装卷卡死/急救排查</span>
+      </button>
+      <button class="btn btn-secondary" onclick="switchTab('level1')">
         <span>⚡ 开启装机进阶之旅</span>
       </button>
       <button class="btn btn-secondary" onclick="switchTab('manual')">
